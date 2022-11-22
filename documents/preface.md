@@ -1,10 +1,10 @@
 # Welcome
 
-This workshop offers attendees an intro to mid-level, hands-on session with Red Hat OpenShift Container Platform - an **enterprise certified Kubernetes platform** for modern cloud-native application, from pushing containerized microservices, to deploying an entire infrastructure, to execute microservices and consuming them.
+This workshop offers attendees an intro to mid-level, hands-on session with **Red Hat OpenShift Container Platform** - an **enterprise certified Kubernetes platform** for modern cloud-native application, from pushing containerized microservices, to deploying an entire infrastructure, to execute microservices and consuming them.
 
-What are we going to deploy to Red Hat OpenShift Container Platform? Well, it’s going to be a set of microservices that:
+What are we going to deploy to Red Hat OpenShift Container Platform is going to be a set of microservices that:
 
-:white_check_mark: Developed with Quarkus (the microservices are already developed, and you don’t need to know Quarkus)
+:white_check_mark: Developed with Quarkus (the microservices are already developed, and you don’t need to know Quarkus :thumbsup:)
 
 :white_check_mark: Exposing HTTP APIs
 
@@ -30,7 +30,7 @@ This workshop is a BYOL *(Bring Your Own Laptop)* session, so bring your Windows
 
 :pushpin: How to implement Continuous Deployment (CD) in Red Hat OpenShift Container Platform using OpenShift GitOps
 
-And much more!
+And much more of fun stuff!
 
 ## Presenting the Workshop
 
