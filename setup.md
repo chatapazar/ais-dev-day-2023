@@ -12,10 +12,32 @@
     ./workshop-provisioner.sh
    ```
 
-5. Run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) with number of users as the script argument.
+   **Following Operators will be installed with *All namespaces* installation mode:**
 
-   For example:
+   * Gitea Operator
+   * Web Terminal
+   * Dev Workspace Operator
+   * Red Hat OpenShift Dev Spaces
+   * Red Hat OpenShift Service Mesh
+   * Red Hat Integration - AMQ Streams
+   * Red Hat OpenShift distributed tracing platform
+   * Red Hat OpenShift distributed tracing data collection
+
+   **Following Application instances will be set up:**
+
+   * Gitea in **gitea** project
+   * Dev Spaces (Eclipse Che) in **redhat-openshift-devspaces** project
+
+   **Following Applications will be installed:**
+
+   * Sonatype Nexus Repository Manager 3 OSS in **nexus** project
+
+5. Export lab user password and cluster admin password (the passwords should be there in the mail sent from RHPDS). Then run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) script with number of lab users as the script argument.
+
+   For example, provisioning 40 lab users:
 
    ```sh
+    export USER_PASSWORD=123456
+    export ADMIN_PASSWORD=admin123
     ./lab-user-provisioner.sh 40
    ```
