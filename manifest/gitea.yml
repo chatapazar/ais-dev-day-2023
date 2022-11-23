@@ -1,0 +1,21 @@
+apiVersion: gpte.opentlc.com/v1
+kind: Gitea
+metadata:
+  name: git
+spec:
+  giteaImageTag: latest
+  giteaVolumeSize: 4Gi
+  giteaSsl: true
+  postgresqlVolumeSize: 4Gi
+  giteaAdminUser: lab-admin
+  giteaAdminPassword: openshift
+  giteaAdminEmail: opentlc-mgr@redhat.com
+  giteaCreateUsers: true
+  giteaUserNumber: 1
+  giteaGenerateUserFormat: lab-user
+  giteaUserPassword: openshift
+  giteaMigrateRepositories: true
+  giteaRepositoriesList:
+  - repo: https://github.com/audomsak/quarkus-super-heroes.git
+    name: quarkus-super-heroes
+    private: false
