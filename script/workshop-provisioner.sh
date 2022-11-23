@@ -6,9 +6,8 @@
 
 repeat() {
     echo
-    for i in {1..120}
-    do
-        echo -n "$1";
+    for i in {1..120}; do
+        echo -n "$1"
     done
     echo
 }
