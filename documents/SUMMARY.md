@@ -1,13 +1,17 @@
 # Summary​
 
-- [Super Hero on OpenShift Workshop](preface.md)
+- [Super Heros on OpenShift Workshop](preface.md)
 
-## Architecture Overview
+- [Architecture Overview](architecture.md)
 
 ## Technical Services Deployment
 
 ## Application Deployment
 
-## Monitoring
+## Application Monitoring
 
 ## Continuous Deployment
+
+## Appendix
+
+- [What's Quarkus?](appendix/quarkus.md)
