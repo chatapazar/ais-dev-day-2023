@@ -23,7 +23,7 @@
    * Red Hat OpenShift distributed tracing platform
    * Red Hat OpenShift distributed tracing data collection
 
-   **Following Application instances will be set up:**
+   **Following Applications will be set up using CRD:**
 
    * Gitea in **gitea** project
    * Dev Spaces (Eclipse Che) in **redhat-openshift-devspaces** project
