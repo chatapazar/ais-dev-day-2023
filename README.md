@@ -1,5 +1,5 @@
-# Red Hat Developer Advocacy. 29 November 2022. Bangkok, Thailand
+# Red Hat Developer Advocacy. Bangkok, Thailand
 
-[Workshop Guide](http:)
+[Workshop Guide](https://audomsak.gitbook.io/developer-advocacy-2022/)
 
 ![cover](cover.jpg)
