@@ -1,6 +1,6 @@
 # Summary​
 
-## [Super Heros on OpenShift Workshop]
+## Super Heros on OpenShift Workshop
 
 - [About Workshop](super-heros-on-openshift-workshop/about-workshop.md)
 
