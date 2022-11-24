@@ -20,6 +20,7 @@
    * Red Hat OpenShift Dev Spaces
    * Red Hat OpenShift Service Mesh
    * Red Hat Integration - AMQ Streams
+   * Red Hat OpenShift GitOps
    * Red Hat OpenShift distributed tracing platform
    * Red Hat OpenShift distributed tracing data collection
 
