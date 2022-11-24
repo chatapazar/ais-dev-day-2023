@@ -16,7 +16,25 @@ A service mesh architecture uses a proxy instance called a sidecar in whichever 
 
 ## What is Red Hat OpenShift Service Mesh?
 
-Red Hat® OpenShift® Service Mesh—based on the open source project Istio —provides a uniform way to connect, manage, and observe microservices-based applications. It provides behavioral insight into—and control of—the networked microservices in your service mesh.
+Red Hat OpenShift Service Mesh provides a platform for behavioral insight and operational control over your networked microservices in a service mesh. With Red Hat OpenShift Service Mesh, you can connect, secure, and monitor microservices in your OpenShift Container Platform environment.
+
+Red Hat OpenShift Service Mesh based on the open source project Istio —provides a uniform way to connect, manage, and observe microservices-based applications. It provides behavioral insight into—and control of—the networked microservices in your service mesh.
+
+Red Hat OpenShift Service Mesh gives you an easy way to create a network of deployed services that provide:
+
+* Discovery
+* Load balancing
+* Service-to-service authentication
+* Failure recovery
+* Metrics
+* Monitoring
+
+Red Hat OpenShift Service Mesh also provides more complex operational functions including:
+
+* A/B testing
+* Canary releases
+* Access control
+* End-to-end authentication
 
 ![OpenShift Service Mesh](image/service-mesh/ocp-service-mesh.png)
 
