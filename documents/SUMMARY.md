@@ -44,7 +44,7 @@
 
   - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md)
 
-- [Distributed Tracing]()
+- [Distributed Tracing](application-monitoring/distributed-tracing.md)
 
   - [Trace application transactions]
 
