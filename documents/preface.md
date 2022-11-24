@@ -1,6 +1,6 @@
 # Welcome
 
-This workshop offers attendees an intro to mid-level, hands-on session with **Red Hat OpenShift Container Platform** - an **enterprise certified Kubernetes platform** for modern cloud-native application, from pushing containerized microservices, to deploying an entire infrastructure, to execute microservices and consuming them.
+This workshop offers attendees an intro to mid-level, hands-on session with **Red Hat OpenShift Container Platform** - an **enterprise certified Kubernetes platform** for modern cloud-native application, from containerizing microservices, to deploying an entire application, to execute microservices and consuming them as well tracing, monitoring, and management.
 
 What are we going to deploy to Red Hat OpenShift Container Platform is going to be a set of microservices that:
 
@@ -20,9 +20,9 @@ This workshop is a BYOL *(Bring Your Own Laptop)* session, so bring your Windows
 
 :pushpin: How to build container images out of an existing Java application
 
-:pushpin: How to deploy microservices to Red Hat OpenShift Container Platform
+:pushpin: How to deploy microservices to Red Hat OpenShift Container Platform in various ways.
 
-:pushpin: How to create (managed) services in Red Hat OpenShift Container Platform (Postgres database, Kafka)
+:pushpin: How to create application supported services in Red Hat OpenShift Container Platform (Postgres database, Kafka)
 
 :pushpin: How you improve the resilience of our microservices
 
