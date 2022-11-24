@@ -1,6 +1,18 @@
-# Understanding OpenShift GitOps
+# Understanding GitOps
 
 ![GitOps](../image/gitops.png)
+
+## What is GitOps?
+
+GitOps uses Git repositories as a single source of truth to deliver infrastructure as code. Submitted code checks the CI process, while the CD process checks and applies requirements for things like security, infrastructure as code, or any other boundaries set for the application framework. All changes to code are tracked, making updates easy while also providing version control should a rollback be needed.
+
+GitOps delivers:
+
+* A standard workflow for application development
+* Increased security for setting application requirements upfront
+* Improved reliability with visibility and version control through Git
+* Consistency across any cluster, any cloud, and any on-premise environment
+Many other tools can be used together to build a GitOps framework. For example, git repositories, Kubernetes, continuous integration/continuous delivery (CI/CD) tools, and configuration management tools.
 
 ## About GitOps
 
