@@ -2,7 +2,7 @@
 
 Distributed tracing is a method of tracking application requests as they flow from frontend devices to backend services and databases. Developers can use distributed tracing to troubleshoot requests that exhibit high latency or errors.
 
-![Distrubuted tracing](../distrubuted-tracing/tracing.svg)
+![Distrubuted tracing](image/distrubuted-tracing/tracing.svg)
 
 ## Distributed tracing architecture
 
@@ -29,7 +29,7 @@ Red Hat OpenShift distributed tracing consists of two main components:
 * **Red Hat OpenShift distributed tracing data collection** - This component is based on the open source OpenTelemetry project.
 Both of these components are based on the vendor-neutral OpenTracing APIs and instrumentation.
 
-![Distrubuted tracing](../distrubuted-tracing/jaeger.webp)
+![Distrubuted tracing](image/distrubuted-tracing/jaeger.webp)
 
 ## References
 
