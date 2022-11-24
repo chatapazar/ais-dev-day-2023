@@ -36,7 +36,7 @@
 
   - [Query Application Metrics](application-monitoring/query-application-metric.md)
 
-- [Monitor Application with Grafana]
+- [Monitor Application with Grafana](application-monitoring/monitor-app-with-grafana.md)
 
   - [Create Grafana Instance](application-monitoring/create-grafana-instance.md)
 
@@ -44,7 +44,7 @@
 
   - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md)
 
-- [Distributed Tracing]
+- [Distributed Tracing]()
 
   - [Trace application transactions]
 
