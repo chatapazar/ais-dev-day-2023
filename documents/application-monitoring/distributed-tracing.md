@@ -38,3 +38,5 @@ Both of these components are based on the vendor-neutral OpenTracing APIs and in
 * [OpenTelemetry - a vendor-neutral open-source Observability framework](https://opentelemetry.io/)
 
 * [Jaeger - open source, end-to-end distributed tracing](https://www.jaegertracing.io/)
+
+* [OpenShift distributed tracing](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11/html/distributed_tracing/index)
