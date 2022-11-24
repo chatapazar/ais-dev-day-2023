@@ -1,10 +1,12 @@
 # Summary​
 
-## [Super Heros on OpenShift Workshop](preface.md)
+## [Super Heros on OpenShift Workshop]
 
-- [Architecture Overview](architecture.md)
+- [About Workshop](super-heros-on-openshift-workshop/about-workshop.md)
 
-- [Getting Started](getting-started.md)
+- [Application Architecture](super-heros-on-openshift-workshop/architecture.md)
+
+- [Getting Started](super-heros-on-openshift-workshop/getting-started.md)
 
 ## Technical Services Deployment
 

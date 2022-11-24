@@ -1,4 +1,4 @@
-# Architecture Overview
+# Application Architecture
 
 In this workshop, you will deploy an existing application that allows superheroes to fight against supervillains. You will be containerizing and deploying several microservices communicating either synchronously via REST or asynchronously using Kafka:
 
@@ -12,8 +12,8 @@ In this workshop, you will deploy an existing application that allows superheroe
 
 * ***Statistics***: Each fight is asynchronously sent (via Kafka) to the Statistics microservice. It has an HTML + JQuery UI displaying all the statistics.
 
-![Architecture](image/architecture.png)
+![Architecture](image/architecture/architecture.png)
 
 The main UI allows you to pick up one random Hero and Villain by clicking on "**New Fighters.**" Then it’s just a matter of clicking on "**Fight!**" to get them to fight. The table at the bottom shows the list of the previous fights.
 
-![Main UI](image/main-ui.png)
+![Main UI](image/architecture/main-ui.png)

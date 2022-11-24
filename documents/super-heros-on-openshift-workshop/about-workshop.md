@@ -1,4 +1,4 @@
-# Welcome
+# About Workshop
 
 This workshop offers attendees an intro to mid-level, hands-on session with **Red Hat OpenShift Container Platform** - an **enterprise certified Kubernetes platform** for modern cloud-native application, from containerizing microservices, to deploying an entire application, to execute microservices and consuming them as well tracing, monitoring, and management.
 
