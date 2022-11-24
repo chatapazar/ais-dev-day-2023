@@ -156,10 +156,17 @@ install_git_ops() {
 }
 
 install_distributed_tracing_platform() {
+    project=openshift-distributed-tracing
+
+    echo
+    echo "Creating $project project..."
+    echo
+
+    oc new-project $project
+
     operatorName=jaeger-product
     operatorDesc="Red Hat OpenShift distributed tracing platform"
     ymlFilePath=../manifest/distributed-tracing-platform-subscription.yml
-    project=openshift-distributed-tracing
 
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
