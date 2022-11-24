@@ -21,7 +21,8 @@ With distributed tracing you can perform the following functions:
 * Monitor distributed transactions
 * Optimize performance and latency
 * Perform root cause analysis
-* Red Hat OpenShift distributed tracing consists of two main components:
+
+Red Hat OpenShift distributed tracing consists of two main components:
 
 * **Red Hat OpenShift distributed tracing platform** - This component is based on the open source Jaeger project.
 
