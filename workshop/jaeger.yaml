@@ -1,0 +1,9 @@
+kind: Jaeger
+apiVersion: jaegertracing.io/v1
+metadata:
+  name: jaeger
+spec:
+  strategy: allInOne
+  allInOne:
+    options:
+      log-level: info

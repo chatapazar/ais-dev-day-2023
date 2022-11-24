@@ -1,0 +1,25 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: otel
+spec:
+  mode: deployment
+  config: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+          http:
+    processors:
+    exporters:
+      jaeger:
+	# Use  jaeger-collector-headless.CONTROL_PLANE.svc:14250 to export to Service Mesh Jaeger
+        endpoint: jaeger-collector-headless:14250
+        tls:
+          ca_file: "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt"
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: []
+          exporters: [jaeger]
