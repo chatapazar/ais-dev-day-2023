@@ -146,6 +146,15 @@ install_amq_streams() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
+install_git_ops() {
+    operatorName=openshift-gitops-operator 
+    operatorDesc="Red Hat OpenShift GitOps"
+    ymlFilePath=../manifest/gitops-subscription.yml
+    project=openshift-operators
+
+    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
+}
+
 install_distributed_tracing_platform() {
     operatorName=jaeger-product
     operatorDesc="Red Hat OpenShift distributed tracing platform"
@@ -254,6 +263,9 @@ setup_dev_spaces
 repeat '-'
 
 install_amq_streams
+repeat '-'
+
+install_git_ops
 repeat '-'
 
 install_distributed_tracing_platform
