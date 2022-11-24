@@ -26,7 +26,7 @@
 
 ## Application Monitoring
 
-- [Application Metrics]
+- [Application Metrics](application-monitoring/application-metrics.md)
 
   - [Configure Service Monitoring](application-monitoring/configure-service-monitoring.md)
 
