@@ -12,6 +12,15 @@ repeat() {
     echo
 }
 
+enable_user_workload_monitoring()
+{
+    echo
+    echo "Enabling monitoring for user-defined projects..."
+    echo
+
+    oc apply -f ../manifest/cluster-monitoring-config.yml -n openshift-monitoring
+}
+
 install_operator() {
     operatorNameParam=$1
     operatorDescParam=$2
@@ -230,6 +239,9 @@ preload_nexus_artefacts() {
 ####################################################
 echo
 echo "Super Heros on OpenShift Workshop Provisioner"
+repeat '-'
+
+enable_user_workload_monitoring
 repeat '-'
 
 setup_gitea
