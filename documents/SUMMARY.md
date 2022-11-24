@@ -4,6 +4,8 @@
 
 - [Architecture Overview](architecture.md)
 
+- [Getting Started](getting-started.md)
+
 ## Technical Services Deployment
 
 - [Deploy PostgreSQL Databases](technical-service-deployment/postgresql-deployment.md)
