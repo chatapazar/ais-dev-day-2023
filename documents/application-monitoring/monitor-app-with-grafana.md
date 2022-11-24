@@ -1,6 +1,6 @@
 # Monitor Application with Grafana
 
-![Grafana dashboard](../monitor-app-with-grafana/grafana-prometheus.png)
+![Grafana dashboard](image/monitor-app-with-grafana/grafana-prometheus.png)
 
 ## What is Grafana & What Is It Used For?
 
@@ -22,7 +22,7 @@ The dashboards contain a gamut of visualization options such as geo maps, heat m
 
 A dashboard contains several different individual panels on the grid. Each panel has different functionalities.
 
-![Grafana dashboard](../monitor-app-with-grafana/grafana-dashboard-example.png)
+![Grafana dashboard](image/monitor-app-with-grafana/grafana-dashboard-example.png)
 
 ## How does Grafana work with Prometheus?
 
@@ -31,7 +31,7 @@ Prometheus is an open source data monitoring tool. The combination of Prometheus
 Though Prometheus too has data visualization features & stuff. But still, Grafana is preferred for visualizing data. Queries are fired from the dashboard & the data is fetched from Prometheus.
 It acts as a perfect open source data model for storing time series data.
 
-![Grafana dashboard](../monitor-app-with-grafana/grafana-prometheus-overview.png)
+![Grafana dashboard](image/monitor-app-with-grafana/grafana-prometheus-overview.png)
 
 ## References
 
