@@ -8,25 +8,25 @@
 
 - [Getting Started](super-heros-on-openshift-workshop/getting-started.md)
 
-## Technical Services Deployment
+## Application Services Deployment
 
-- [Deploy PostgreSQL Databases](technical-service-deployment/postgresql-deployment.md)
+- [PostgreSQL Databases Deployment](technical-service-deployment/postgresql-deployment.md)
 
-- [Deploy AMQ Streams (Kafka)](technical-service-deployment/kafka-deployment.md)
+- [AMQ Streams (Kafka) Deployment](technical-service-deployment/kafka-deployment.md)
 
 ## Application Deployment
 
-- [Deploy Hero Microservice](application-deployment/hero-microservice-deployment.md) container
+- [Hero Microservice](application-deployment/hero-microservice-deployment.md) container
 
-- [Deploy Villain Microservice](application-deployment/villain-microservice-deployment.md) s2i
+- [Villain Microservice](application-deployment/villain-microservice-deployment.md) s2i
 
-- [Deploy Fight Microservice](application-deployment/fight-microservice-deployment.md) mvn
+- [Fight Microservice](application-deployment/fight-microservice-deployment.md) mvn
 
-- [Deploy Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
+- [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
 
-- [Deploy Statistics Microservice](application-deployment/statistics-microservice-deployment.md) gitops
+- [Statistics Microservice](application-deployment/statistics-microservice-deployment.md) gitops
 
-- [Deploy Statistics UI Microservice](application-deployment/statistics-ui-microservice-deployment.md) gitops
+- [Statistics UI Microservice](application-deployment/statistics-ui-microservice-deployment.md) gitops
 
 ## Application Monitoring
 
