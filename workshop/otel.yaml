@@ -13,7 +13,6 @@ spec:
     processors:
     exporters:
       jaeger:
-	# Use  jaeger-collector-headless.CONTROL_PLANE.svc:14250 to export to Service Mesh Jaeger
         endpoint: jaeger-collector-headless:14250
         tls:
           ca_file: "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt"
@@ -23,3 +22,4 @@ spec:
           receivers: [otlp]
           processors: []
           exporters: [jaeger]
+#Set jaeger endpoint to jaeger-collector-headless.CONTROL_PLANE.svc:14250 to export to Service Mesh Jaeger
