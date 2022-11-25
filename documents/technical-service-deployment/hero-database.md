@@ -158,4 +158,8 @@ We need to load some data into the database we've just deployed. How to do that?
 
 2. How to use Web Terminal via OpenShift web console to interact with application deployed on cluster (in this case, heroes-db PostgreSQL) without having to install terminal applications i.e. PuTTY, Cmder, Xshell, SecureCRT etc. on your computer.
 
-3. How to add labels to workload using `oc` command line tool.
+3. How to use `curl` command to download file from website.
+
+4. How to use `psql` (PostgreSQL client) command to connect to PostgreSQL database server and a few tasks e.g. run SQL script, list tables, and run SQL statement.
+
+5. How to add labels to workload using `oc` - [OpenShift command line tool](https://docs.okd.io/4.11/cli_reference/openshift_cli/getting-started-cli.html#cli-getting-started).
