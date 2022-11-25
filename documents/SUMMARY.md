@@ -1,28 +1,38 @@
 # Summary​
 
-- [Super Heros on OpenShift Workshop](preface.md)
+## Super Heroes on OpenShift Workshop
 
-- [Architecture Overview](architecture.md)
+- [About Workshop](super-heroes-on-openshift-workshop/about-workshop.md)
 
-## Technical Services Deployment
+- [Application Architecture](super-heroes-on-openshift-workshop/architecture.md)
 
-- [Deploy PostgreSQL Databases](technical-service-deployment/postgresql-deployment.md)
+- [Getting Started](super-heroes-on-openshift-workshop/getting-started.md)
 
-- [Deploy AMQ Streams (Kafka)](technical-service-deployment/kafka-deployment.md)
+## Application Services Deployment
+
+- [PostgreSQL Databases Deployment](technical-service-deployment/postgresql-deployment.md)
+
+  - [Deploy Database For Hero Microservice](technical-service-deployment/hero-database.md)
+
+  - [Deploy Database For Villain Microservice](technical-service-deployment/villain-database.md)
+
+  - [Deploy Database For Fight Microservice](technical-service-deployment/fight-database.md)
+
+- [AMQ Streams (Kafka) Deployment](technical-service-deployment/kafka-deployment.md)
 
 ## Application Deployment
 
-- [Deploy Hero Microservice](application-deployment/hero-microservice-deployment.md) container
+- [Hero Microservice](application-deployment/hero-microservice-deployment.md) container
 
-- [Deploy Villain Microservice](application-deployment/villain-microservice-deployment.md) s2i
+- [Villain Microservice](application-deployment/villain-microservice-deployment.md) s2i
 
-- [Deploy Fight Microservice](application-deployment/fight-microservice-deployment.md) mvn
+- [Fight Microservice](application-deployment/fight-microservice-deployment.md) mvn
 
-- [Deploy Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
+- [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
 
-- [Deploy Statistics Microservice](application-deployment/statistics-microservice-deployment.md) gitops
+- [Statistics Microservice](application-deployment/statistics-microservice-deployment.md) gitops
 
-- [Deploy Statistics UI Microservice](application-deployment/statistics-ui-microservice-deployment.md) gitops
+- [Statistics UI Microservice](application-deployment/statistics-ui-microservice-deployment.md) gitops
 
 ## Application Monitoring
 
@@ -32,7 +42,7 @@
 
   - [Query Application Metrics](application-monitoring/query-application-metric.md)
 
-- [Monitor Application with Grafana]
+- [Monitor Application with Grafana](application-monitoring/monitor-app-with-grafana.md)
 
   - [Create Grafana Instance](application-monitoring/create-grafana-instance.md)
 
@@ -40,7 +50,7 @@
 
   - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md)
 
-- [Distributed Tracing]
+- [Distributed Tracing](application-monitoring/distributed-tracing.md)
 
   - [Trace application transactions]
 
@@ -52,8 +62,7 @@
 
 ## Application Management
 
-- [Service Mesh]
--
+- [Service Mesh](application-management/service-mesh.md)
 
 ## Appendix
 

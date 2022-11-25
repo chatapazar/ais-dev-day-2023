@@ -8,17 +8,17 @@ The Java ergonomics, designed 20 years ago, do not fit well in this new environm
 
 That’s where Quarkus, and other projects, enter the game. Quarkus uses a build time principle. During the build of the application, tasks that usually happen at runtime are executed at build time.
 
-![How Quarkus works](../image/quarkus-1.png)
+![How Quarkus works](image/quarkus-1.png)
 
 Thus, when the application runs, everything has been pre-computed, and all the annotation scanning, XML parsing, and so on won’t be executed anymore. It has two direct benefits: startup time (a lot faster) and memory consumption (a lot lower).
 
-![How Quarkus works](../image/quarkus-2.png)
+![How Quarkus works](image/quarkus-2.png)
 
 So, as depicted in the figure above, Quarkus does bring an infrastructure for frameworks to embrace build time metadata discovery (like annotations), replace proxies with generated classes, pre-configure most frameworks, and handle dependency injection at build time.
 
 Also, during the build, Quarkus detects which class needs to be accessed by reflection at runtime, boots framework at build time to record the result, and generally offers a lot of GraalVM optimization for free (or cheap at least). Indeed, thanks to all this metadata, Quarkus can configure native compilers such as the GraalVM compiler to generate a native executable for your Java application. Thanks to an aggressive dead-code elimination, the final executable is smaller, faster to start, and uses a ridiculously small amount of memory.
 
-![How Quarkus works](../image/quarkus-3.png)
+![How Quarkus works](image/quarkus-3.png)
 
 ## References
 

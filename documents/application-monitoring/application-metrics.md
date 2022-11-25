@@ -1,6 +1,6 @@
 # Application Metrics
 
-![Metrics Dashboard](../image/metric.png)
+![Metrics Dashboard](image/application-metrics/metric.png)
 
 ## Metrics are your first sign of trouble
 
@@ -44,7 +44,7 @@ The OpenShift Container Platform monitoring stack is based on the Prometheus ope
 
 * **Components for monitoring user-defined projects.** After optionally enabling monitoring for user-defined projects, additional monitoring components are installed in the openshift-user-workload-monitoring project. This provides monitoring for user-defined projects. These components are illustrated in the User section in the following diagram.
 
-![Metrics Dashboard](../image/ocp-monitoring-stack.png)
+![Metrics Dashboard](image/application-metrics/ocp-monitoring-stack.png)
 
 ## References
 
