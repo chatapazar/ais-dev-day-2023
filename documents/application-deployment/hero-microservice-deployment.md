@@ -153,14 +153,14 @@
 
 ## What have you learnt?
 
-1. How to create ConfigMap object to keep all application configurations.
+1. How to create ConfigMap object with YAML to keep all application configurations.
 
-2. How to create Secret object to keep all secret application configurations.
+2. How to create Secret object with YAML to keep all secret application configurations.
 
-3. How to deploy application to OpenShift cluster using existing container image. And also following tasks:
+3. How to deploy application using existing container image with following configurations:
 
-   - Configure application health checks e.g. liveness and readiness probes
+   - Application health checks e.g. liveness and readiness probes
 
-   - Allocate require and limit resources i.e. memory for application.
+   - Require and limit resource i.e. memory for application.
 
-4. Bind configurations from ConfigMap and Secret objects to application container as environment variables.
+4. Bind configurations from ConfigMap and Secret objects to application container via environment variables.
