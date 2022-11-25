@@ -12,9 +12,6 @@ metadata:
     prometheus.io/port: "8085"
     prometheus.io/scheme: http
   labels:
-    app.kubernetes.io/name: event-statistics
-    app.kubernetes.io/part-of: event-stats
-    app.kubernetes.io/version: java17-latest
     app: event-statistics
     application: event-stats
     system: quarkus-super-heroes
@@ -25,9 +22,6 @@ spec:
   selector:
     matchLabels:
       app: event-statistics
-    app.kubernetes.io/version: java17-latest
-    app.kubernetes.io/part-of: event-stats
-    app.kubernetes.io/name: event-statistics
   template:
     metadata:
       annotations:
@@ -46,9 +40,6 @@ spec:
         application: event-stats
         system: quarkus-super-heroes
         app.openshift.io/runtime: quarkus
-        app.kubernetes.io/version: java17-latest
-        app.kubernetes.io/part-of: event-stats
-        app.kubernetes.io/name: event-statistics
     spec:
       containers:
         - env:
@@ -93,12 +84,3 @@ spec:
               memory: 768Mi
             requests:
               memory: 256Mi
-  # triggers:
-  #   - imageChangeParams:
-  #       automatic: true
-  #       containerNames:
-  #         - event-statistics
-  #       from:
-  #         kind: ImageStreamTag
-  #         name: event-statistics:java17-latest
-  #     type: ImageChange
