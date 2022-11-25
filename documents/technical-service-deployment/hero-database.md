@@ -131,10 +131,27 @@ We need to load some data into the database we've just deployed. How to do that?
     \q
     ```
 
----
+## Add label to workload
 
-## What you've learned?
+1. Run following command in Web Terminal to add a few [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to `heroes-db` workload.
 
-1. How to deploy PostgreSQL database service (for the Hero microservice) from Developer Catalog.
+    ```sh
+    oc label dc heroes-db \
+    app=heroes-db \
+    application=heroes-service \
+    system=quarkus-super-heroes \
+    app.kubernetes.io/part-of=heroes-service \
+    app.openshift.io/runtime=postgresql
+    ```
+
+2. The `heroes-db` entity in UI will change immediately. Click on it then go to **Details** tab. You should be able to see the labels were added.
+
+    ![Web Terminal](image/postgresql-deployment/deploy-db-8.png)
+
+## What have you learnt?
+
+1. How to deploy PostgreSQL database service from Developer Catalog.
 
 2. How to use Web Terminal via OpenShift web console to interact with application deployed on cluster (in this case, heroes-db PostgreSQL) without having to install terminal applications i.e. PuTTY, Cmder, Xshell, SecureCRT etc. on your computer.
+
+3. How to add labels to workload using `oc` command line tool.
