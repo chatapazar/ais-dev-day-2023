@@ -10,7 +10,7 @@
 
 2. Copy this YAML snippet to the editor and click **Create** button.
 
-    YAML snippet:
+    *YAML snippet:*
 
     ```yaml
     apiVersion: v1
@@ -42,7 +42,7 @@
 
 2. Copy this YAML snippet to the editor and click **Create** button. Please note that the `fights-db-config` Secret object gets bound to MongoDB container as environment variables.
 
-    YAML snippet:
+    *YAML snippet:*
 
     ```yaml
     apiVersion: apps/v1
@@ -94,7 +94,7 @@
 
 2. Copy this YAML snippet to the editor and click **Create** button.
 
-    YAML snippet:
+    *YAML snippet:*
 
     ```yaml
     apiVersion: v1
