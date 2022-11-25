@@ -4,8 +4,6 @@
 
 1. Click on ![add](image/add-icon.png) icon located at top right corner of web console.
 
-   ![Create a ConfigMap object](image/hero-microservice-deployment/deploy-1.png)
-
 2. Copy this YAML snippet to the editor and click **Create** button.
 
    _YAML snippet:_
@@ -31,7 +29,7 @@
        %{i,Referer}"
    ```
 
-   ![Create a ConfigMap object](image/hero-microservice-deployment/deploy-2.png)
+   ![Create a ConfigMap object](image/hero-microservice-deployment/deploy-1.png)
 
 3. A **rest-heroes-config** ConfigMap object should be created.
 
