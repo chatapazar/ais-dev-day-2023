@@ -117,6 +117,10 @@
 
     ![Service is pointing to MongoDB container](image/database-deployment/deploy-db-25.png)
 
+4. Go to **Topology** menu, you should see `flights-db` MongoDB entity.
+
+    ![MongoDB entity](image/database-deployment/deploy-db-26.png)
+
 ## What have you learnt?
 
 How to create Kubernetes resources e.g. Secret, Deployment, and Service objects with YAML via OpenShift web console.
