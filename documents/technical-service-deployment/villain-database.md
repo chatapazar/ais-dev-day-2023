@@ -4,7 +4,7 @@
 
 1. Right click in view area then select **Container image** menu.
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-9.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-9.png)
 
 2. Enter following inputs as a screenshot below:
 
@@ -13,15 +13,15 @@
     - **Application:** `Create application`
     - **Name:** `villains-db`
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-10.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-10.png)
 
 3. Scroll down to to bottom of the page, then **Uncheck "Create a route" checkbox**. And then click on **Deployment** link.
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-12.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-12.png)
 
 4. Click **Add value** link to add more input fields of environment variables
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-13.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-13.png)
 
 5. Enter following environment variables. Then click on **Labels** link.
 
@@ -29,21 +29,21 @@
     - **POSTGRESQL_PASSWORD:** `superbad`
     - **POSTGRESQL_DATABASE:** `villains_database`
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-14.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-14.png)
 
 6. Enter `system=quarkus-super-heroes` then click **Create** button.
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-15.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-15.png)
 
 7. A new `villains-db` PostgreSQL instance should be created. Wait for awhile unti it's up and running.
 
-    ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-16.png)
+    ![PostgreSQL database deployment](image/database-deployment/deploy-db-16.png)
 
 ## Initial data to database
 
 1. Click on the **Web Terminal** icon located on top right corner of web console. Wait for a few moment, you should see a terminal shows up.
 
-    ![Web Terminal](image/postgresql-deployment/deploy-db-17.png)
+    ![Web Terminal](image/database-deployment/deploy-db-17.png)
 
 2. Use `curl` command to download SQL script.
 

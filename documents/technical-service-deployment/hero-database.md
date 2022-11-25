@@ -4,15 +4,15 @@
 
 1. Make sure that you're in **Developer** perspective, project **user*X*-superheroes** is selected, and in the **Tolplogy** page. Then right click in view area and select **Database** menu.
 
-   ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-1.png)
+   ![PostgreSQL database deployment](image/database-deployment/deploy-db-1.png)
 
 2. Select **PostgreSQL** database.
 
-   ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-2.png)
+   ![PostgreSQL database deployment](image/database-deployment/deploy-db-2.png)
 
 3. Click **Instantiate Template** button.
 
-   ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-3.png)
+   ![PostgreSQL database deployment](image/database-deployment/deploy-db-3.png)
 
 4. Enter following inputs (leave it as is for other fields) then click **Create** button.
 
@@ -21,11 +21,11 @@
    - **PostgreSQL Connection Password:** `superman`
    - **PostgreSQL Database Name:** `heroes_database`
 
-   ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-4.png)
+   ![PostgreSQL database deployment](image/database-deployment/deploy-db-4.png)
 
 5. Wait for awhile, the `heroes-db` pod should be up and running.
 
-   ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-5.png)
+   ![PostgreSQL database deployment](image/database-deployment/deploy-db-5.png)
 
 ## Initial data to database
 
@@ -33,11 +33,11 @@ We need to load some data into the database we've just deployed. How to do that?
 
 1. Click on the **Web Terminal** icon located on top right corner of web console. Then select **user*X*-superheroes** and click **Start** button.
 
-    ![Web Terminal](image/postgresql-deployment/deploy-db-6.png)
+    ![Web Terminal](image/database-deployment/deploy-db-6.png)
 
 2. Wait for a few moment, you should see a terminal shows up.
 
-    ![Web Terminal](image/postgresql-deployment/deploy-db-7.png)
+    ![Web Terminal](image/database-deployment/deploy-db-7.png)
 
 3. Use `curl` command to download SQL script.
 
@@ -146,11 +146,11 @@ We need to load some data into the database we've just deployed. How to do that?
 
 2. The `heroes-db` entity in UI will change immediately. Click on it then go to **Details** tab. You should be able to see the labels were added.
 
-    ![Web Terminal](image/postgresql-deployment/deploy-db-8.png)
+    ![Web Terminal](image/database-deployment/deploy-db-8.png)
 
 3. You can minimize or close the **Web Terminal** window when not use it.
 
-    ![Web Terminal](image/postgresql-deployment/deploy-db-11.png)
+    ![Web Terminal](image/database-deployment/deploy-db-11.png)
 
 ## What have you learnt?
 

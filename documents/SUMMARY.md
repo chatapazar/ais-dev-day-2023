@@ -10,7 +10,7 @@
 
 ## Application Services Deployment
 
-- [PostgreSQL Databases Deployment](technical-service-deployment/postgresql-deployment.md)
+- [Databases Deployment](technical-service-deployment/database-deployment.md)
 
   - [Deploy Database For Hero Microservice](technical-service-deployment/hero-database.md)
 
