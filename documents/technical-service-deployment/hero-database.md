@@ -47,7 +47,7 @@ We need to load some data into the database we've just deployed. How to do that?
 
     Sample output:
 
-    ```sh
+    ```txt
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
     100 86517  100 86517    0     0   180k      0 --:--:-- --:--:-- --:--:--  180k
@@ -61,7 +61,7 @@ We need to load some data into the database we've just deployed. How to do that?
 
     Sample output:
 
-    ```sh
+    ```txt
     bash-4.4 ~ $  psql postgresql://heroes-db:5432/heroes_database?user=superman
     Password:
     psql (10.21)
@@ -78,7 +78,7 @@ We need to load some data into the database we've just deployed. How to do that?
 
     Sample output:
 
-    ```sh
+    ```txt
     heroes_database=> \i heroes-db-init.sql
     DROP TABLE
     DROP SEQUENCE
@@ -117,7 +117,7 @@ We need to load some data into the database we've just deployed. How to do that?
 
     Sample output:
 
-    ```sh
+    ```txt
     heroes_database=> select count(*) from hero;
     count
     -------
