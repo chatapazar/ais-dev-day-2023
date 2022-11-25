@@ -133,6 +133,6 @@ We need to load some data into the database we've just deployed. How to do that?
 
 ## What you've learnt?
 
-1. How to deploy PostgreSQL database service (for the Hero microservice) from Developer Catalog.
+1. How to deploy PostgreSQL database service from Developer Catalog.
 
 2. How to use Web Terminal via OpenShift web console to interact with application deployed on cluster (in this case, heroes-db PostgreSQL) without having to install terminal applications i.e. PuTTY, Cmder, Xshell, SecureCRT etc. on your computer.
