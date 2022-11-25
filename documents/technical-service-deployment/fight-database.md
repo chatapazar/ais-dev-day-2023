@@ -38,7 +38,7 @@
 
 1. Click on ![add](image/database-deployment/add-icon.png) icon located at top right corner of web console.
 
-2. Copy this YAML snippet to the editor and click "Create" button. Please note that the `fights-db-config` Secret object get bound to MongoDB container via environment variables.
+2. Copy this YAML snippet to the editor and click "Create" button. Please note that the `fights-db-config` Secret object gets bound to MongoDB container as environment variables.
 
     ```yaml
     apiVersion: apps/v1
@@ -80,7 +80,7 @@
 
     ![Deploy MongoDB container](image/database-deployment/deploy-db-21.png)
 
-3. A `fights-db` Deployment object should be created and there's 1 Pod running.
+3. A `fights-db` Deployment object should be created and there is 1 Pod running.
 
     ![Deploy MongoDB container](image/database-deployment/deploy-db-22.png)
 
@@ -119,4 +119,4 @@
 
 ## What have you learnt?
 
-How to create Kubernetes resources e.g. Secret, Deployment, and Service objects with YAML via web console.
+How to create Kubernetes resources e.g. Secret, Deployment, and Service objects with YAML via OpenShift web console.
