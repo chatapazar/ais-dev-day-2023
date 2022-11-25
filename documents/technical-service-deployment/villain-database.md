@@ -1,6 +1,6 @@
 # Deploy Database For Villain Microservice
 
-## Deploy database for Villain microservice from External Container Registry
+## Deploy PostgreSQL database from External Container Registry
 
 1. Right click in view area then select **Container image** menu.
 
