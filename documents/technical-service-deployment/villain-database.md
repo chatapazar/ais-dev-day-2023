@@ -9,13 +9,13 @@
 2. Enter following inputs as a screenshot below:
 
     - **Image name from external registry:** `registry.redhat.io/rhel9/postgresql-13`
-    - **Runtime icon:** select `postgresql` option
-    - **Application:** select `Create application` option
+    - **Runtime icon:** `postgresql`
+    - **Application:** `Create application`
     - **Name:** `villains-db`
 
     ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-10.png)
 
-3. Scroll down to to bottom of the page, then **Uncheck Create a route checkbox**. And then click on **Deployment** link.
+3. Scroll down to to bottom of the page, then **Uncheck "Create a route" checkbox**. And then click on **Deployment** link.
 
     ![PostgreSQL database deployment](image/postgresql-deployment/deploy-db-12.png)
 
