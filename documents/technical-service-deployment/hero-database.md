@@ -148,6 +148,10 @@ We need to load some data into the database we've just deployed. How to do that?
 
     ![Web Terminal](image/postgresql-deployment/deploy-db-8.png)
 
+3. You can minimize or close the **Web Terminal** window when not use it.
+
+    ![Web Terminal](image/postgresql-deployment/deploy-db-11.png)
+
 ## What have you learnt?
 
 1. How to deploy PostgreSQL database service from Developer Catalog.
