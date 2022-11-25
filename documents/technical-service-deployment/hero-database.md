@@ -131,7 +131,7 @@ We need to load some data into the database we've just deployed. How to do that?
     \q
     ```
 
-## What you've learnt?
+## What have you learnt?
 
 1. How to deploy PostgreSQL database service from Developer Catalog.
 
