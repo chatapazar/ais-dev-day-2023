@@ -189,6 +189,15 @@ install_service_mesh() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
+install_service_registry() {
+    operatorName=service-registry-operator
+    operatorDesc="Red Hat Integration - Service Registry Operator"
+    ymlFilePath=../manifest/service-registry-subscription.yml
+    project=openshift-operators
+
+    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
+}
+
 setup_web_terminal() {
     operatorName=web-terminal
     operatorDesc="Web Terminal"
@@ -246,7 +255,7 @@ preload_nexus_artefacts() {
 
     # Build a project to preload required artefacts into Nexus so next build will be fast! i.e. when running workshop
     oc run -n $project maven-build --image=quay.io/asuksunt/web-terminal-tooling:1.0 \
-        --rm -i -t --restart=Never \
+        --restart=Never \
         --command -- sh -c 'git clone http://git.gitea.svc.cluster.local:3000/lab-user/quarkus-super-heroes.git; cd quarkus-super-heroes; mvn compile -s maven-setting.xml'
 }
 
@@ -282,6 +291,9 @@ install_distributed_tracing_data_collection
 repeat '-'
 
 install_service_mesh
+repeat '-'
+
+install_service_registry
 repeat '-'
 
 setup_web_terminal
