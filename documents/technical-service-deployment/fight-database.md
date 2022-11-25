@@ -109,13 +109,13 @@
       type: ClusterIP
     ```
 
-    ![Deploy MongoDB container](image/database-deployment/deploy-db-23.png)
+    ![Create Service for MongoDB container](image/database-deployment/deploy-db-23.png)
 
 3. A `fights-db` Service object should be created. Go to **Pods** tab you should be able to see the Service is pointing to the `flight-db-xxxxxxx` Pod which is the MongoDB Pod.
 
-    ![Deploy MongoDB container](image/database-deployment/deploy-db-24.png)
+    ![Service for MongoDB container](image/database-deployment/deploy-db-24.png)
 
-    ![Deploy MongoDB container](image/database-deployment/deploy-db-25.png)
+    ![Service is pointing to MongoDB container](image/database-deployment/deploy-db-25.png)
 
 ## What have you learnt?
 
