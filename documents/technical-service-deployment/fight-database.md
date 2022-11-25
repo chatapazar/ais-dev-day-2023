@@ -4,7 +4,7 @@
 
 ### Create a Secret object to store database configurations
 
-1. Click on ![add](image/database-deployment/add-icon.png) icon located at top right corner of web console.
+1. Click on <img src="image/database-deployment/add.webp" width="17" height="17" /> icon located at top right corner of web console.
 
     ![Create a Secret object](image/database-deployment/deploy-db-18.png)
 
