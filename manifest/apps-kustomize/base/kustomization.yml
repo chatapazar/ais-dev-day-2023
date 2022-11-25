@@ -1,4 +1,5 @@
 resources:
+- rolebinding.yml
 - configmap.yml
 - secret.yml
 - event-statistics.yml
