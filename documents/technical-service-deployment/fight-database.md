@@ -8,7 +8,9 @@
 
     ![Create a Secret object](image/database-deployment/deploy-db-18.png)
 
-2. Copy this YAML snippet to the editor and click "Create" button.
+2. Copy this YAML snippet to the editor and click **Create** button.
+
+    YAML snippet:
 
     ```yaml
     apiVersion: v1
@@ -38,7 +40,9 @@
 
 1. Click on ![add](image/database-deployment/add-icon.png) icon located at top right corner of web console.
 
-2. Copy this YAML snippet to the editor and click "Create" button. Please note that the `fights-db-config` Secret object gets bound to MongoDB container as environment variables.
+2. Copy this YAML snippet to the editor and click **Create** button. Please note that the `fights-db-config` Secret object gets bound to MongoDB container as environment variables.
+
+    YAML snippet:
 
     ```yaml
     apiVersion: apps/v1
@@ -88,7 +92,9 @@
 
 1. Click on ![add](image/database-deployment/add-icon.png) icon located at top right corner of web console.
 
-2. Copy this YAML snippet to the editor and click "Create" button.
+2. Copy this YAML snippet to the editor and click **Create** button.
+
+    YAML snippet:
 
     ```yaml
     apiVersion: v1
