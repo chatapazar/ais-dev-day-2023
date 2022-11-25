@@ -16,7 +16,6 @@ metadata:
     app.openshift.io/runtime: quarkus
   name: event-statistics
 spec:
-  host: ""
   port:
     targetPort: http
   to:
