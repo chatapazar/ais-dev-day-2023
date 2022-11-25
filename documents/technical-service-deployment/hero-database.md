@@ -131,8 +131,6 @@ We need to load some data into the database we've just deployed. How to do that?
     \q
     ```
 
----
-
 ## What you've learned?
 
 1. How to deploy PostgreSQL database service (for the Hero microservice) from Developer Catalog.
