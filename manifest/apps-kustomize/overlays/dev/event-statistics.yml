@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-statistics
+spec:
+  template:
+    spec:
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          envFrom:
+            - configMapRef:
+                name: event-statistics-config
+            - secretRef:
+                name: event-statistics-config-creds
+          image: quay.io/voravitl/event-statistics:latest
+          name: event-statistics
+          resources:
+            limits:
+              memory: 768Mi
+            requests:
+              memory: 512Mi
