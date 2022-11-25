@@ -155,10 +155,11 @@
 
 2. How to create Secret object with YAML to keep all secret application configurations.
 
-3. How to deploy application using existing container image with following configurations:
+3. How to deploy application using existing container image with following additional configurations:
 
    - Application health checks e.g. liveness and readiness probes
-
    - Require and limit resource i.e. memory for application.
+   - Environment variable for application container
+   - User-defined label
 
 4. Bind configurations from ConfigMap and Secret objects to application container via environment variables.
