@@ -147,7 +147,7 @@ install_amq_streams() {
 }
 
 install_git_ops() {
-    operatorName=openshift-gitops-operator 
+    operatorName=openshift-gitops-operator
     operatorDesc="Red Hat OpenShift GitOps"
     ymlFilePath=../manifest/gitops-subscription.yml
     project=openshift-operators
@@ -254,7 +254,7 @@ preload_nexus_artefacts() {
 # Main (Entry point)
 ####################################################
 echo
-echo "Super Heros on OpenShift Workshop Provisioner"
+echo "Super Heroes on OpenShift Workshop Provisioner"
 repeat '-'
 
 enable_user_workload_monitoring
