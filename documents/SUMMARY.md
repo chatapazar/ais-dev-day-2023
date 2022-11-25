@@ -1,16 +1,22 @@
 # Summary​
 
-## Super Heros on OpenShift Workshop
+## Super Heroes on OpenShift Workshop
 
-- [About Workshop](super-heros-on-openshift-workshop/about-workshop.md)
+- [About Workshop](super-heroes-on-openshift-workshop/about-workshop.md)
 
-- [Application Architecture](super-heros-on-openshift-workshop/architecture.md)
+- [Application Architecture](super-heroes-on-openshift-workshop/architecture.md)
 
-- [Getting Started](super-heros-on-openshift-workshop/getting-started.md)
+- [Getting Started](super-heroes-on-openshift-workshop/getting-started.md)
 
 ## Application Services Deployment
 
 - [PostgreSQL Databases Deployment](technical-service-deployment/postgresql-deployment.md)
+
+  - [Deploy Database For Hero Microservice](technical-service-deployment/hero-database.md)
+
+  - [Deploy Database For Villain Microservice](technical-service-deployment/villain-database.md)
+
+  - [Deploy Database For Fight Microservice](technical-service-deployment/fight-database.md)
 
 - [AMQ Streams (Kafka) Deployment](technical-service-deployment/kafka-deployment.md)
 

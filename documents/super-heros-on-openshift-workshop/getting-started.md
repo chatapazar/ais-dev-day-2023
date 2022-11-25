@@ -14,7 +14,7 @@ Once you've logged in you'll see a welcome dialog, just click **Skip tour** butt
 
 You will be provided with pre-setup projects/namespaces, [software, and operators](#installed-softwares-and-operators) as following:
 
-* **user*X*-superheros:** This is the **main project** you're going to deloy the Quarkus Super Heros application in here.
+* **user*X*-superheroes:** This is the **main project** you're going to deloy the Quarkus Super Heroes application in here.
 
 * **user*X*-devspaces:** A project for Red Hat OpenShift Dev Spaces - Web-based, cloud-native IDE.
 
