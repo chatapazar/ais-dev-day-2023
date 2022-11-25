@@ -156,13 +156,13 @@ install_git_ops() {
 }
 
 install_distributed_tracing_platform() {
-    project=openshift-distributed-tracing
+    # project=openshift-distributed-tracing
+    project=openshift-operators
+    # echo
+    # echo "Creating $project project..."
+    # echo
 
-    echo
-    echo "Creating $project project..."
-    echo
-
-    oc new-project $project
+    # oc new-project $project
 
     operatorName=jaeger-product
     operatorDesc="Red Hat OpenShift distributed tracing platform"

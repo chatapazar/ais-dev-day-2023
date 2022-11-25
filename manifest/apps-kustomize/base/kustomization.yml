@@ -1,0 +1,6 @@
+resources:
+- configmap.yml
+- secret.yml
+- event-statistics.yml
+- event-statistics-service.yml
+- route.yml
