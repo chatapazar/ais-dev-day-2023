@@ -12,6 +12,7 @@ metadata:
     prometheus.io/port: "8085"
     prometheus.io/scheme: http
   labels:
+    app.kubernetes.io/part-of: event-statistics
     app: event-statistics
     application: event-stats
     system: quarkus-super-heroes
