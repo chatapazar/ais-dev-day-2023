@@ -33,7 +33,7 @@
 
    ![Create a ConfigMap object](image/hero-microservice-deployment/deploy-2.png)
 
-3. A `rest-heroes-config` ConfigMap object should be created.
+3. A **rest-heroes-config** ConfigMap object should be created.
 
    ![Create a ConfigMap object](image/hero-microservice-deployment/deploy-3.png)
 
@@ -62,13 +62,13 @@
 
    ![Create a Secret object](image/hero-microservice-deployment/deploy-4.png)
 
-3. A `rest-heroes-config-creds` Secret object should be created.
+3. A **rest-heroes-config-creds** Secret object should be created.
 
    ![Create a Secret object](image/hero-microservice-deployment/deploy-5.png)
 
-## Deploy Application With Existing Container Image
+## Deploy application with existing container image
 
-1. Go to **Topology** menu, right click on view area then select **Add to Project -> Container Image**.
+1. Go to **Topology** menu, right click on view area then select **Add to Project -> Container Image** menu.
 
    ![Create a Secret object](image/hero-microservice-deployment/deploy-6.png)
 
@@ -81,7 +81,7 @@
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-7.png)
 
-3. Scroll down to the bottom of the page, select **8083** option for **Target port**, uncheck the **Create a route** checkbox. and then click **Health checks** link.
+3. Scroll down to the bottom of the page, select **8083** option for **Target port**, uncheck the **Create a route** checkbox, and then click **Health checks** link.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-8.png)
 
@@ -122,7 +122,7 @@
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-14.png)
 
-10. Enter following inputs for **Memory**. Then click **Labels** link.
+10. Enter following memory request and limit. Then click **Labels** link.
 
     - **Request:** `256`
     - **Limit:** `768`
@@ -135,7 +135,7 @@
 
 ## Add application configurations in ConfigMap and Secret objects to application container
 
-1. Click on **rest-heroes** entity in view area, a panel will show up. And then click **rest-heroes** link.
+1. Click on **rest-heroes** entity in view area. A panel will show up, then click **rest-heroes** link.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-17.png)
 
@@ -143,11 +143,11 @@
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-18.png)
 
-3. Select `rest-heroes-config` ConfigMap and `rest-heroes-config-creds` Secret objects, then click **Save** button. And then go to **Topology** menu.
+3. Select **rest-heroes-config** ConfigMap and **rest-heroes-config-creds** Secret objects, then click **Save** button. And then go to **Topology** menu.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-20.png)
 
-4. Hover mouse pointer over the **rest-heroes** entity, a bubble should show up and say _1 Running_.
+4. Hover mouse pointer over the **rest-heroes** entity, a bubble should show up and say _1 Running_ which means there is 1 pod running.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-21.png)
 
