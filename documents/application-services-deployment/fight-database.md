@@ -117,7 +117,7 @@
 
     ![Create Service for MongoDB container](image/database-deployment/deploy-db-23.png)
 
-3. A `fights-db` Service object should be created. Go to **Pods** tab you should be able to see the Service is pointing to the `flight-db-xxxxxxx` Pod which is the MongoDB Pod.
+3. A `fights-db` Service object should be created. Go to **Pods** tab you should be able to see the Service is pointing and will be forwarding traffic to the `flight-db-xxxxxxx` Pod which is the MongoDB pod.
 
     ![Service for MongoDB container](image/database-deployment/deploy-db-24.png)
 
@@ -129,4 +129,8 @@
 
 ## What have you learnt?
 
-How to create Kubernetes resources e.g. Secret, Deployment, and Service objects with YAML via OpenShift web console.
+1. How to create Kubernetes resources e.g. Secret, Deployment, and Service objects with YAML via OpenShift web console.
+
+2. How to view actual value stored in the Secret object.
+
+3. How to check which pod(s) the Service object is pointing and will be forwarding traffic to.

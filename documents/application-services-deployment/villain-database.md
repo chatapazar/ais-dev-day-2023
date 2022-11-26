@@ -141,7 +141,7 @@
 
 ## What have you learnt?
 
-How to deploy PostgreSQL database service container from external container registry (in this case, Red Hat Registry) with following settings:
+How to deploy PostgreSQL database service container from external container registry, in this case, Red Hat Registry (can be Docker Hub or other registries as well) with following settings:
 
 - Application icon and name
 - Environment variables for application container
