@@ -65,3 +65,5 @@
 ## Appendix
 
 - [What's Quarkus?](appendix/quarkus.md)
+
+- [Useful Resources](appendix/useful-resources.md)
