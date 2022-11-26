@@ -24,15 +24,17 @@
 
 ## Application Deployment
 
-- [Hero Microservice](application-deployment/hero-microservice-deployment.md) container
+- [Microservices Deployment](application-deployment/microservices-deployment.md)
 
-- [Villain Microservice](application-deployment/villain-microservice-deployment.md) s2i
+  - [Hero Microservice](application-deployment/hero-microservice.md) container
 
-- [Fight Microservice](application-deployment/fight-microservice-deployment.md) mvn
+  - [Villain Microservice](application-deployment/villain-microservice.md) s2i
 
-- [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
+  - [Fight Microservice](application-deployment/fight-microservice.md) mvn
 
-- [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices-deployment.md)
+  - [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice.md) yaml
+
+  - [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices.md)
 
 ## Application Monitoring
 
