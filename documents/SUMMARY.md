@@ -30,9 +30,7 @@
 
 - [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
 
-- [Statistics Microservice](application-deployment/statistics-microservice-deployment.md) gitops
-
-- [Statistics UI Microservice](application-deployment/statistics-ui-microservice-deployment.md) gitops
+- [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices-deployment.md)
 
 ## Application Monitoring
 
@@ -54,7 +52,7 @@
 
   - [Trace application transactions]
 
-## Continuous Deployment
+## Continuous Deployment (CD)
 
 - [GitOps](continuous-deployment/gitops.md)
 
