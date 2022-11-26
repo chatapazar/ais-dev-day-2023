@@ -10,13 +10,15 @@
 
 ## Application Services Deployment
 
-- [Databases Deployment](technical-service-deployment/database-deployment.md)
+- [Databases Deployment](application-services-deployment/database-deployment.md)
 
-  - [Deploy Database For Hero Microservice](technical-service-deployment/hero-database.md)
+  - [Deploy Database For Hero Microservice](application-services-deployment/hero-database.md)
 
-  - [Deploy Database For Villain Microservice](technical-service-deployment/villain-database.md)
+  - [Deploy Database For Villain Microservice](application-services-deployment/villain-database.md)
 
-  - [Deploy Database For Fight Microservice](technical-service-deployment/fight-database.md)
+  - [Deploy Database For Fight Microservice](application-services-deployment/fight-database.md)
+
+- [AMQ Streams (Kafka) Deployment](application-services-deployment/kafka-deployment.md)
 
 - [AMQ Streams (Kafka) Deployment](technical-service-deployment/kafka-deployment.md)
 
