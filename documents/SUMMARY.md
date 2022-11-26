@@ -20,7 +20,7 @@
 
 - [AMQ Streams (Kafka) Deployment](application-services-deployment/kafka-deployment.md)
 
-- [AMQ Streams (Kafka) Deployment](technical-service-deployment/kafka-deployment.md)
+- [Service Registry (Apicurio) Deployment](application-services-deployment/service-registry-deployment.md)
 
 ## Application Deployment
 
