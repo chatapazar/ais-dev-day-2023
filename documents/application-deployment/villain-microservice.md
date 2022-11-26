@@ -68,7 +68,7 @@
 
 1. Go to **Topology** menu, right click on view area then select **Add to Project -> Import from Git** menu.
 
-   ![Create a Secret object](image/villain-microservice/deploy-5.png)
+   ![Deploy application container](image/villain-microservice/deploy-5.png)
 
 2. Click **Show advanced Git options** link then enter following inputs. OpenShift Build (S2I) will check the project e.g. source code, framework and select builder image for build/compile application for you.
 
