@@ -125,3 +125,5 @@
 1. How to deploy microservice using Maven command.
 
 2. Magic of Quarkus framework! (well, you didn't learn anything but you saw it, right? :laughing:)
+
+3. How to check OpenShift Build logs.
