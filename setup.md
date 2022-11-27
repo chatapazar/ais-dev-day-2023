@@ -45,7 +45,7 @@
 
    **Following projects/namespaces will be created for each user:**
    * user*X*-devspaces
-   * user*X*-superheros
+   * user*X*-superheroes
    * user*X*-istio-system
 
    **Following Operators will be installed with *A specific namespace* installation mode:**
