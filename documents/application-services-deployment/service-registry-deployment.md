@@ -26,9 +26,11 @@ Red Hat Integration - Service Registry is based on [Apicruio Registry](https://w
 
     ![Deploy Service Registry](image/registry-deployment/registry-deployment-3.png)
 
-4. Enter `fights-kafka-bootstrap.userX-super-heroes.svc.cluster.local:9092` to **bootstrapServers** field. :exclamation:**DO NOT FORGET** to change the `userX` to your user. Then click **Add env** link.
+4. Enter `fights-kafka-bootstrap.userX-super-heroes.svc.cluster.local:9092` to **bootstrapServers** field. :exclamation:**DO NOT FORGET** to change the `userX` to your user.
 
     This is an internal DNS hostname and port of the Kafka broker you've deployed earlier. Basically, we're going to use Kafka as a datastore for Apicurio Registry to store schemas. However, the datastore can be SQL database i.g. PostgreSQL as well.
+
+    Then click **Add env** link.
 
     ![Deploy Service Registry](image/registry-deployment/registry-deployment-4.png)
 
@@ -39,11 +41,11 @@ Red Hat Integration - Service Registry is based on [Apicruio Registry](https://w
 
     ![Deploy Service Registry](image/registry-deployment/registry-deployment-5.png)
 
-6. Enter `1` to replicas field then click **Create** button.
+6. Enter `1` to **replicas** field then click **Create** button.
 
     ![Deploy Service Registry](image/registry-deployment/registry-deployment-6.png)
 
-7. Wait for a while until you see dark blue ring surrounds the **apicurio** entity. That means the pod is running! :tada:
+7. Wait for a while until you see dark blue ring surrounds the **apicurio-deployment** entity. That means the pod is running! :tada:
 
     ![Deploy Service Registry](image/registry-deployment/registry-deployment-7.png)
 
