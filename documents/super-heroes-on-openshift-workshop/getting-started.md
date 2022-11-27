@@ -14,7 +14,7 @@ Once you've logged in you'll see a welcome dialog, just click **Skip tour** butt
 
 You will be provided with pre-setup projects/namespaces, [software, and operators](#installed-softwares-and-operators) as following:
 
-* **user*X*-superheroes:** This is the **main project** you're going to deloy the Quarkus Super Heroes application in here.
+* **user*X*-super-heroes:** This is the **main project** you're going to deloy the Quarkus Super Heroes application in here.
 
 * **user*X*-devspaces:** A project for Red Hat OpenShift Dev Spaces - Web-based, cloud-native IDE.
 
@@ -36,6 +36,7 @@ Just in case you're curious about what else are installed in the cluster for thi
 * Red Hat OpenShift Dev Spaces
 * Red Hat OpenShift Service Mesh
 * Red Hat Integration - AMQ Streams
+* Red Hat Integration - Service Registry Operator
 * Red Hat OpenShift distributed tracing platform
 * Red Hat OpenShift distributed tracing data collection
 * Sonatype Nexus Repository Manager 3 OSS
