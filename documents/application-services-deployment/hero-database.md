@@ -2,7 +2,7 @@
 
 ## Deploy PostgreSQL database from Developer Catalog
 
-1. Make sure that you're in **Developer** perspective, project **user*X*-super-heroes** is selected, and in the **Tolplogy** page. Then right click in view area and select **Database** menu.
+1. Make sure that you're in **Developer** perspective, project **user*X*-super-heroes** is selected, and in the **Topology** page. Then right click in view area and select **Database** menu.
 
    ![PostgreSQL database deployment](image/database-deployment/deploy-db-1.png)
 
