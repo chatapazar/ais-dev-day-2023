@@ -23,7 +23,7 @@
 
    ![PostgreSQL database deployment](image/database-deployment/deploy-db-4.png)
 
-5. Wait for awhile, the `heroes-db` pod should be up and running.
+5. Wait for awhile, the **heroes-db** pod should be up and running.
 
    ![PostgreSQL database deployment](image/database-deployment/deploy-db-5.png)
 
@@ -31,7 +31,7 @@
 
 We need to load some data into the database we've just deployed. How to do that? the answer is using PostgreSQL client to execute a SQL script. Let's do it!
 
-1. Click on the **Web Terminal** icon located on top right corner of web console. Then select **user*X*-superheroes** and click **Start** button.
+1. Click on the **Web Terminal** icon located at top right corner of web console. Then select **user*X*-super-heroes** and click **Start** button.
 
     ![Web Terminal](image/database-deployment/deploy-db-6.png)
 
@@ -133,7 +133,7 @@ We need to load some data into the database we've just deployed. How to do that?
 
 ## Add label to workload
 
-1. Run following command in Web Terminal to add a few [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to `heroes-db` workload.
+1. Run following command in Web Terminal to add a few [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) to **heroes-db** workload.
 
     ```sh
     oc label dc heroes-db \
@@ -144,7 +144,7 @@ We need to load some data into the database we've just deployed. How to do that?
     app.openshift.io/runtime=postgresql
     ```
 
-2. The `heroes-db` entity in UI will change immediately. Click on it then go to **Details** tab. You should be able to see the labels were added.
+2. The **heroes-db** entity in UI will change immediately. Click on it then go to **Details** tab. You should be able to see the labels were added.
 
     ![Web Terminal](image/database-deployment/deploy-db-8.png)
 
