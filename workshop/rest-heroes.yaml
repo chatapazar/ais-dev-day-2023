@@ -147,7 +147,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2022-11-18 - 15:29:54 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
-    prometheus.io/port: "8083"
+    prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: rest-heroes
@@ -175,7 +175,7 @@ spec:
         app.quarkus.io/build-timestamp: 2022-11-18 - 15:29:54 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
-        prometheus.io/port: "8083"
+        prometheus.io/port: "8080"
         prometheus.io/scheme: http
         sidecar.istio.io/inject: "false"
       labels:
@@ -199,13 +199,13 @@ spec:
                 name: rest-heroes-config-creds
             - configMapRef:
                 name: rest-heroes-config
-          image: quay.io/voravitl/rest-heroes:latest
+          image: quay.io/asuksunt/rest-heroes:1.0
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
             httpGet:
               path: /q/health/live
-              port: 8083
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -213,14 +213,14 @@ spec:
             timeoutSeconds: 10
           name: rest-heroes
           ports:
-            - containerPort: 8083
+            - containerPort: 8080
               name: http
               protocol: TCP
           readinessProbe:
             failureThreshold: 3
             httpGet:
               path: /q/health/ready
-              port: 8083
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -242,7 +242,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2022-11-18 - 15:29:54 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
-    prometheus.io/port: "8083"
+    prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: rest-heroes
@@ -256,9 +256,9 @@ metadata:
 spec:
   ports:
     - name: http
-      port: 80
+      port: 8080
       protocol: TCP
-      targetPort: 8083
+      targetPort: 8080
   selector:
     app.kubernetes.io/name: rest-heroes
     app.kubernetes.io/part-of: heroes-service

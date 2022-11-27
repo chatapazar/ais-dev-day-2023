@@ -36,8 +36,8 @@ data:
     %h %l %u %t "%r" %s %b "User-Agent: %{i,User-Agent}" "x-request-id:
     %{i,x-request-id}" "x-b3-traceid: %{i,x-b3-traceid}"  " Referer:
     %{i,Referer}"
-  quarkus.rest-client.hero-client.url: http://rest-heroes:80
-  quarkus.rest-client.villain-client.url: http://rest-villains:80
+  quarkus.rest-client.hero-client.url: http://rest-heroes:8080
+  quarkus.rest-client.villain-client.url: http://rest-villains:8080
 ---
 apiVersion: v1
 kind: Secret
@@ -307,7 +307,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2022-11-18 - 15:30:18 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
-    prometheus.io/port: "8082"
+    prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: rest-fights
@@ -335,7 +335,7 @@ spec:
         app.quarkus.io/build-timestamp: 2022-11-18 - 15:30:18 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
-        prometheus.io/port: "8082"
+        prometheus.io/port: "8080"
         prometheus.io/scheme: http
         #prometheus.istio.io/merge-metrics: "true"
         sidecar.istio.io/inject: "false"
@@ -361,13 +361,13 @@ spec:
             - secretRef:
                 name: rest-fights-config-creds
           #image: quay.io/quarkus-super-heroes/rest-fights:java17-latest
-          image: quay.io/voravitl/rest-fights:latest
+          image: quay.io/asuksunt/rest-fights:1.0
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
             httpGet:
               path: /q/health/live
-              port: 8082
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -375,14 +375,14 @@ spec:
             timeoutSeconds: 10
           name: rest-fights
           ports:
-            - containerPort: 8082
+            - containerPort: 8080
               name: http
               protocol: TCP
           readinessProbe:
             failureThreshold: 3
             httpGet:
               path: /q/health/ready
-              port: 8082
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -404,7 +404,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2022-11-18 - 15:30:18 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
-    prometheus.io/port: "8082"
+    prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: rest-fights
@@ -418,9 +418,9 @@ metadata:
 spec:
   ports:
     - name: http
-      port: 80
+      port: 8080
       protocol: TCP
-      targetPort: 8082
+      targetPort: 8080
   selector:
     app.kubernetes.io/name: rest-fights
     app.kubernetes.io/part-of: fights-service
@@ -447,7 +447,7 @@ metadata:
 spec:
   host: ""
   port:
-    targetPort: http
+    targetPort: 8080
   to:
     kind: Service
     name: rest-fights

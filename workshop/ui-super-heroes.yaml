@@ -36,7 +36,7 @@ spec:
         sidecar.istio.io/inject: "false"
     spec:
       containers:
-        - image: quay.io/quarkus-super-heroes/ui-super-heroes:latest
+        - image: quay.io/asuksunt/ui-super-heroes:1.0
           name: ui-super-heroes
           imagePullPolicy: Always
           env:
@@ -82,7 +82,7 @@ metadata:
   name: ui-super-heroes
 spec:
   ports:
-    - port: 80
+    - port: 8080
       protocol: TCP
       targetPort: 8080
       name: http

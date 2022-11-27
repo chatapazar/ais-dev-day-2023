@@ -38,7 +38,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2022-11-18 - 15:30:39 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
-    prometheus.io/port: "8085"
+    prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: event-statistics
@@ -66,7 +66,7 @@ spec:
         app.quarkus.io/build-timestamp: 2022-11-18 - 15:30:39 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
-        prometheus.io/port: "8085"
+        prometheus.io/port: "8080"
         prometheus.io/scheme: http
         sidecar.istio.io/inject: "false"
       labels:
@@ -90,13 +90,13 @@ spec:
                 name: event-statistics-config
             - secretRef:
                 name: event-statistics-config-creds
-          image: quay.io/voravitl/event-statistics:latest
+          image: quay.io/asuksunt/event-statistics:1.0
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
             httpGet:
               path: /q/health/live
-              port: 8085
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -104,14 +104,14 @@ spec:
             timeoutSeconds: 10
           name: event-statistics
           ports:
-            - containerPort: 8085
+            - containerPort: 8080
               name: http
               protocol: TCP
           readinessProbe:
             failureThreshold: 3
             httpGet:
               path: /q/health/ready
-              port: 8085
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 0
             periodSeconds: 30
@@ -142,7 +142,7 @@ metadata:
     app.quarkus.io/build-timestamp: 2022-11-18 - 15:30:39 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
-    prometheus.io/port: "8085"
+    prometheus.io/port: "8080"
     prometheus.io/scheme: http
   labels:
     app.kubernetes.io/name: event-statistics
@@ -156,9 +156,9 @@ metadata:
 spec:
   ports:
     - name: http
-      port: 80
+      port: 8080
       protocol: TCP
-      targetPort: 8085
+      targetPort: 8080
   selector:
     app.kubernetes.io/name: event-statistics
     app.kubernetes.io/part-of: event-stats
@@ -185,7 +185,7 @@ metadata:
 spec:
   host: ""
   port:
-    targetPort: http
+    targetPort: 8080
   to:
     kind: Service
     name: event-statistics
