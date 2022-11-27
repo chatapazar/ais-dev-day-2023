@@ -11,6 +11,7 @@
     - **Image name from external registry:** `registry.redhat.io/rhel9/postgresql-13`
     - **Runtime icon:** `postgresql`
     - **Application:** `Create application`
+    - **Application Name:** `villains-service`
     - **Name:** `villains-db`
 
     ![PostgreSQL database deployment](image/database-deployment/deploy-db-10.png)

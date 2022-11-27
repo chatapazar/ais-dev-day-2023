@@ -38,14 +38,14 @@
    For example, provisioning 40 lab users:
 
    ```sh
-    export USER_PASSWORD=123456
-    export ADMIN_PASSWORD=admin123
-    ./lab-user-provisioner.sh 40
+    export USER_PASSWORD=openshift
+    export ADMIN_PASSWORD=r3dh4t1!
+    ./lab-user-provisioner.sh 5
    ```
 
    **Following projects/namespaces will be created for each user:**
    * user*X*-devspaces
-   * user*X*-superheros
+   * user*X*-superheroes
    * user*X*-istio-system
 
    **Following Operators will be installed with *A specific namespace* installation mode:**
