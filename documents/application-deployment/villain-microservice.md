@@ -79,7 +79,7 @@
 
    ![Deploy application container](image/villain-microservice/deploy-6.png)
 
-3. Scroll down to the bottom of the page, uncheck the **Create a route** checkbox, and then click **Health checks** link.
+3. Scroll down to the bottom of the page, select **8080** option for **Target port**, uncheck the **Create a route** checkbox, and then click **Health checks** link.
 
    ![Deploy application container](image/villain-microservice/deploy-7.png)
 
@@ -90,7 +90,7 @@
 5. Enter following inputs then click :heavy_check_mark: icon.
 
    - **Path:** `/q/health/ready`
-   - **Port:** `8084`
+   - **Port:** `8080`
    - **Period:** `30`
    - **Timeout:** `10`
 
@@ -103,7 +103,7 @@
 7. Enter following inputs then click :heavy_check_mark: icon.
 
    - **Path:** `/q/health/live`
-   - **Port:** `8084`
+   - **Port:** `8080`
    - **Period:** `30`
    - **Timeout:** `10`
 
@@ -125,7 +125,7 @@
 10. Enter following environment variable. Then click **Resource limits** link.
 
     - **Name:** `KUBERNETES_NAMESPACE`
-    - **Value:** `userX-superheroes` where `X` is your user number.
+    - **Value:** `userX-super-heroes` where `X` is your user number.
 
     ![Deploy application container](image/villain-microservice/deploy-14.png)
 
@@ -142,7 +142,7 @@
 
 ## Add application configurations in ConfigMap and Secret objects to application container
 
-1. Click on **rest-villains** entity in view area. A panel will show up, then click **rest-villains** link.
+1. Click on **rest-villains** entity in view area, a panel will show on right hand side. Notice that a build process starts automatically to build source code and container image (you can click **View logs** to see build logs). By the way, just let it run in background for now. Then click **rest-villains** link.
 
    ![Deploy application container](image/villain-microservice/deploy-17.png)
 
@@ -150,29 +150,11 @@
 
    ![Deploy application container](image/villain-microservice/deploy-18.png)
 
-3. Select **rest-villains-config** ConfigMap and **rest-villains-config-creds** Secret objects, then click **Save** button. And then go to **Details** tab.
+3. Select **rest-villains-config** ConfigMap and **rest-villains-config-creds** Secret objects, then click **Save** button. And then go to **Topology** menu.
 
    ![Deploy application container](image/villain-microservice/deploy-19.png)
 
-4. Scroll down to **Containers** section. You'll see that, by default, OpenShift Build configures network port **8080** (for HTTP connection) and **8443** (for HTTPS connection) for application container pod automatically.
-
-   In general, these are default network port numbers for most of Java framework e.g. Spring Boot, Quarkus, Micronaut, Dropwizard.
-
-   However, our **rest-villains** microservice is configured to use only port **8084** so we need to update **rest-villains** Deployment object.
-
-   ![Deploy application container](image/villain-microservice/deploy-20.png)
-
-## Update network port to be exposed for application container
-
-1. Go to **YAML** tab scroll down until you see part of YAML as a screenshot below.
-
-   ![Deploy application container](image/villain-microservice/deploy-21.png)
-
-2. Edit the YAML like this then click **Save** button. Then go to **Topology** menu.
-
-   ![Deploy application container](image/villain-microservice/deploy-22.png)
-
-3. Wait for a monent then hover mouse pointer over the **rest-villains** entity, a bubble should show up and say _1 Running_ which means there is 1 pod running.
+4. Wait for a while until you see dark blue ring surrounds the **rest-villains** entity. Hover mouse pointer over it, a bubble should show up and say _1 Running_ which means there is 1 pod running.
 
    ![Deploy application container](image/villain-microservice/deploy-23.png)
 
