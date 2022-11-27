@@ -79,7 +79,7 @@
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-7.png)
 
-3. Scroll down to the bottom of the page, select **8083** option for **Target port**, uncheck the **Create a route** checkbox, and then click **Health checks** link.
+3. Scroll down to the bottom of the page, select **8080** option for **Target port**, uncheck the **Create a route** checkbox, and then click **Health checks** link.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-8.png)
 
@@ -90,7 +90,7 @@
 5. Enter following inputs then click :heavy_check_mark: icon.
 
    - **Path:** `/q/health/ready`
-   - **Port:** `8083`
+   - **Port:** `8080`
    - **Period:** `30`
    - **Timeout:** `10`
 
@@ -103,7 +103,7 @@
 7. Enter following inputs then click :heavy_check_mark: icon.
 
    - **Path:** `/q/health/live`
-   - **Port:** `8083`
+   - **Port:** `8080`
    - **Period:** `30`
    - **Timeout:** `10`
 
@@ -116,7 +116,7 @@
 9. Enter following environment variable. Then click **Resource limits** link.
 
    - **Name:** `KUBERNETES_NAMESPACE`
-   - **Value:** `userX-superheroes` where `X` is your user number.
+   - **Value:** `userX-super-heroes` where `X` is your user number.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-14.png)
 
