@@ -53,21 +53,21 @@ data:
   quarkus.mongodb.credentials.username: c3VwZXJmaWdodA==
   quarkus.mongodb.credentials.password: c3VwZXJmaWdodA==
 ---
-apiVersion: v1
-kind: Secret
-type: Opaque
-metadata:
-  name: fights-db-config
-  labels:
-    app: fights-db
-    application: fights-service
-    system: quarkus-super-heroes
-data:
-  MONGODB_DATABASE: ZmlnaHRz
-  MONGODB_USERNAME: c3VwZXJmaWdodA==
-  MONGODB_PASSWORD: c3VwZXJmaWdodA==
-  MONGODB_ROOT_USER: c3VwZXI=
-  MONGODB_ROOT_PASSWORD: c3VwZXI=
+# apiVersion: v1
+# kind: Secret
+# type: Opaque
+# metadata:
+#   name: fights-db-config
+#   labels:
+#     app: fights-db
+#     application: fights-service
+#     system: quarkus-super-heroes
+# data:
+#   MONGODB_DATABASE: ZmlnaHRz
+#   MONGODB_USERNAME: c3VwZXJmaWdodA==
+#   MONGODB_PASSWORD: c3VwZXJmaWdodA==
+#   MONGODB_ROOT_USER: c3VwZXI=
+#   MONGODB_ROOT_PASSWORD: c3VwZXI=
 # ---
 # apiVersion: apps/v1
 # kind: Deployment
