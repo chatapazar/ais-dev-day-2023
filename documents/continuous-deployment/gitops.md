@@ -45,3 +45,20 @@ Red Hat OpenShift GitOps uses Argo CD to maintain cluster resources. Argo CD is 
 Argo CD reports any configurations that deviate from their specified state. These reports allow administrators to automatically or manually resync configurations to the defined state. Therefore, Argo CD enables you to deliver global custom resources, like the resources that are used to configure OpenShift Container Platform clusters.
 
 ![OpenShift Pipelines & GitOps](image/ocp-pipeline-and-gitops.webp)
+
+## Review Current Topology
+* Prerequisite
+* Current Topology --> image cd-1
+
+## Review Deployment Configuration in Git Repository & Kustomized configuration management
+--> image cd-2 - cd-7 , kustomize.io
+## Create Applicaiton in OpenShift GitOps
+* Login to OpenShift GitOps (ArgoCD)
+  
+* Create Application
+* Sync (Deploy) Application
+* Check Deployment Application in Developer Console
+* Test Event-Statistic Demo Applicaiton
+* View Another view in OpenShift GitOps (ArgoCD)
+* Test Deployment Application Diff with Deployment Configuration in Git Repository (by OpenShift GitOps)
+* Sync to Correct Configuration
