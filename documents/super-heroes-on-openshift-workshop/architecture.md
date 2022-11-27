@@ -8,7 +8,7 @@ In this workshop, you will deploy an existing application that allows superheroe
 
 * ***Hero REST API***: A reactive HTTP microservice exposing CRUD operations on Heroes, stored in a Postgres database.
 
-* ***Fight REST API***: This REST API invokes the Hero and Villain APIs to get a random superhero and supervillain. Each fight is, then, stored in a PostgreSQL database. This microservice can be developed using both the classical (imperative) or reactive approach. Invocations to the hero and villain services are protected using resilience patterns (retry, timeout, circuit-breakers).
+* ***Fight REST API***: This REST API invokes the Hero and Villain APIs to get a random superhero and supervillain. Each fight is, then, stored in a MongoDB database. This microservice can be developed using both the classical (imperative) or reactive approach. Invocations to the hero and villain services are protected using resilience patterns (retry, timeout, circuit-breakers).
 
 * ***Statistics***: Each fight is asynchronously sent (via Kafka) to the Statistics microservice. It has an HTML + JQuery UI displaying all the statistics.
 

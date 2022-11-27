@@ -10,29 +10,31 @@
 
 ## Application Services Deployment
 
-- [PostgreSQL Databases Deployment](technical-service-deployment/postgresql-deployment.md)
+- [Databases Deployment](application-services-deployment/database-deployment.md)
 
-  - [Deploy Database For Hero Microservice](technical-service-deployment/hero-database.md)
+  - [Deploy Database For Hero Microservice](application-services-deployment/hero-database.md)
 
-  - [Deploy Database For Villain Microservice](technical-service-deployment/villain-database.md)
+  - [Deploy Database For Villain Microservice](application-services-deployment/villain-database.md)
 
-  - [Deploy Database For Fight Microservice](technical-service-deployment/fight-database.md)
+  - [Deploy Database For Fight Microservice](application-services-deployment/fight-database.md)
 
-- [AMQ Streams (Kafka) Deployment](technical-service-deployment/kafka-deployment.md)
+- [AMQ Streams (Kafka) Deployment](application-services-deployment/kafka-deployment.md)
+
+- [Service Registry (Apicurio) Deployment](application-services-deployment/service-registry-deployment.md)
 
 ## Application Deployment
 
-- [Hero Microservice](application-deployment/hero-microservice-deployment.md) container
+- [Microservices Deployment](application-deployment/microservices-deployment.md)
 
-- [Villain Microservice](application-deployment/villain-microservice-deployment.md) s2i
+  - [Hero Microservice](application-deployment/hero-microservice.md) container
 
-- [Fight Microservice](application-deployment/fight-microservice-deployment.md) mvn
+  - [Villain Microservice](application-deployment/villain-microservice.md) s2i
 
-- [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice-deployment.md) yaml
+  - [Fight Microservice](application-deployment/fight-microservice.md) mvn
 
-- [Statistics Microservice](application-deployment/statistics-microservice-deployment.md) gitops
+  - [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice.md) yaml
 
-- [Statistics UI Microservice](application-deployment/statistics-ui-microservice-deployment.md) gitops
+  - [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices.md)
 
 ## Application Monitoring
 
@@ -54,7 +56,7 @@
 
   - [Trace application transactions]
 
-## Continuous Deployment
+## Continuous Deployment (CD)
 
 - [GitOps](continuous-deployment/gitops.md)
 
@@ -67,3 +69,5 @@
 ## Appendix
 
 - [What's Quarkus?](appendix/quarkus.md)
+
+- [Useful Resources](appendix/useful-resources.md)

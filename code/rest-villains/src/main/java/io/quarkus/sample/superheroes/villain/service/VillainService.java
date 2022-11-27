@@ -63,7 +63,7 @@ public class VillainService {
     return Villain.findByIdOptional(id);
   }
 
-	@Transactional(SUPPORTS)
+  @Transactional(SUPPORTS)
   @WithSpan("VillainService.findRandomVillain")
 	public Optional<Villain> findRandomVillain() {
     Log.debug("Finding a random villain");
