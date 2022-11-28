@@ -189,6 +189,15 @@ install_service_mesh() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
+install_kiali() {
+    operatorName=kiali-ossm
+    operatorDesc="Kiali Operator"
+    ymlFilePath=../manifest/kiali-subscription.yml
+    project=openshift-operators
+
+    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
+}
+
 install_service_registry() {
     operatorName=service-registry-operator
     operatorDesc="Red Hat Integration - Service Registry Operator"
@@ -291,6 +300,9 @@ install_distributed_tracing_data_collection
 repeat '-'
 
 install_service_mesh
+repeat '-'
+
+install_kiali
 repeat '-'
 
 install_service_registry

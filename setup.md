@@ -14,13 +14,15 @@
 
    **Following Operators will be installed with *All namespaces* installation mode:**
 
-   * Gitea Operator
    * Web Terminal
+   * Gitea Operator
+   * Kiali Operator
    * Dev Workspace Operator
+   * Red Hat OpenShift GitOps
    * Red Hat OpenShift Dev Spaces
    * Red Hat OpenShift Service Mesh
    * Red Hat Integration - AMQ Streams
-   * Red Hat OpenShift GitOps
+   * Red Hat Integration - Service Registry Operator
    * Red Hat OpenShift distributed tracing platform
    * Red Hat OpenShift distributed tracing data collection
 
@@ -35,17 +37,17 @@
 
 5. Export lab user password and cluster admin password (the passwords should be there in the mail sent from RHPDS). Then run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) script with number of lab users as the script argument.
 
-   For example, provisioning 40 lab users:
+   For example, provisioning 5 lab users:
 
    ```sh
-    export USER_PASSWORD=openshift
-    export ADMIN_PASSWORD=r3dh4t1!
-    ./lab-user-provisioner.sh 5
+   export USER_PASSWORD=openshift
+   export ADMIN_PASSWORD=r3dh4t1!
+   ./lab-user-provisioner.sh 5
    ```
 
    **Following projects/namespaces will be created for each user:**
    * user*X*-devspaces
-   * user*X*-superheroes
+   * user*X*-super-heroes
    * user*X*-istio-system
 
    **Following Operators will be installed with *A specific namespace* installation mode:**
