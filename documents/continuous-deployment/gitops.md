@@ -54,7 +54,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     - heroes microservice
     - villians microservice
     - super heroes ui
-  * Check Current Topology of your userX-superheroes like this (in userX-superheroes)
+  * Check Current Topology of your project userX-super-heroes like this (in userX-super-heroes)
     ![](image/cd-1.png)
 
 ## Review Deployment Configuration in Git Repository & Kustomized Configuration Management
@@ -139,7 +139,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
 
 ## Create Applicaiton in OpenShift GitOps
 * Login to OpenShift GitOps (ArgoCD)
-  - open your developer console, go to your project 'userX-superheroes' (replace X with your username)
+  - open your developer console, go to your project 'userX-super-heroes' (replace X with your username)
   - Go to top right of developer console, Navigate to the table menu (It's to the left of the plus sign menu.) --> OpenShift GitOps --> Cluster Argo CD.
     ![](image/cd-8.png)
   - For the first time to open Argo CD Console. Your Browser will warining about connection(is not private) Because we used self sign certification. Please accecpt this risk and proceed to Argo CD Cosole
@@ -171,12 +171,12 @@ Argo CD reports any configurations that deviate from their specified state. Thes
   - in Destination part
     ![](image/cd-15.png)
     - Cluster URL: https://kubernetes.default.svc
-    - Namespace: userX-superheroes
-      - change X to your username such as user5-superheroes
+    - Namespace: userX-super-heroes
+      - change X to your username such as user5-super-heroes
   - Leave default in last part (Source Type/Kustomize)
     ![](image/cd-16.png)
   - Click Create and wait untill your application show in console
-  - if you don't found your application (because this workshop, we share argo cd to all user). you can filter with your namespaces such as 'userX-superheroes' 
+  - if you don't found your application (because this workshop, we share argo cd to all user). you can filter with your namespaces such as 'userX-super-heroes' 
     ![](image/cd-17.png)
   - see status of your application set to 'OutOfSync'
 
@@ -198,7 +198,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     ![](image/cd-20.png)
     - all component change to green icon and don't have yellow icon
 * Check Deployment Application in Developer Console
-  - back to OpenShift Developer Console, in your topology of project 'userX-superheroes'
+  - back to OpenShift Developer Console, in your topology of project 'userX-super-heroes'
   - 'event-statistics' deploy in your project now.
     ![](image/cd-21.png)
     ![](image/cd-22.png)

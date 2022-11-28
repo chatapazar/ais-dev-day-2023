@@ -40,7 +40,8 @@ create_projects() {
 
         oc login -u user$i -p $USER_PASSWORD --insecure-skip-tls-verify
         oc new-project user$i-devspaces
-        oc new-project user$i-superheroes
+        #oc delete project user$i-superheroes
+        oc new-project user$i-super-heroes
         oc new-project user$i-istio-system
         oc new-project user$i-monitoring
     done
@@ -168,10 +169,10 @@ add_monitor_edit_role_to_user()
 ####################################################
 totalUsers=$1
 
-create_projects
-install_grafana
-add_monitor_edit_role_to_user
+#create_projects
+#install_grafana
+#add_monitor_edit_role_to_user
 #create_argocd_user
 #set_default_role_argocd
-#update_argocd_password
-provision_devspaces_project_in_advance
+update_argocd_password
+#provision_devspaces_project_in_advance
