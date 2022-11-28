@@ -28,7 +28,7 @@ install_operator() {
     project=$4
 
     echo
-    echo "Installing $operatorDescParam..."
+    echo "Installing $operatorDescParam to $project project..."
     echo
 
     oc apply -f $ymlFilePathParam -n $project
@@ -248,14 +248,14 @@ setup_nexus() {
 
 preload_nexus_artefacts() {
     echo
-    echo "Building a project for workshop to preload all required maven artefacts to Nexus Repository..."
+    echo "Building a project for workshop to preload all required Maven artefacts to Nexus Repository..."
     echo
 
     project=default
 
     # Build a project to preload required artefacts into Nexus so next build will be fast! i.e. when running workshop
     oc run -n $project maven-build --image=quay.io/asuksunt/web-terminal-tooling:1.0 \
-        --restart=Never \
+        --restart=OnFailure \
         --command -- sh -c 'git clone http://git.gitea.svc.cluster.local:3000/lab-user/quarkus-super-heroes.git; cd quarkus-super-heroes; mvn compile -s maven-setting.xml'
 }
 
