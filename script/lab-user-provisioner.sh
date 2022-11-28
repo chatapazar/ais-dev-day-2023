@@ -12,9 +12,15 @@ repeat() {
 }
 
 provision_devspaces_project_in_advance() {
-    oc login -u opentlc-mgr -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+    echo ""
+    echo "Logging in as cluster administrator to pre-provisioning devspeces for users..."
+    echo
 
-    for ((i = 1; i <= $totalUsers; i++)); do
+    oc login -u opentlc-mgr -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+    repeat '-'
+
+    for i in $( seq 1 $totalUsers )
+    do
         project=user$i-devspaces
         oc label namespace $project app.kubernetes.io/part-of=che.eclipse.org
         oc label namespace $project app.kubernetes.io/component=workspaces-namespace
@@ -24,11 +30,19 @@ provision_devspaces_project_in_advance() {
 }
 
 create_projects() {
-    for ((i = 1; i <= $totalUsers; i++)); do
+    echo
+
+    for i in $( seq 1 $totalUsers )
+    do
+        echo ""
+        echo "Logging in as user$i user to create projects..."
+        echo
+
         oc login -u user$i -p $USER_PASSWORD --insecure-skip-tls-verify
         oc new-project user$i-devspaces
         oc new-project user$i-superheroes
         oc new-project user$i-istio-system
+        oc new-project user$i-monitoring
     done
     repeat '-'
 }
@@ -40,7 +54,7 @@ install_operator() {
     project=$4
 
     echo
-    echo "Installing $operatorDescParam..."
+    echo "Installing $operatorDescParam to $project project..."
     echo
 
     oc apply -f $ymlFilePathParam -n $project
@@ -62,10 +76,16 @@ install_operator() {
 }
 
 install_grafana() {
-    oc login -u opentlc-mgr -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+    echo ""
+    echo "Logging in as cluster administrator to install operator..."
+    echo
 
-    for ((i = 1; i <= $totalUsers; i++)); do
-        project=user$i-superheroes
+    oc login -u opentlc-mgr -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+    repeat '-'
+
+    for i in $( seq 1 $totalUsers )
+    do
+        project=user$i-monitoring
         sed "s/NAMESPACE/${project}/g" ../manifest/operator-group.yml | oc apply -f- -n $project
 
         operatorName=grafana-operator
@@ -84,7 +104,7 @@ set_default_role_argocd(){
 
 
 create_argocd_user() {
-    ##manual add argocd-cm.yml to argocd-cm 
+    ##manual add argocd-cm.yml to argocd-cm
     ##data:
     ##  admin.enabled: 'true'
     ##  accounts.user1: apiKey, login
@@ -104,13 +124,14 @@ create_argocd_user() {
     done
     echo $DATA
     oc patch cm example -n project2  --type json --patch '[{ "op": "replace", "path": "/data", "value": '$DATA'}]'
-    
-    oc get cm argocd-cm -n openshift-gitops -o yaml > ../manifest/argocd-cm.yml 
-    for ((i = 1; i <= 100; i++)); do
+
+    oc get cm argocd-cm -n openshift-gitops -o yaml > ../manifest/argocd-cm.yml
+    for i in $( seq 1 $totalUsers )
+    do
         username=user$i
-        echo "  accounts.$username: apiKey, login" >> ../manifest/argocd-cm.yml        
+        echo "  accounts.$username: apiKey, login" >> ../manifest/argocd-cm.yml
     done
-    oc apply -f ../manifest/argocd-cm.yml 
+    oc apply -f ../manifest/argocd-cm.yml
 }
 
 update_argocd_password(){
@@ -120,9 +141,25 @@ update_argocd_password(){
     PASSWORD=$(oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-) 2>/dev/null
     echo $PASSWORD
     argocd login $ARGOCD  --insecure --username admin --password $PASSWORD
-    for ((i = 1; i <= 100; i++)); do
+    for i in $( seq 1 $totalUsers )
+    do
         username=user$i
         argocd account update-password --account $username --new-password openshift --current-password $PASSWORD
+    done
+}
+
+add_monitor_edit_role_to_user()
+{
+    echo ""
+    echo "Logging in as cluster administrator to add monitor edit role to users..."
+    echo
+
+    oc login -u opentlc-mgr -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+    repeat '-'
+
+    for i in $( seq 1 $totalUsers )
+    do
+        oc adm policy add-role-to-user monitoring-edit user$i -n user$i-super-heroes
     done
 }
 
@@ -132,8 +169,9 @@ update_argocd_password(){
 totalUsers=$1
 
 create_projects
-#install_grafana
+install_grafana
+add_monitor_edit_role_to_user
 #create_argocd_user
 #set_default_role_argocd
 #update_argocd_password
-#provision_devspaces_project_in_advance
+provision_devspaces_project_in_advance
