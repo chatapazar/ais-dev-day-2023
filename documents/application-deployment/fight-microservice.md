@@ -72,7 +72,7 @@
 1. Open the Web Terminal. Then run this command to clone Git repository to local.
 
     ```sh
-    git clone http://git.gitea.svc.cluster.local:3000/lab-user/developer-advocacy-2022
+    git clone http://git.gitea.svc.cluster.local:3000/lab-user/developer-advocacy-2022.git
     ```
 
     Notice that the URL is internal DNS! Yes, there is a Git server (Gitea) running in the same cluster but different project.
@@ -102,11 +102,7 @@
 
 4. Wait until the build success. Then go to **Builds** menu, you should see a new **rest-fights** BuildConfigs for OpenShift Build (Binary).
 
-    <br/>
-
     What happens behind the scene is that when you run Maven build in local, Quarkus Maven plugin (plus a bunch of configurations) talks to OpenShift to create required resources for your service i.e. ConfigMap, Secret, Deployment etc. including the BuildConfigs as well. When code build in local is done, the plugin will upload artefacts a.k.a binaries e.g. jar, war, libraries to OpenShift and after that the OpenShift Build kicks off the container image build and deploy.
-
-    <br/>
 
     Click on the **rest-fights** BuildConfigs to see build logs.
 
