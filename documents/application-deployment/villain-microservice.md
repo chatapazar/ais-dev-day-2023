@@ -72,7 +72,7 @@
 
 2. Click **Show advanced Git options** link then enter following inputs. OpenShift Build (S2I) will check the project e.g. source code, framework and select builder image for build/compile application for you.
 
-   - **Git Repo URL:** `https://github.com/rhthsa/developer-advocacy-2022`
+   - **Git Repo URL:** `https://gitlab.com/s.audomsak/developer-advocacy-2022`
    - **Context dir:** `code/rest-villains`
    - **Application:** `villains-service`
    - **Name:** `rest-villains`

@@ -72,7 +72,7 @@
 
 2. Enter following inputs:
 
-   - **Image name from external registry:** `quay.io/voravitl/rest-heroes`
+   - **Image name from external registry:** `quay.io/asuksunt/rest-heroes:1.0`
    - **Runtime icon:** `quarkus`
    - **Application:** `heroes-service`
    - **Name:** `rest-heroes`

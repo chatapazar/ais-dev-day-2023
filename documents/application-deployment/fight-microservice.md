@@ -93,7 +93,6 @@
     ./mvnw -s maven-setting.xml install \
     -DskipTests \
     -Dquarkus.container-image.group=$(oc project --short) \
-    -Dquarkus.openshift.route.expose=false \
     -Dquarkus.profile=openshift-17 \
     -Dquarkus.kubernetes.deploy=true
    ```
