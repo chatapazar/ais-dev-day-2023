@@ -50,13 +50,13 @@
 
   - [Query Application Metrics](application-monitoring/query-application-metric.md)
 
-- [Monitor Application with Grafana](application-monitoring/monitor-app-with-grafana.md)
+<!-- - [Monitor Application with Grafana](application-monitoring/monitor-app-with-grafana.md)
 
   - [Create Grafana Instance](application-monitoring/create-grafana-instance.md)
 
   - [Setup Grafana Datasource](application-monitoring/setup-grafana-datasource.md)
 
-  - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md)
+  - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md) -->
 
 - [Distributed Tracing](application-monitoring/distributed-tracing.md)
 
@@ -66,9 +66,9 @@
 
   - [Trace Application Transaction](application-monitoring/trace-application-transaction.md)
 
-## Application Management
+<!-- ## Application Management
 
-- [Service Mesh](application-management/service-mesh.md)
+- [Service Mesh](application-management/service-mesh.md) -->
 
 ## Appendix
 
