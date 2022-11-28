@@ -26,15 +26,17 @@
 
 - [Microservices Deployment](application-deployment/microservices-deployment.md)
 
-  - [Hero Microservice](application-deployment/hero-microservice.md) container
+  - [Hero Microservice](application-deployment/hero-microservice.md)
 
-  - [Villain Microservice](application-deployment/villain-microservice.md) s2i
+  - [Villain Microservice](application-deployment/villain-microservice.md)
 
-  - [Fight Microservice](application-deployment/fight-microservice.md) mvn
+  - [Fight Microservice](application-deployment/fight-microservice.md)
 
-  - [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice.md) yaml
+  - [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice.md)
 
   - [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices.md)
+
+  - [Beautify The Topology View](application-deployment/beautify-topology.md)
 
 ## Application Monitoring
 
@@ -54,7 +56,11 @@
 
 - [Distributed Tracing](application-monitoring/distributed-tracing.md)
 
-  - [Trace application transactions]
+  - [Configure OpenShift Distributed Tracing Platform](application-monitoring/configure-distributed-tracing-platform.md)
+
+  - [Configure OpenShift Distributed Tracing Data Collection](application-monitoring/configure-distributed-tracing-data-collection.md)
+
+  - [Trace Application Transaction](application-monitoring/trace-application-transaction.md)
 
 ## Continuous Deployment (CD)
 
