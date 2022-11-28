@@ -38,6 +38,10 @@
 
   - [Beautify The Topology View](application-deployment/beautify-topology.md)
 
+## Continuous Deployment (CD)
+
+- [GitOps](continuous-deployment/gitops.md)
+
 ## Application Monitoring
 
 - [Application Metrics](application-monitoring/application-metrics.md)
@@ -61,12 +65,6 @@
   - [Configure OpenShift Distributed Tracing Data Collection](application-monitoring/configure-distributed-tracing-data-collection.md)
 
   - [Trace Application Transaction](application-monitoring/trace-application-transaction.md)
-
-## Continuous Deployment (CD)
-
-- [GitOps](continuous-deployment/gitops.md)
-
-  - Setup
 
 ## Application Management
 
