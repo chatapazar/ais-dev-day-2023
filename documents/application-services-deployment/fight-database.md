@@ -117,13 +117,13 @@
 
     ![Create Service for MongoDB container](image/database-deployment/deploy-db-23.png)
 
-3. A `fights-db` Service object should be created. Go to **Pods** tab you should be able to see the Service is pointing and will be forwarding traffic to the `flight-db-xxxxxxx` Pod which is the MongoDB pod.
+3. A `fights-db` Service object should be created. Go to **Pods** tab you should be able to see the Service is pointing and will be forwarding traffic to the `fights-db-xxxxxxx` Pod which is the MongoDB pod.
 
     ![Service for MongoDB container](image/database-deployment/deploy-db-24.png)
 
     ![Service is pointing to MongoDB container](image/database-deployment/deploy-db-25.png)
 
-4. Go to **Topology** menu, you should see `flights-db` MongoDB entity.
+4. Go to **Topology** menu, you should see `fights-db` MongoDB entity.
 
     ![MongoDB entity](image/database-deployment/deploy-db-26.png)
 
