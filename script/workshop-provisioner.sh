@@ -216,8 +216,13 @@ setup_web_terminal() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 
     # Customize Web Terminal template see: https://github.com/redhat-developer/web-terminal-operator/
-    #oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=false' -n $project
-    #oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n $project
+    oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=false' -n $project
+    oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n $project
+
+    oc delete subscription web-terminal-operator -n $project
+    sleep 5
+
+    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
 setup_nexus() {
@@ -275,48 +280,48 @@ echo
 echo "Super Heroes on OpenShift Workshop Provisioner"
 repeat '-'
 
-# enable_user_workload_monitoring
-# repeat '-'
+enable_user_workload_monitoring
+repeat '-'
 
-# setup_gitea
-# repeat '-'
+setup_gitea
+repeat '-'
 
-# install_dev_workspaces
-# repeat '-'
+install_dev_workspaces
+repeat '-'
 
-# setup_dev_spaces
-# repeat '-'
+setup_dev_spaces
+repeat '-'
 
-# install_amq_streams
-# repeat '-'
+install_amq_streams
+repeat '-'
 
-# install_git_ops
-# repeat '-'
+install_git_ops
+repeat '-'
 
-# install_distributed_tracing_platform
-# repeat '-'
+install_distributed_tracing_platform
+repeat '-'
 
-# install_distributed_tracing_data_collection
-# repeat '-'
+install_distributed_tracing_data_collection
+repeat '-'
 
-# install_service_mesh
-# repeat '-'
+install_service_mesh
+repeat '-'
 
-# install_kiali
-# repeat '-'
+install_kiali
+repeat '-'
 
-# install_service_registry
-# repeat '-'
+install_service_registry
+repeat '-'
 
-#  setup_web_terminal
-#  repeat '-'
+ setup_web_terminal
+ repeat '-'
 
-# setup_nexus
-# repeat '-'
+setup_nexus
+repeat '-'
 
-# preload_nexus_artefacts
-# repeat '-'
+preload_nexus_artefacts
+repeat '-'
 
-# oc project default
+oc project default
 
-# echo "Done!!!"
+echo "Done!!!"
