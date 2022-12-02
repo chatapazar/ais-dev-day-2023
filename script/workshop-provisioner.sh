@@ -156,13 +156,7 @@ install_git_ops() {
 }
 
 install_distributed_tracing_platform() {
-    # project=openshift-distributed-tracing
     project=openshift-operators
-    # echo
-    # echo "Creating $project project..."
-    # echo
-
-    # oc new-project $project
 
     operatorName=jaeger-product
     operatorDesc="Red Hat OpenShift distributed tracing platform"
@@ -219,9 +213,9 @@ setup_web_terminal() {
     oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=false' -n $project
     oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n $project
 
+    # Hack!! Reinstall after customized otherwise the Web Terminal icon won't show up in the web console
     oc delete subscription web-terminal-operator -n $project
     sleep 5
-
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
