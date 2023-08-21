@@ -2,4 +2,4 @@
 
 [Workshop Guide](https://audomsak.gitbook.io/developer-advocacy-2022/)
 
-![cover](cover.jpg)
+![cover](cover.png)
