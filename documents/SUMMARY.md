@@ -14,13 +14,20 @@
 
   - [Deploy Database For Hero Microservice](application-services-deployment/hero-database.md)
 
+<!-- 
+  ## Change to yaml
   - [Deploy Database For Villain Microservice](application-services-deployment/villain-database.md)
 
   - [Deploy Database For Fight Microservice](application-services-deployment/fight-database.md)
+-->
 
 - [AMQ Streams (Kafka) Deployment](application-services-deployment/kafka-deployment.md)
 
+<!-- 
+  ## Change to yaml
 - [Service Registry (Apicurio) Deployment](application-services-deployment/service-registry-deployment.md)
+-->
+
 
 ## Application Deployment
 
@@ -28,6 +35,8 @@
 
   - [Hero Microservice](application-deployment/hero-microservice.md)
 
+<!--
+  ## Change to yaml
   - [Villain Microservice](application-deployment/villain-microservice.md)
 
   - [Fight Microservice](application-deployment/fight-microservice.md)
@@ -37,10 +46,14 @@
   - [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices.md)
 
   - [Beautify The Topology View](application-deployment/beautify-topology.md)
-
+-->
+<!--
 ## Continuous Deployment (CD)
 
 - [GitOps](continuous-deployment/gitops.md)
+
+## Change to run with yaml file on web console
+ -->
 
 ## Application Monitoring
 
