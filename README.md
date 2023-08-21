@@ -1,4 +1,4 @@
-# Red Hat Developer Advocacy. Bangkok, Thailand
+# Krungthai Computer Services Account Day. Bangkok, Thailand
 
 [Workshop Guide](https://audomsak.gitbook.io/developer-advocacy-2022/)
 
