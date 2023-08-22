@@ -6,7 +6,7 @@ The cluster you're using for this workshop already has Grafana Operator installe
 
 ## Create Grafana instance via OpenShift web console
 
-1. Click on the **Project** drop-down list then select **user*X*-monitoring** project where **_X_** is your username.
+1. Click on the **Project** drop-down list then select **user*X*-monitoring** project where ***X*** is your username.
 
    ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-1.png)
 
