@@ -20,10 +20,10 @@ The cluster you're using for this workshop already has Grafana Operator installe
     apiVersion: grafana.integreatly.org/v1beta1
     kind: Grafana
     metadata:
-        labels:
-          dashboards: grafana
-          folders: grafana
-        name: grafana
+      labels:
+        dashboards: grafana
+        folders: grafana
+      name: grafana
     spec:
       config:
         auth:
