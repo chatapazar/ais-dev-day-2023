@@ -1,0 +1,73 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app: fights-db
+    application: fights-service
+    system: quarkus-super-heroes
+  name: fights-db-config
+data:
+  MONGODB_DATABASE: ZmlnaHRz
+  MONGODB_USERNAME: c3VwZXJmaWdodA==
+  MONGODB_PASSWORD: c3VwZXJmaWdodA==
+  MONGODB_ROOT_USER: c3VwZXI=
+  MONGODB_ROOT_PASSWORD: c3VwZXI=
+type: Opaque
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: fights-db
+    application: fights-service
+    system: quarkus-super-heroes
+  name: fights-db
+spec:
+  ports:
+    - port: 27017
+      protocol: TCP
+      targetPort: 27017
+  selector:
+    name: fights-db
+  type: ClusterIP
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: fights-db
+    application: fights-service
+    system: quarkus-super-heroes
+    app.kubernetes.io/part-of: fights-service
+    app.openshift.io/runtime: mongodb
+  name: fights-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: fights-db
+  template:
+    metadata:
+      labels:
+        application: fights-service
+        name: fights-db
+        system: quarkus-super-heroes
+    spec:
+      containers:
+        - envFrom:
+            - secretRef:
+                name: fights-db-config
+          image: bitnami/mongodb:5.0
+          name: fights-db
+          ports:
+            - containerPort: 27017
+          resources:
+            limits:
+              memory: 256Mi
+            requests:
+              memory: 64Mi

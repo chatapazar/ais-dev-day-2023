@@ -1,0 +1,150 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: rest-heroes
+    application: heroes-service
+    system: quarkus-super-heroes
+  name: rest-heroes-config
+data:
+  quarkus.hibernate-orm.database.generation: validate
+  quarkus.hibernate-orm.sql-load-script: no-file
+  quarkus.datasource.reactive.url: postgresql://heroes-db:5432/heroes_database
+  quarkus.opentelemetry.tracer.exporter.otlp.endpoint: http://otel-collector:4317
+  quarkus.http.access-log.enabled: "false"
+  quarkus.http.access-log.pattern: >
+    %h %l %u %t "%r" %s %b "User-Agent: %{i,User-Agent}" "x-request-id:
+    %{i,x-request-id}" "x-b3-traceid: %{i,x-b3-traceid}"  " Referer:
+    %{i,Referer}"
+
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app: rest-heroes
+    application: heroes-service
+    system: quarkus-super-heroes
+  name: rest-heroes-config-creds
+data:
+  quarkus.datasource.username: c3VwZXJtYW4=
+  quarkus.datasource.password: c3VwZXJtYW4=
+type: Opaque
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: rest-heroes
+    application: heroes-service
+    system: quarkus-super-heroes
+  name: rest-heroes
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: rest-heroes
+    app.kubernetes.io/part-of: heroes-service
+  type: ClusterIP
+
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app.openshift.io/connects-to: "heroes-db"
+  labels:
+    app.kubernetes.io/name: rest-heroes
+    app.kubernetes.io/part-of: heroes-service
+    app: rest-heroes
+    application: heroes-service
+    system: quarkus-super-heroes
+    app.openshift.io/runtime: quarkus
+  name: rest-heroes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/part-of: heroes-service
+      app.kubernetes.io/name: rest-heroes
+  template:
+    metadata:
+      annotations:
+        app.openshift.io/connects-to: "heroes-db"
+      labels:
+        app: rest-heroes
+        application: heroes-service
+        system: quarkus-super-heroes
+        app.openshift.io/runtime: quarkus
+        app.kubernetes.io/part-of: heroes-service
+        app.kubernetes.io/name: rest-heroes
+    spec:
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          envFrom:
+            - configMapRef:
+                name: rest-heroes-config
+            - secretRef:
+                name: rest-heroes-config-creds
+          image: quay.io/asuksunt/rest-heroes:1.0
+          imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/live
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+          name: rest-heroes
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/ready
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+          resources:
+            limits:
+              memory: 768Mi
+            requests:
+              memory: 256Mi
+
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: rest-heroes
+    application: heroes-service
+    system: quarkus-super-heroes
+  name: rest-heroes
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: rest-heroes

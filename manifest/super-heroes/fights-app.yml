@@ -1,0 +1,151 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app: rest-fights
+    application: fights-service
+    system: quarkus-super-heroes
+  name: rest-fights-config-creds
+data:
+  quarkus.mongodb.credentials.username: c3VwZXJmaWdodA==
+  quarkus.mongodb.credentials.password: c3VwZXJmaWdodA==
+type: Opaque
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: rest-fights
+    application: fights-service
+    system: quarkus-super-heroes
+  name: rest-fights
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: rest-fights
+    app.kubernetes.io/part-of: fights-service
+  type: ClusterIP
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: rest-fights
+    application: fights-service
+    system: quarkus-super-heroes
+  name: rest-fights-config
+data:
+  quarkus.rest-client.hero-client.url: http://rest-heroes:8080
+  quarkus.rest-client.villain-client.url: http://rest-villains:8080
+  quarkus.liquibase-mongodb.migrate-at-start: "false"
+  quarkus.mongodb.hosts: fights-db:27017
+  quarkus.opentelemetry.tracer.exporter.otlp.endpoint: http://otel-collector:4317
+  kafka.bootstrap.servers: PLAINTEXT://fights-kafka-bootstrap:9092
+  mp.messaging.connector.smallrye-kafka.apicurio.registry.url: http://apicurio:8080/apis/registry/v2
+  quarkus.http.access-log.enabled: 'false'
+  quarkus.http.access-log.pattern: >
+    %h %l %u %t "%r" %s %b "User-Agent: %{i,User-Agent}" "x-request-id:
+    %{i,x-request-id}" "x-b3-traceid: %{i,x-b3-traceid}"  " Referer:
+    %{i,Referer}"
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app.openshift.io/connects-to: "fights-db,rest-villains,rest-heroes"
+  labels:
+    app.kubernetes.io/name: rest-fights
+    app.kubernetes.io/part-of: fights-service
+    app: rest-fights
+    application: fights-service
+    system: quarkus-super-heroes
+    app.openshift.io/runtime: quarkus
+  name: rest-fights
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: rest-fights
+      app.kubernetes.io/part-of: fights-service
+  template:
+    metadata:
+      annotations:
+        app.openshift.io/connects-to: "fights-db,rest-villains,rest-heroes"
+      labels:
+        app: rest-fights
+        application: fights-service
+        system: quarkus-super-heroes
+        app.openshift.io/runtime: quarkus
+        app.kubernetes.io/name: rest-fights
+        app.kubernetes.io/part-of: fights-service
+    spec:
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          envFrom:
+            - configMapRef:
+                name: rest-fights-config
+            - secretRef:
+                name: rest-fights-config-creds
+          image: quay.io/asuksunt/rest-fights:1.0
+          imagePullPolicy: Always
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/live
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+          name: rest-fights
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/ready
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 0
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+          resources:
+            limits:
+              memory: 768Mi
+            requests:
+              memory: 256Mi
+
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: rest-fights
+    application: fights-service
+    system: quarkus-super-heroes
+  name: rest-fights
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: rest-fights
