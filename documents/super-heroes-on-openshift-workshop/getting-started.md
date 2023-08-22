@@ -16,6 +16,8 @@ You will be provided with pre-setup projects/namespaces, [software, and operator
 
 * **user*X*-super-heroes:** This is the **main project** you're going to deloy the Quarkus Super Heroes application in here.
 
+* **user*X*-monitoring:** A project for Grafana that will be used to monitor the application.
+
 * **user*X*-devspaces:** A project for Red Hat OpenShift Dev Spaces - Web-based, cloud-native IDE.
 
 Note. ***X*** is your user number.
