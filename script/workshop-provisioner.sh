@@ -49,48 +49,6 @@ install_operator() {
     echo "$operatorDescParam is now available!"
 }
 
-setup_gitea() {
-    echo "Installing CatalogSource for Gitea Operator..."
-    echo
-
-    oc apply -f https://raw.githubusercontent.com/redhat-gpte-devopsautomation/gitea-operator/master/catalog_source.yaml
-
-    operatorName=gitea-operator
-    operatorDesc="Gitea Operator"
-    ymlFilePath=../manifest/gitea-subscription.yml
-    project=openshift-operators
-
-    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
-
-    project=gitea
-
-    echo
-    echo "Creating $project project..."
-    echo
-
-    oc new-project $project
-
-    echo
-    echo "Setting up Getea instance and import repository..."
-    echo
-
-    oc apply -f ../manifest/gitea.yml -n $project
-
-    echo
-    echo "Waiting for Gitea instance to be available..."
-    echo
-
-    available="false"
-
-    while [[ $available != "true" ]]; do
-        sleep 5
-        available=$(oc get giteas.gpte.opentlc.com git -o jsonpath='{.status.userSetupComplete}' -n $project)
-    done
-
-    echo "Gitea instance is now available!"
-    echo
-}
-
 setup_dev_spaces() {
     project=openshift-operators
     operatorName=devspaces
@@ -146,15 +104,6 @@ install_amq_streams() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
-install_git_ops() {
-    operatorName=openshift-gitops-operator
-    operatorDesc="Red Hat OpenShift GitOps"
-    ymlFilePath=../manifest/gitops-subscription.yml
-    project=openshift-operators
-
-    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
-}
-
 install_distributed_tracing_platform() {
     project=openshift-operators
 
@@ -169,24 +118,6 @@ install_distributed_tracing_data_collection() {
     operatorName=opentelemetry-product
     operatorDesc="Red Hat OpenShift distributed tracing data collection"
     ymlFilePath=../manifest/distributed-tracing-data-collection-subscription.yml
-    project=openshift-operators
-
-    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
-}
-
-install_service_mesh() {
-    operatorName=servicemeshoperator
-    operatorDesc="Red Hat OpenShift Service Mesh"
-    ymlFilePath=../manifest/service-mesh-subscription.yml
-    project=openshift-operators
-
-    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
-}
-
-install_kiali() {
-    operatorName=kiali-ossm
-    operatorDesc="Kiali Operator"
-    ymlFilePath=../manifest/kiali-subscription.yml
     project=openshift-operators
 
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
@@ -210,7 +141,7 @@ setup_web_terminal() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 
     # Customize Web Terminal template see: https://github.com/redhat-developer/web-terminal-operator/
-    oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=false' -n $project
+    oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=true' -n $project
     oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n $project
 
     # Hack!! Reinstall after customized otherwise the Web Terminal icon won't show up in the web console
@@ -219,52 +150,13 @@ setup_web_terminal() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
-setup_nexus() {
-    project=nexus
+install_grafana() {
+    operatorName=grafana-operator
+    operatorDesc="Grafana Operator"
+    ymlFilePath=../manifest/manifest/grafana-subscription.yml
+    project=openshift-operators
 
-    echo
-    echo "Creating $project project..."
-    echo
-
-    oc new-project $project
-
-    echo "Importing Sonatype Nexus Repository Manager 3 OSS template..."
-    echo
-
-    oc create -f https://raw.githubusercontent.com/audomsak/openshift-sonatype-nexus/master/nexus3-persistent-template-secure.yaml -n $project
-
-    echo
-    echo "Setting up Sonatype Nexus Repository Manager instance..."
-    echo
-
-    oc new-app nexus3-persistent
-
-    echo
-    echo "Waiting for Sonatype Nexus Repository Manager instance to be available..."
-    echo
-
-    available="false"
-
-    while [[ $available != "true" ]]; do
-        sleep 5
-        available=$(oc get pods -l deploymentconfig='nexus' -o jsonpath='{.items[*].status.containerStatuses[0].ready}' -n $project)
-    done
-
-    echo "Sonatype Nexus Repository Manager instance is now available!"
-    echo
-}
-
-preload_nexus_artefacts() {
-    echo
-    echo "Building a project for workshop to preload all required Maven artefacts to Nexus Repository..."
-    echo
-
-    project=default
-
-    # Build a project to preload required artefacts into Nexus so next build will be fast! i.e. when running workshop
-    oc run -n $project maven-build --image=quay.io/asuksunt/web-terminal-tooling:1.0 \
-        --restart=OnFailure \
-        --command -- sh -c 'git clone http://git.gitea.svc.cluster.local:3000/lab-user/quarkus-super-heroes.git; cd quarkus-super-heroes; mvn compile -s maven-setting.xml'
+    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
 ####################################################
@@ -277,9 +169,6 @@ repeat '-'
 enable_user_workload_monitoring
 repeat '-'
 
-setup_gitea
-repeat '-'
-
 install_dev_workspaces
 repeat '-'
 
@@ -289,32 +178,20 @@ repeat '-'
 install_amq_streams
 repeat '-'
 
-install_git_ops
-repeat '-'
-
 install_distributed_tracing_platform
 repeat '-'
 
 install_distributed_tracing_data_collection
 repeat '-'
 
-install_service_mesh
-repeat '-'
-
-install_kiali
-repeat '-'
-
 install_service_registry
+repeat '-'
+
+install_grafana
 repeat '-'
 
  setup_web_terminal
  repeat '-'
-
-setup_nexus
-repeat '-'
-
-preload_nexus_artefacts
-repeat '-'
 
 oc project default
 
