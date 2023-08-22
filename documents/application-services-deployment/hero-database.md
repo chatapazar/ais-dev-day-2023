@@ -39,7 +39,7 @@ We need to load some data into the database we've just deployed. How to do that?
 
     ![Web Terminal](image/database-deployment/deploy-db-7.png)
 
-3. Use `curl` command to download SQL script.
+3. Run `curl` command to download SQL script.
 
     ```sh
     curl https://raw.githubusercontent.com/rhthsa/developer-advocacy-2022/main/manifest/super-heroes/heroes-db-init.sql -o heroes-db-init.sql
@@ -53,7 +53,7 @@ We need to load some data into the database we've just deployed. How to do that?
     100 86517  100 86517    0     0   180k      0 --:--:-- --:--:-- --:--:--  180k
     ```
 
-4. Use `psql` (PostgreSQL client) to connect to the `heroes-db` PostgreSQL server. **The password is `superman`**.
+4. Run `psql` (PostgreSQL client) command to connect to the `heroes-db` PostgreSQL server. **The password is `superman`**.
 
     ```sh
      psql postgresql://heroes-db:5432/heroes_database?user=superman
