@@ -49,52 +49,6 @@ install_operator() {
     echo "$operatorDescParam is now available!"
 }
 
-setup_dev_spaces() {
-    project=openshift-operators
-    operatorName=devspaces
-    operatorDesc="Red Hat OpenShift Dev Spaces"
-    ymlFilePath=../manifest/devspaces-subscription.yml
-
-    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
-
-    project=redhat-openshift-devspaces
-
-    echo
-    echo "Creating $project project..."
-    echo
-
-    oc new-project $project
-
-    echo
-    echo "Setting up Red Hat OpenShift Dev Spaces instance..."
-    echo
-
-    oc apply -f ../manifest/devspaces.yml -n $project
-
-    echo
-    echo "Waiting for Red Hat OpenShift Dev Spaces instance to be available..."
-    echo
-
-    available="false"
-
-    while [[ $available != "Active" ]]; do
-        sleep 5
-        available=$(oc get checlusters.org.eclipse.che devspaces -o jsonpath='{.status.chePhase}' -n $project)
-    done
-
-    echo "Red Hat OpenShift Dev Spaces instance is now available!"
-    echo
-}
-
-install_dev_workspaces() {
-    project=openshift-operators
-    operatorName=devworkspace-operator
-    operatorDesc="Dev Workspace Operator"
-    ymlFilePath=../manifest/devworkspace-subscription.yml
-
-    install_operator $operatorName "$operatorDesc" $ymlFilePath $project
-}
-
 install_amq_streams() {
     operatorName=amq-streams
     operatorDesc="Red Hat Integration - AMQ Streams"
@@ -153,7 +107,7 @@ setup_web_terminal() {
 install_grafana() {
     operatorName=grafana-operator
     operatorDesc="Grafana Operator"
-    ymlFilePath=../manifest/manifest/grafana-subscription.yml
+    ymlFilePath=../manifest/grafana-subscription.yml
     project=openshift-operators
 
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
@@ -167,12 +121,6 @@ echo "Super Heroes on OpenShift Workshop Provisioner"
 repeat '-'
 
 enable_user_workload_monitoring
-repeat '-'
-
-install_dev_workspaces
-repeat '-'
-
-setup_dev_spaces
 repeat '-'
 
 install_amq_streams
@@ -190,8 +138,11 @@ repeat '-'
 install_grafana
 repeat '-'
 
- setup_web_terminal
- repeat '-'
+# For some reasons, the web terminal icon doesn't show in OpenShift web console
+# if we install Web Terminal operator via CLI but the issue is gone if we install
+# it via OpenShift web console. That's weird!
+# setup_web_terminal
+# repeat '-'
 
 oc project default
 
