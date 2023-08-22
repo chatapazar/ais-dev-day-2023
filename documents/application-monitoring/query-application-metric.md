@@ -4,13 +4,13 @@
 
 Open Web Terminal then run this command to query application metrics. You can also query metrics of other microservices as well by just change `rest-villains` hostname to other service hostnames i.e. `rest-fights`.
 
-However, this way is not practical and really hard to understand what each metric value means. So, we'll do something better by using OpenShift platform monitoring.
-
 ```sh
 curl http://rest-villains:8080/q/metrics
 ```
 
-![Query metric manually](image/application-metrics/app-metric-1.png)
+However, this way is not practical and really hard to understand what each metric value means. So, we'll do something better by using OpenShift platform monitoring.
+
+![Query metrics manually](image/application-metrics/app-metric-1.png)
 
 ## Query application metrics via OpenShift web console
 
