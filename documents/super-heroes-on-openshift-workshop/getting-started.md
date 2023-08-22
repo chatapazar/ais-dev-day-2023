@@ -18,8 +18,6 @@ You will be provided with pre-setup projects/namespaces, [software, and operator
 
 * **user*X*-devspaces:** A project for Red Hat OpenShift Dev Spaces - Web-based, cloud-native IDE.
 
-* **user*X*-istio-system:** A project for deploying OpenShift Service Mesh
-
 Note. ***X*** is your user number.
 
 ![Projects](image/getting-started/projects.png)
@@ -29,17 +27,13 @@ Note. ***X*** is your user number.
 Just in case you're curious about what else are installed in the cluster for this workshop. Here's the list of installed softwares and operators:
 
 * Web Terminal
-* Gitea Operator
 * Grafana Operator
 * Dev Workspace Operator
-* Red Hat OpenShift GitOps
 * Red Hat OpenShift Dev Spaces
-* Red Hat OpenShift Service Mesh
 * Red Hat Integration - AMQ Streams
 * Red Hat Integration - Service Registry Operator
 * Red Hat OpenShift distributed tracing platform
 * Red Hat OpenShift distributed tracing data collection
-* Sonatype Nexus Repository Manager 3 OSS
 
 ## References
 

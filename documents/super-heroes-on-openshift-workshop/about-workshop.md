@@ -1,6 +1,6 @@
 # About Workshop
 
-This workshop offers attendees an intro to mid-level, hands-on session with **Red Hat OpenShift Container Platform** - an **enterprise certified Kubernetes platform** for modern cloud-native application, from containerizing microservices, to deploying an entire application, to execute microservices and consuming them as well tracing, monitoring, and management.
+This workshop offers attendees an intro to mid-level, hands-on session with **Red Hat OpenShift Container Platform** - a certified enterprise Kubernetes platform for modern cloud-native application, from containerizing microservices, to deploying an entire application, to execute microservices and consuming them as well tracing, monitoring, and management.
 
 What are we going to deploy to Red Hat OpenShift Container Platform is going to be a set of microservices that:
 
@@ -18,25 +18,19 @@ What are we going to deploy to Red Hat OpenShift Container Platform is going to 
 
 This workshop is a BYOL *(Bring Your Own Laptop)* session, so bring your Windows, OSX, or Linux laptop, and be ready to install a few set of tools. What you are going to learn:
 
-:pushpin: How to build container images out of an existing Java application
+:pushpin: How to deploy microservices to Red Hat OpenShift Container Platform.
 
-:pushpin: How to deploy microservices to Red Hat OpenShift Container Platform in various ways.
+:pushpin: How to create application supported services in Red Hat OpenShift Container Platform (Database, Kafka, Service Registry)
 
-:pushpin: How to create application supported services in Red Hat OpenShift Container Platform (Postgres database, Kafka)
-
-:pushpin: How you improve the resilience of our microservices
+:pushpin: How to improve the resilience of our microservices
 
 :pushpin: How to monitor your application in Red Hat OpenShift Container Platform
 
-:pushpin: How to implement Continuous Deployment (CD) in Red Hat OpenShift Container Platform using OpenShift GitOps
-
-And much more of fun stuff!
-
 ## Presenting the Workshop
 
-This workshop should give you a practical introduction to Red Hat OpenShift Container Platform. You will practice all the needed tools to deploy an entire microservice architecture, mixing classical HTTP, reactive and event-based microservices. You will finish by monitoring and scaling the microservices so they can handle the load. Further more, you will have a hand-on experience of continuous deployment using OpenShift Gitops to automate application deployment.
+This workshop should give you a practical introduction to Red Hat OpenShift Container Platform. You will practice all the needed tools to deploy an entire microservice architecture, mixing classical HTTP, reactive and event-based microservices. You will finish by monitoring and scaling the microservices so they can handle the load.
 
-The idea is that you leave this workshop with a good understanding (*or at least, better!*) of what Red Hat OpenShift Container Platform is, what it is not, and how it can help you in your projects. Then, you’ll be prepared to investigate a bit more on your own.
+The idea is that you leave this workshop with a good understanding (*or at least, better!*) of what Red Hat OpenShift Container Platform is and what's not, and how it can help you in your projects. Then, you’ll be prepared to investigate a bit more on your own.
 
 ## Notice
 
