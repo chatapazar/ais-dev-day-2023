@@ -49,7 +49,7 @@ data:
   quarkus.mongodb.hosts: fights-db:27017
   quarkus.opentelemetry.tracer.exporter.otlp.endpoint: http://otel-collector:4317
   kafka.bootstrap.servers: PLAINTEXT://fights-kafka-bootstrap:9092
-  mp.messaging.connector.smallrye-kafka.apicurio.registry.url: http://apicurio:8080/apis/registry/v2
+  mp.messaging.connector.smallrye-kafka.apicurio.registry.url: http://apicurio-service:8080/apis/registry/v2
   quarkus.http.access-log.enabled: 'false'
   quarkus.http.access-log.pattern: >
     %h %l %u %t "%r" %s %b "User-Agent: %{i,User-Agent}" "x-request-id:
