@@ -118,7 +118,7 @@ elif [[ $option = "db" ]]; then
     db_deployment_yaml few
 
 elif [[ $option = "app" ]]; then
-    app_depoyment_yaml few
+    app_deployment_yaml few
 
 elif [[ $option = "kafka" ]]; then
     kafka_deployment_yaml
