@@ -2,7 +2,7 @@
 
 1. Request OpenShift cluster e.g. **OpenShift 4.11 Workshop** with a number of users as needed from RHPDS.
 
-2. Open a terminal on your computer then login to cluster with cluster admin user i.e. **opentlc-mgr** user.
+2. Open a terminal on your computer then login to cluster with cluster admin user i.e. **admin** user.
 
 3. Clone this repository to your computer then go to [script](script/) directory.
 
@@ -15,12 +15,9 @@
    **Following Operators will be installed with *All namespaces* installation mode:**
 
    * Web Terminal
-   * Gitea Operator
-   * Kiali Operator
+   * Grafana Operator
    * Dev Workspace Operator
-   * Red Hat OpenShift GitOps
    * Red Hat OpenShift Dev Spaces
-   * Red Hat OpenShift Service Mesh
    * Red Hat Integration - AMQ Streams
    * Red Hat Integration - Service Registry Operator
    * Red Hat OpenShift distributed tracing platform
@@ -28,14 +25,18 @@
 
    **Following Applications will be set up using CRD:**
 
-   * Gitea in **gitea** project
    * Dev Spaces (Eclipse Che) in **redhat-openshift-devspaces** project
 
-   **Following Applications will be installed:**
+5. Install Web Terminal Operator via OpenShift web console then run these commands to custom the tooling image.
 
-   * Sonatype Nexus Repository Manager 3 OSS in **nexus** project
+   For some reasons, the web terminal icon doesn't show in OpenShift web console if we install Web Terminal operator via CLI but the issue is gone if we install it via OpenShift web console. That's weird!
 
-5. Export lab user password and cluster admin password (the passwords should be there in the mail sent from RHPDS). Then run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) script with number of lab users as the script argument.
+   ```sh
+   oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=true' -n openshift-operators
+   oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n openshift-operators
+   ```
+
+6. Export lab user password and cluster admin password (the passwords should be there in the mail sent from RHDP). Then run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) script with number of lab users as the script argument.
 
    For example, provisioning 5 lab users:
 
@@ -48,8 +49,4 @@
    **Following projects/namespaces will be created for each user:**
    * user*X*-devspaces
    * user*X*-super-heroes
-   * user*X*-istio-system
-
-   **Following Operators will be installed with *A specific namespace* installation mode:**
-
-   * Grafana Operator
+   * user*X*-monitoring
