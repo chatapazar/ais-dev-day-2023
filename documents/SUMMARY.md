@@ -14,20 +14,11 @@
 
   - [Deploy Database For Hero Microservice](application-services-deployment/hero-database.md)
 
-<!-- 
-  ## Change to yaml
-  - [Deploy Database For Villain Microservice](application-services-deployment/villain-database.md)
-
-  - [Deploy Database For Fight Microservice](application-services-deployment/fight-database.md)
--->
+  - [Deploy Databases For Other Microservices](application-services-deployment/other-databases.md)
 
 - [AMQ Streams (Kafka) Deployment](application-services-deployment/kafka-deployment.md)
 
-<!-- 
-  ## Change to yaml
 - [Service Registry (Apicurio) Deployment](application-services-deployment/service-registry-deployment.md)
--->
-
 
 ## Application Deployment
 
@@ -35,25 +26,7 @@
 
   - [Hero Microservice](application-deployment/hero-microservice.md)
 
-<!--
-  ## Change to yaml
-  - [Villain Microservice](application-deployment/villain-microservice.md)
-
-  - [Fight Microservice](application-deployment/fight-microservice.md)
-
-  - [Super Hero UI Microservice](application-deployment/super-hero-ui-microservice.md)
-
-  - [Statistics and UI Microservices](application-deployment/statistics-and-ui-microservices.md)
-
-  - [Beautify The Topology View](application-deployment/beautify-topology.md)
--->
-<!--
-## Continuous Deployment (CD)
-
-- [GitOps](continuous-deployment/gitops.md)
-
-## Change to run with yaml file on web console
- -->
+  - [Deploy Other Microservices](application-deployment/other-microservices.md)
 
 ## Application Monitoring
 
@@ -63,13 +36,13 @@
 
   - [Query Application Metrics](application-monitoring/query-application-metric.md)
 
-<!-- - [Monitor Application with Grafana](application-monitoring/monitor-app-with-grafana.md)
+- [Monitor Application with Grafana](application-monitoring/monitor-app-with-grafana.md)
 
   - [Create Grafana Instance](application-monitoring/create-grafana-instance.md)
 
   - [Setup Grafana Datasource](application-monitoring/setup-grafana-datasource.md)
 
-  - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md) -->
+  - [Create Grafana Dashboard](application-monitoring/create-grafana-dashboard.md)
 
 - [Distributed Tracing](application-monitoring/distributed-tracing.md)
 
@@ -78,10 +51,6 @@
   - [Configure OpenShift Distributed Tracing Data Collection](application-monitoring/configure-distributed-tracing-data-collection.md)
 
   - [Trace Application Transaction](application-monitoring/trace-application-transaction.md)
-
-<!-- ## Application Management
-
-- [Service Mesh](application-management/service-mesh.md) -->
 
 ## Appendix
 
