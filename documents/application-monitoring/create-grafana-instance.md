@@ -6,42 +6,42 @@ The cluster you're using for this workshop already has Grafana Operator installe
 
 ## Create Grafana instance via OpenShift web console
 
-1. Click on the **Project** drop-down list then select **user*X*-monitoring** project where ***X*** is your username.
+1. Click on the **Project** drop-down list then select **user*X*-monitoring** project where **_X_** is your username.
 
-    ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-1.png)
+   ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-1.png)
 
 2. Click on the book icon, to add application from Developer Catalog then type `grafana` in the search box. Select **Grafana** and click **Create** button.
 
-    ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-2.png)
+   ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-2.png)
 
-3. Switch to **YAML view** then replace the content with this YAML snippet.
+3. Switch to **YAML view**, replace the content with this YAML snippet. Then click **Create** button.
 
     ```yaml
     apiVersion: grafana.integreatly.org/v1beta1
     kind: Grafana
     metadata:
-    labels:
-        dashboards: grafana
-        folders: grafana
-    name: grafana
+        labels:
+          dashboards: grafana
+          folders: grafana
+        name: grafana
     spec:
-    config:
+      config:
         auth:
-        disable_login_form: 'false'
-        disable_signout_menu: 'false'
+          disable_login_form: 'false'
+          disable_signout_menu: 'false'
         log:
-        mode: console
+          mode: console
         security:
-        admin_password: admin
-        admin_user: admin
-    route:
+          admin_password: admin
+          admin_user: admin
+      route:
         spec: {}
-    deployment:
+      deployment:
         spec:
-        template:
+          template:
             spec:
-            containers:
-                - image: 'grafana/grafana:10.0.3'
+              containers:
+              - image: 'grafana/grafana:10.0.3'
                 name: grafana
     ```
 
@@ -49,11 +49,15 @@ The cluster you're using for this workshop already has Grafana Operator installe
 
 4. Wait for a monent you'll see Grafana get deployed. Click on the arrow icon to open Grafana web console.
 
-    ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-4.png)
+   ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-4.png)
 
-5. login with username `admin` and password `admin`.
+5. Login with username `admin` and password `admin`.
 
-    ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-5.png)
+   ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-5.png)
+
+6. You'll be asked to change the password, just click on **Skip** link.
+
+   ![Deploy Grafana](image/create-grafana-instance/deploy-grafana-6.png)
 
 ## What have you learnt?
 
