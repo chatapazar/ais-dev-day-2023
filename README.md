@@ -1,5 +1,5 @@
 # Krungthai Computer Services Account Day. Bangkok, Thailand
 
-[Workshop Guide](https://audomsak.gitbook.io/developer-advocacy-2022/)
+[Workshop Guide](https://audomsak.gitbook.io/ktcs-account-day-2023/)
 
 ![cover](cover.png)
