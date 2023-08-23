@@ -11,10 +11,14 @@ If you're curious what the script does, see the code [here](../../script/install
 
 ## Deploy application using script
 
-In the Web Terminal, run following commands to deploy the microservices. Wait for a few seconds you should see all of the microservices get deployed.
+1. In the Web Terminal, run following commands to deploy the microservices. Wait for a few seconds you should see all of the microservices get deployed.
 
-```sh
-./installation.sh app $(oc whoami)-super-heroes
-```
+    ```sh
+    ./installation.sh app $(oc whoami)-super-heroes
+    ```
 
-![Deploy application](image/other-microservices/app-deploy-1.png)
+    ![Deploy application](image/other-microservices/app-deploy-1.png)
+
+2. Wait until all microservices up and running (all pods has blue ring around) then click on arrow icon of `ui-super-heroes` pod to open the Super Heroes web application.
+
+    ![Deploy application](image/other-microservices/app-deploy-2.png)
