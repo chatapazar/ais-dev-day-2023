@@ -56,6 +56,32 @@ add_monitoring_view_role_to_grafana_serviceaccount() {
     done
 }
 
+add_grafana_operator_to_project() {
+
+    echo ""
+    echo "Add Grafana Operator to userX-monitoring ..."
+    echo
+
+    oc login -u admin -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+
+    for i in $( seq 1 $totalUsers )
+    do
+        # if test $i -gt 2;
+        # then
+        echo
+        echo "Installing grafana to project $i ..."
+        echo
+
+        cat ../manifest/monitor-group.yml | sed "s#NAMESPACE#user$i-monitoring#g" | oc apply -n user$i-monitoring -f -
+        oc apply -f ../manifest/grafana-subscription-perproject.yml -n user$i-monitoring
+
+        echo
+        echo "Waiting for $operatorDescParam to be available..."
+        echo
+        # fi
+    done
+}
+
 ####################################################
 # Main (Entry point)
 ####################################################
@@ -66,4 +92,6 @@ repeat '-'
 add_monitoring_edit_role_to_user
 repeat '-'
 add_monitoring_view_role_to_grafana_serviceaccount
+repeat '-'
+add_grafana_operator_to_project
 repeat '-'

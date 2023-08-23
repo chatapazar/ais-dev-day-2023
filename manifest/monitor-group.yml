@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: monitor-operator-group
+  namespace: NAMESPACE
+spec:
+  targetNamespaces:
+  - NAMESPACE
