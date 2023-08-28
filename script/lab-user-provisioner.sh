@@ -93,5 +93,5 @@ add_monitoring_edit_role_to_user
 repeat '-'
 add_monitoring_view_role_to_grafana_serviceaccount
 repeat '-'
-add_grafana_operator_to_project
-repeat '-'
+# add_grafana_operator_to_project
+# repeat '-'
