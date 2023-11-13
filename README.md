@@ -1,5 +1,5 @@
 # AIS Developer Day. Bangkok, Thailand
 
-[Workshop Guide](https://audomsak.gitbook.io/ktcs-account-day-2023/)
+[Workshop Guide](https://chatapazar.gitbook.io/ais-cloud-native-development-day/)
 
 ![cover](ais_cover.png)
