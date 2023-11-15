@@ -29,7 +29,7 @@ heroes_db_deployment_template() {
     done
 
     #Initial data
-    curl https://raw.githubusercontent.com/rhthsa/ktcs-account-day-2023/main/manifest/super-heroes/heroes-db-init.sql -o heroes-db-init.sql
+    curl https://raw.githubusercontent.com/chatapazar/ais-dev-day-2023/main/manifest/super-heroes/heroes-db-init.sql -o heroes-db-init.sql
     psql -h $DB_HOST -U $DB_USERNAME -d $DB_NAME -f heroes-db-init.sql
 
     #Connect to DB
@@ -64,7 +64,7 @@ villains_db_deployment_template() {
     done
 
     #Initial data
-    curl https://raw.githubusercontent.com/rhthsa/ktcs-account-day-2023/main/manifest/super-heroes/villains-db-init.sql -o villains-db-init.sql
+    curl https://raw.githubusercontent.com/chatapazar/ais-dev-day-2023/main/manifest/super-heroes/villains-db-init.sql -o villains-db-init.sql
     psql -h $DB_HOST -U $DB_USERNAME -d $DB_NAME -f villains-db-init.sql
 }
 

@@ -26,7 +26,7 @@ If you're curious what the script does, see the code [here](../../script/install
 2. Run following commands to deploy the databases. Wait for a few seconds you should see the **fights-db** and **villains-db** databases get deployed.
 
     ```sh
-    cd ktcs-account-day-2023/script && ./installation.sh db $(oc whoami)-super-heroes
+    cd ais-dev-day-2023/script && ./installation.sh db $(oc whoami)-super-heroes
     ```
 
     ![Deploy database](image/database-deployment/deploy-db-28.png)
