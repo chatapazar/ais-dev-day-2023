@@ -9,7 +9,6 @@ data:
     prometheusK8s:
       volumeClaimTemplate:
        spec:
-         storageClassName: gp3-csi
          volumeMode: Filesystem
          resources:
            requests:
