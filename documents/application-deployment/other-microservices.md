@@ -19,7 +19,7 @@ If you're curious what the script does, see the code [here](../../script/install
 
     ![Deploy application](image/other-microservices/app-deploy-1.png)
 
-2. Wait until all microservices up and running (all pods has blue ring around) then click on arrow icon of `ui-super-heroes` pod to open the Super Heroes web application.
+2. Wait until all microservices up and running (all pods has blue ring around) then click on arrow icon of `ui-super-heroes` pod to open the Super Heroes web application. (if web page show 'Application is not available', try to change url from https to http, in this workshop we create route with http protocol, openshift route support both http & https base on your configuration! :D)
 
     ![Deploy application](image/other-microservices/app-deploy-2.png)
 
