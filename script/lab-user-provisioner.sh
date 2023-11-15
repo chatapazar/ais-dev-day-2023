@@ -42,6 +42,21 @@ add_monitoring_edit_role_to_user()
     done
 }
 
+add_ui_serviceaccount() {
+
+    echo ""
+    echo "Logging in as cluster administrator to add ui serviceaccount to ..."
+    echo
+
+    oc login -u admin -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+
+    for i in $( seq 1 $totalUsers )
+    do
+        oc create serviceaccount ui -n user$i-super-heroes
+        oc adm policy add-scc-to-user anyuid -z ui -n user$i-super-heroes
+    done
+}
+
 add_monitoring_view_role_to_grafana_serviceaccount() {
 
     echo ""
@@ -93,5 +108,7 @@ add_monitoring_edit_role_to_user
 repeat '-'
 add_monitoring_view_role_to_grafana_serviceaccount
 repeat '-'
-# add_grafana_operator_to_project
-# repeat '-'
+#add_grafana_operator_to_project
+#repeat '-'
+add_ui_serviceaccount
+repeat '-'

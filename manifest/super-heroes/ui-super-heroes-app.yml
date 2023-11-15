@@ -60,6 +60,9 @@ spec:
               memory: 128Mi
             requests:
               memory: 32Mi
+          serviceAccountName: ui
+          serviceAccount: ui
+          securityContext: {}
 
 
 ---
