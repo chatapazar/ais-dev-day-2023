@@ -1,6 +1,6 @@
 # Workshop Setup Guide
 
-1. Request OpenShift cluster e.g. **OpenShift 4.11 Workshop** with a number of users as needed from RHPDS.
+1. Request OpenShift cluster e.g. **OpenShift Cluster Workshop** with a number of users as needed from RHPDS.
 
 2. Open a terminal on your computer then login to cluster with cluster admin user i.e. **admin** user.
 
@@ -18,8 +18,8 @@
    * Grafana Operator
    * Dev Workspace Operator
    * Red Hat OpenShift Dev Spaces
-   * Red Hat Integration - AMQ Streams
-   * Red Hat Integration - Service Registry Operator
+   * Red Hat Streams for Apache Kafka
+   * Red Hat build of Apicurio Registry
    * Red Hat OpenShift distributed tracing platform
    * Red Hat OpenShift distributed tracing data collection
 

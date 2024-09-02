@@ -32,7 +32,7 @@ Just in case you're curious about what else are installed in the cluster for thi
 * Grafana Operator
 * Dev Workspace Operator
 * Red Hat OpenShift Dev Spaces
-* Red Hat Integration - AMQ Streams
+* Red Hat Streams for Apache Kafka
 * Red Hat Integration - Service Registry Operator
 * Red Hat OpenShift distributed tracing platform
 * Red Hat OpenShift distributed tracing data collection
