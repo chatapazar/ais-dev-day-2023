@@ -12,13 +12,13 @@ If you're curious what the script does, see the code [here](../../script/install
 1. Open the Web Terminal. Then run this command to clone Git repository to local.
 
     ```sh
-    git clone https://github.com/chatapazar/ais-dev-day-2023.git
+    git clone https://github.com/chatapazar/dev-day-2024q3.git
     ```
 
     or
 
     ```sh
-    git clone https://gitlab.com/ckongman/ais-dev-day-2023.git
+    git clone https://gitlab.com/ckongman/dev-day-2024q3.git
     ```
 
    ![Deploy database](image/database-deployment/deploy-db-27.png)
@@ -26,7 +26,7 @@ If you're curious what the script does, see the code [here](../../script/install
 2. Run following commands to deploy the databases. Wait for a few seconds you should see the **fights-db** and **villains-db** databases get deployed.
 
     ```sh
-    cd ais-dev-day-2023/script && ./installation.sh db $(oc whoami)-super-heroes
+    cd dev-day-2024q3/script && ./installation.sh db $(oc whoami)-super-heroes
     ```
 
     ![Deploy database](image/database-deployment/deploy-db-28.png)

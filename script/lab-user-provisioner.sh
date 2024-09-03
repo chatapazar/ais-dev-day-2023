@@ -42,6 +42,31 @@ add_monitoring_edit_role_to_user()
     done
 }
 
+add_logging_view_role_to_user()
+{
+
+    echo ""
+    echo "Add Logging View to userX-super-heroes ..."
+    echo
+
+    oc login -u admin -p $ADMIN_PASSWORD --insecure-skip-tls-verify
+
+    for i in $( seq 1 $totalUsers )
+    do
+        # if test $i -gt 2;
+        # then
+        echo
+        echo "Add cluster-logging-application-view to project $i ..."
+        echo
+
+        cat ../manifest/logging-view.yaml | sed "s#USERNAME#user$i#g" | oc apply -n user$i-super-heroes -f -
+        
+        # fi
+    done
+
+}
+
+
 add_ui_serviceaccount() {
 
     echo ""
@@ -111,4 +136,6 @@ repeat '-'
 add_grafana_operator_to_project
 repeat '-'
 add_ui_serviceaccount
+repeat '-'
+add_logging_view_role_to_user
 repeat '-'

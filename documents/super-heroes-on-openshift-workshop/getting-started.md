@@ -4,11 +4,21 @@
 
 Workshop organizer will provide you the OpenShift Web Console URL as well as a credential for login. Open the URL in your favourite web browser and log in with your credential.
 
-![Login to OpenShift web console](image/getting-started/ocp-login.png)
+* First Step, register with your email address and use access password (openshift)
 
-Once you've logged in you'll see a welcome dialog, just click **Skip tour** button to close the dialog.
+  ![Login to OpenShift web console](image/getting-started/login-1.png)
 
-![Welcome dialog](image/getting-started/skip-tour.png)
+* After success registration, workshop information will be appear!!! open OpenShift Console URL (console_url information), get password and your username (such as user1)
+
+  ![Login to OpenShift web console](image/getting-started/login-2.png)
+
+* Input your username and password
+
+  ![Login to OpenShift web console](image/getting-started/ocp-login.png)
+
+* Once you've logged in you'll see a welcome dialog, just click **Skip tour** button to close the dialog.
+
+  ![Welcome dialog](image/getting-started/skip-tour.png)
 
 ## Projects (Namespaces)
 
@@ -33,9 +43,11 @@ Just in case you're curious about what else are installed in the cluster for thi
 * Dev Workspace Operator
 * Red Hat OpenShift Dev Spaces
 * Red Hat Streams for Apache Kafka
-* Red Hat Integration - Service Registry Operator
+* Red Hat build of Apicurio Registry
 * Red Hat OpenShift distributed tracing platform
-* Red Hat OpenShift distributed tracing data collection
+* Red Hat build of OpenTelemetry
+* Red Hat Cluster Logging
+* Red Hat Loki Operator
 
 ## References
 

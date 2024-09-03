@@ -29,7 +29,7 @@ heroes_db_deployment_template() {
     done
 
     #Initial data
-    curl https://raw.githubusercontent.com/chatapazar/ais-dev-day-2023/main/manifest/super-heroes/heroes-db-init.sql -o heroes-db-init.sql
+    curl https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/heroes-db-init.sql -o heroes-db-init.sql
     psql -h $DB_HOST -U $DB_USERNAME -d $DB_NAME -f heroes-db-init.sql
 
     #Connect to DB
@@ -64,7 +64,7 @@ villains_db_deployment_template() {
     done
 
     #Initial data
-    curl https://raw.githubusercontent.com/chatapazar/ais-dev-day-2023/main/manifest/super-heroes/villains-db-init.sql -o villains-db-init.sql
+    curl https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/villains-db-init.sql -o villains-db-init.sql
     psql -h $DB_HOST -U $DB_USERNAME -d $DB_NAME -f villains-db-init.sql
 }
 
@@ -85,8 +85,9 @@ app_deployment_yaml() {
     if [[ $1 = "all" ]]; then
         oc apply -f ../manifest/super-heroes/heroes-app.yml
     fi
+    
+    #oc apply -f ../manifest/super-heroes/villains-app.yml
     oc apply -f ../manifest/super-heroes/fights-app.yml
-    oc apply -f ../manifest/super-heroes/villains-app.yml
     oc apply -f ../manifest/super-heroes/statistics-app.yml
     oc apply -f ../manifest/super-heroes/ui-super-heroes-app.yml
 }

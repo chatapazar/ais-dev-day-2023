@@ -72,7 +72,7 @@
 1. Open the Web Terminal. Then run this command to clone Git repository to local.
 
     ```sh
-    git clone http://git.gitea.svc.cluster.local:3000/lab-user/developer-advocacy-2022.git
+    git clone https://gitlab.com/s.audomsak/developer-advocacy-2022.git
     ```
 
     Notice that the URL is internal DNS! Yes, there is a Git server (Gitea) running in the same cluster but different project.
@@ -90,7 +90,7 @@
 3. Run this command to build and deploy microservice to OpenShift cluster.
 
    ```sh
-    ./mvnw -s maven-setting.xml install \
+    ./mvnw install \
     -DskipTests \
     -Dquarkus.container-image.group=$(oc project --short) \
     -Dquarkus.profile=openshift-17 \

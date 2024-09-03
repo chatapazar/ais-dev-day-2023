@@ -10,6 +10,8 @@
 
    *YAML snippet:*
 
+
+
    ```yaml
    apiVersion: opentelemetry.io/v1alpha1
    kind: OpenTelemetryCollector
@@ -21,21 +23,22 @@
        receivers:
          otlp:
            protocols:
-             grpc:
-             http:
+             grpc: {}
+             http: {}
        processors:
        exporters:
-         jaeger:
-           endpoint: jaeger-collector-headless.userX-super-heroes.svc.cluster.local:14250
+         otlp:
+           endpoint: jaeger-collector-headless.user1-super-heroes.svc.cluster.local:4317
            tls:
-             ca_file: "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt"
+             insecure: true
        service:
          pipelines:
            traces:
              receivers: [otlp]
              processors: []
-             exporters: [jaeger]
+             exporters: [otlp]
     ```
+
 
     ![Deploy OpenTelemetry collector](image/distrubuted-tracing/deploy-5.png)
 

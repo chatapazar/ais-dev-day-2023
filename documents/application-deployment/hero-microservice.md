@@ -64,6 +64,14 @@
 
    ![Create a Secret object](image/hero-microservice-deployment/deploy-5.png)
 
+## Review Source Code of Heroes Microservice
+
+1. git url of Heroes Microservice --> https://github.com/quarkusio/quarkus-super-heroes/tree/main/rest-heroes
+
+2. heroes rest web service --> https://github.com/quarkusio/quarkus-super-heroes/blob/main/rest-heroes/src/main/java/io/quarkus/sample/superheroes/hero/rest/HeroResource.java
+
+3. heroes microservice configuration --> https://github.com/quarkusio/quarkus-super-heroes/blob/main/rest-heroes/src/main/resources/application.yml
+
 ## Deploy application with existing container image
 
 1. Go to **Topology** menu, right click on view area then select **Add to Project -> Container Image** menu.
@@ -116,7 +124,7 @@
 9. Enter following environment variable. Then click **Resource limits** link.
 
    - **Name:** `KUBERNETES_NAMESPACE`
-   - **Value:** `userX-super-heroes` where `X` is your user number.
+   - **Value:** `userX-super-heroes` where `X` is your user number!!!.
 
    ![Deploy application container](image/hero-microservice-deployment/deploy-14.png)
 

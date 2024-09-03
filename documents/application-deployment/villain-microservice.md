@@ -115,21 +115,12 @@
 
 9. Enter following environment variable then click **Deployment** link.
 
-   - **Name:** `MAVEN_MIRROR_URL`
-   - **Value:** `http://nexus.nexus.svc.cluster.local:8081/repository/maven-public/`
-
-   Note. This will tell Maven in the builder image to use Nexus deployed on the cluster as a Maven Repository instead to speed up build process.
-
-   ![Deploy application container](image/villain-microservice/deploy-13.png)
-
-10. Enter following environment variable. Then click **Resource limits** link.
-
     - **Name:** `KUBERNETES_NAMESPACE`
-    - **Value:** `userX-super-heroes` where `X` is your user number.
+    - **Value:** `userX-super-heroes` where `X` is your user number!!!.
 
     ![Deploy application container](image/villain-microservice/deploy-14.png)
 
-11. Enter following memory request and limit. Then click **Labels** link.
+11. Then click **Resource limits** link. Enter following memory request and limit. Then click **Labels** link.
 
     - **Request:** `256`
     - **Limit:** `768`

@@ -51,7 +51,7 @@ install_operator() {
 
 install_amq_streams() {
     operatorName=amq-streams
-    operatorDesc="Red Hat Integration - AMQ Streams"
+    operatorDesc="Red Hat Streams for Apache Kafka"
     ymlFilePath=../manifest/amq-stream-subscription.yml
     project=openshift-operators
 
@@ -59,7 +59,7 @@ install_amq_streams() {
 }
 
 install_distributed_tracing_platform() {
-    project=openshift-operators
+    project=openshift-distributed-tracing
 
     operatorName=jaeger-product
     operatorDesc="Red Hat OpenShift distributed tracing platform"
@@ -70,16 +70,16 @@ install_distributed_tracing_platform() {
 
 install_distributed_tracing_data_collection() {
     operatorName=opentelemetry-product
-    operatorDesc="Red Hat OpenShift distributed tracing data collection"
+    operatorDesc="Red Hat build of OpenTelemetry"
     ymlFilePath=../manifest/distributed-tracing-data-collection-subscription.yml
-    project=openshift-operators
+    project=openshift-opentelemetry-operator
 
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
 install_service_registry() {
     operatorName=service-registry-operator
-    operatorDesc="Red Hat Integration - Service Registry Operator"
+    operatorDesc="Red Hat build of Apicurio Registry"
     ymlFilePath=../manifest/service-registry-subscription.yml
     project=openshift-operators
 
@@ -113,6 +113,38 @@ install_grafana() {
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
+install_loki() {
+    
+    oc create -f ../manifest/logging-operator.yaml
+    oc create -f ../manifest/loki-operator.yaml
+    sleep 60
+    oc wait --for condition=established --timeout=180s \
+    crd/lokistacks.loki.grafana.com \
+    crd/clusterloggings.logging.openshift.io
+    oc get csv -n openshift-logging
+    
+    S3_BUCKET=$(oc get configs.imageregistry.operator.openshift.io/cluster -o jsonpath='{.spec.storage.s3.bucket}' -n openshift-image-registry)
+    REGION=$(oc get configs.imageregistry.operator.openshift.io/cluster -o jsonpath='{.spec.storage.s3.region}' -n openshift-image-registry)
+    ACCESS_KEY_ID=$(oc get secret image-registry-private-configuration -o jsonpath='{.data.credentials}' -n openshift-image-registry|base64 -d|grep aws_access_key_id|awk -F'=' '{print $2}'|sed 's/^[ ]*//')
+    SECRET_ACCESS_KEY=$(oc get secret image-registry-private-configuration -o jsonpath='{.data.credentials}' -n openshift-image-registry|base64 -d|grep aws_secret_access_key|awk -F'=' '{print $2}'|sed 's/^[ ]*//')
+    ENDPOINT=$(echo "https://s3.$REGION.amazonaws.com")
+    DEFAULT_STORAGE_CLASS=$(oc get sc -A -o jsonpath='{.items[?(@.metadata.annotations.storageclass\.kubernetes\.io/is-default-class=="true")].metadata.name}')
+
+    cat ../manifest/logging-loki-instance.yaml \
+    |sed 's/S3_BUCKET/'$S3_BUCKET'/' \
+    |sed 's/REGION/'$REGION'/' \
+    |sed 's|ACCESS_KEY_ID|'$ACCESS_KEY_ID'|' \
+    |sed 's|SECRET_ACCESS_KEY|'$SECRET_ACCESS_KEY'|' \
+    |sed 's|ENDPOINT|'$ENDPOINT'|'\
+    |sed 's|DEFAULT_STORAGE_CLASS|'$DEFAULT_STORAGE_CLASS'|' \
+    |oc apply -f -
+    
+    sleep 60
+    
+    oc get po -n openshift-logging
+}
+
+
 ####################################################
 # Main (Entry point)
 ####################################################
@@ -136,6 +168,9 @@ install_service_registry
 repeat '-'
 
 install_grafana
+repeat '-'
+
+install_loki
 repeat '-'
 
 # For some reasons, the web terminal icon doesn't show in OpenShift web console

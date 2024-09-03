@@ -17,3 +17,4 @@ In this workshop, you will deploy an existing application that allows superheroe
 The main UI allows you to pick up one random Hero and Villain by clicking on "**New Fighters.**" Then it’s just a matter of clicking on "**Fight!**" to get them to fight. The table at the bottom shows the list of the previous fights.
 
 ![Main UI](image/architecture/main-ui.png)
+

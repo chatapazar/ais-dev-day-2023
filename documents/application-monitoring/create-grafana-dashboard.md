@@ -13,6 +13,8 @@ Now we've configured the datasource for our Grafana instance. Basically, the Gra
     ![Create Grafana dashboard](image/create-grafana-dashboard/create-dashboard-2.png)
 
 3. Go to [Grafana Dashbords portal](https://grafana.com/grafana/dashboards/?search=quarkus) to get a completed free dashboard created by community. Then select the **JVM Quarkus - Micrometer** dashboard.
+   
+   https://grafana.com/grafana/dashboards/14370-jvm-quarkus-micrometer-metrics/
 
     ![Create Grafana dashboard](image/create-grafana-dashboard/create-dashboard-3.png)
 

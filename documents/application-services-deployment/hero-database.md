@@ -23,7 +23,7 @@
 
    ![PostgreSQL database deployment](image/database-deployment/deploy-db-4.png)
 
-5. Wait for awhile, the **heroes-db** pod should be up and running.
+5. Wait for awhile, the **heroes-db** pod should be up and running. (until pod icon change to dark blue color, 1-2 minutes)
 
    ![PostgreSQL database deployment](image/database-deployment/deploy-db-5.png)
 

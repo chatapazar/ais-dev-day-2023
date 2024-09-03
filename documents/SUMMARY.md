@@ -14,9 +14,11 @@
 
   - [Deploy Database For Hero Microservice](application-services-deployment/hero-database.md)
 
-  - [Deploy Databases For Other Microservices](application-services-deployment/other-databases.md)
+  - [Deploy Database For Villain Microservice](application-services-deployment/villain-database.md)
 
-- [AMQ Streams (Kafka) Deployment](application-services-deployment/kafka-deployment.md)
+  - [Deploy Databases For Fight Microservices](application-services-deployment/fight-databases.md)
+
+- [Red Hat Streams of Apache Kafka Deployment](application-services-deployment/kafka-deployment.md)
 
 - [Service Registry (Apicurio) Deployment](application-services-deployment/service-registry-deployment.md)
 
@@ -25,10 +27,14 @@
 - [Microservices Deployment](application-deployment/microservices-deployment.md)
 
   - [Hero Microservice](application-deployment/hero-microservice.md)
+  
+  - [Villain Microservice](application-deployment/villain-microservice.md)
 
   - [Deploy Other Microservices](application-deployment/other-microservices.md)
 
-## Application Monitoring
+## Application Observeability
+
+- [Application Logging](application-monitoring/application-logging.md)
 
 - [Application Metrics](application-monitoring/application-metrics.md)
 

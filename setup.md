@@ -16,22 +16,29 @@
 
    * Web Terminal
    * Grafana Operator
-   * Dev Workspace Operator
+   * Dev Workspace Operator 
    * Red Hat OpenShift Dev Spaces
    * Red Hat Streams for Apache Kafka
    * Red Hat build of Apicurio Registry
    * Red Hat OpenShift distributed tracing platform
-   * Red Hat OpenShift distributed tracing data collection
+   * Red Hat build of OpenTelemetry
+   * Red Hat Cluster Logging
+   * Red Hat Loki
 
    **Following Applications will be set up using CRD:**
 
    * Dev Spaces (Eclipse Che) in **redhat-openshift-devspaces** project
+
+4.5 if you found error Dev Workspace Operator 0.30  
+
+  * https://access.redhat.com/solutions/7084768 (need restart controller pod to take effect)
 
 5. Install Web Terminal Operator via OpenShift web console then run these commands to custom the tooling image.
 
    For some reasons, the web terminal icon doesn't show in OpenShift web console if we install Web Terminal operator via CLI but the issue is gone if we install it via OpenShift web console. That's weird!
 
    ```sh
+   cd script
    oc annotate devworkspacetemplates.workspace.devfile.io web-terminal-tooling 'web-terminal.redhat.com/unmanaged-state=true' -n openshift-operators
    oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n openshift-operators
    ```
@@ -41,8 +48,8 @@
    For example, provisioning 5 lab users:
 
    ```sh
-   export USER_PASSWORD=openshift
-   export ADMIN_PASSWORD=r3dh4t1!
+   export USER_PASSWORD=H3x8GWJZPtxxU8xp
+   export ADMIN_PASSWORD=Ysrun6PzuUrL5h3q
    ./lab-user-provisioner.sh 5
    ```
 

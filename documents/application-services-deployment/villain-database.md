@@ -20,7 +20,7 @@
 
     ![PostgreSQL database deployment](image/database-deployment/deploy-db-12.png)
 
-4. Click **Add value** link to add more input fields of environment variables
+4. Click **Add value** link to add more input fields of environment variables (expand show advanced deployment option)
 
     ![PostgreSQL database deployment](image/database-deployment/deploy-db-13.png)
 

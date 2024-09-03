@@ -41,7 +41,7 @@ OpenShift comes with monitoring stack with a collection of software e.g. Prometh
 3. Open Web Terminal, then run following command to create a token for Grafana to access Prometheus and query metrics data.
 
     ```sh
-    oc create token grafana-sa --duration 2h -n $(oc whoami)-monitoring
+    oc create token grafana-sa --duration 24h -n $(oc whoami)-monitoring
     ```
 
     ![Setup Grafana datasource](image/setup-grafana-datasource/grafana-ds-3.png)

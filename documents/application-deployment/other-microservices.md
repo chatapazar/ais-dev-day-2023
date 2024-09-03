@@ -2,8 +2,6 @@
 
 You've learnt how to deploy application via OpenShift Web Console in the previous section. Now, for the sake of speed and time saving, we're going to use a script to deploy the rest of microservices as following:
 
-- Villain microservice
-- Fight microservice
 - Statistics microservice
 - Super Hero UI microservice
 
