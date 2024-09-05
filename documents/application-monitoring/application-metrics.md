@@ -46,9 +46,9 @@ The OpenShift Container Platform monitoring stack is based on the Prometheus ope
 
 1. Review Example Metrics Code of Rest-Heroes
    
-   - git repository of Rest-Heroes --> https://github.com/chatapazar/dev-day-2024q3/tree/main/code/rest-heroes
-   - Quarkus use Micrometer Metrics to auto generate default metrics by add dependency (xmicrometer-registry-prometheus) in pom.xml --> https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/code/rest-heroes/pom.xml
-   - Quarkus Micrometer Metrics --> https://quarkus.io/guides/telemetry-micrometer
+   - git repository of Rest-Heroes --> [Rest Heroes](https://github.com/chatapazar/dev-day-2024q3/tree/main/code/rest-heroes)
+   - Quarkus use Micrometer Metrics to auto generate default metrics by add dependency (xmicrometer-registry-prometheus) in pom.xml --> [pom.xml](https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/code/rest-heroes/pom.xml)
+   - Quarkus Micrometer Metrics --> [Quarkus Micrometer](https://quarkus.io/guides/telemetry-micrometer)
 
 
 2. Test Application Metrics, Back to Topology view, click rest-heroes deployment, click pod in popup panel

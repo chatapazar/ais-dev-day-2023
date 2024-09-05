@@ -10,28 +10,31 @@ If you're curious what the script does, see the code [here](../../script/install
 
 ## Deploy application using script
 
-0. Review YAML file for Deploy Fight microservice at --> https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/fights-app.yml
+0. Review YAML file for Deploy Fight microservice at --> [fights-app.yml](https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/fights-app.yml)
    
    - ConfigMap, Secret, Deployment, Service and Route
 
-1. Review YAML file for Deploy event-statistics at --> https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/statistics-app.yml, please review object include:
+1. Review YAML file for Deploy event-statistics at --> [statistics-app.yml](https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/statistics-app.yml)
    
    - Service, ConfigMap, Deployment and Route
 
-
-2. Review YAML file for Deploy ui super heroes at --> https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/ui-super-heroes-app.yml, please review object include:
+2. Review YAML file for Deploy ui super heroes at --> [ui-super-heroes-app.yml](https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/ui-super-heroes-app.yml)
    
-  - Deployment, Service and Route
+   - Deployment, Service and Route
 
 3. In the Web Terminal, run following commands to deploy the microservices. Wait for a few seconds you should see all of the microservices get deployed.
 
     ```sh
     curl https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/fights-app.yml -o fights-app.yml
     oc apply -f fights-app.yml
+    ```
 
+    ```sh
     curl https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/statistics-app.yml -o statistics-app.yml
     oc apply -f statistics-app.yml
+   ```
 
+   ```sh
     curl https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/ui-super-heroes-app.yml -o ui-super-heroes-app.yml
     oc apply -f ui-super-heroes-app.yml
     ```

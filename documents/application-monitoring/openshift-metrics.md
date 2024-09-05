@@ -44,7 +44,7 @@ In the Observe section of OpenShift Container Platform web console, you can acce
 
 8. change dropdownlist to Custom Query to use PromQL (Prometheus Query Language) query metrics such as 
    
-   - PromQL: 'container_memory_max_usage_bytes'
+   - PromQL: `container_memory_max_usage_bytes`
    - Enter to run
 
    ![OpenShift Monitoring](image/application-metrics/monitor-11.png)

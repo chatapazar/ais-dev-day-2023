@@ -30,7 +30,10 @@ The **Fight** and **Statistics** microservices will be interacting with Kafka br
    
     ![Create Kafka Topic](image/kafka-deployment/kafka-1.png)
 
-5. In create KafkaTopic, change configure via from view to yaml view, set labels of strimizi.io/cluster to 'fights', click create
+5. In create KafkaTopic, change configure via from view to yaml view, 
+   
+   - **set labels of strimizi.io/cluster to** `fights`
+   - click create
    
     ![Edit Kafka Cluster Name](image/kafka-deployment/kafka-2.png)
 
@@ -83,7 +86,7 @@ The **Fight** and **Statistics** microservices will be interacting with Kafka br
    
     ![View kafka producer log](image/kafka-deployment/kafka-5.png)
 
-9. Check producer log, kafka producer client try to send message to kafka broker
+9.  Check producer log, kafka producer client try to send message to kafka broker
     
     ![View kafka producer log](image/kafka-deployment/kafka-6.png)
 
@@ -136,11 +139,11 @@ The **Fight** and **Statistics** microservices will be interacting with Kafka br
     
     ![View kafka consumer log](image/kafka-deployment/kafka-9.png)
 
-13. Review source code of Kafka Client at https://github.com/strimzi/client-examples
+13. Review source code of Kafka Client at [client-examples](https://github.com/strimzi/client-examples)
 
-   - producer example source code at https://raw.githubusercontent.com/strimzi/client-examples/main/java/kafka/producer/src/main/java/io/strimzi/kafka/producer/KafkaProducerExample.java
+   - producer example source code at [KafkaProducerExample.java](https://raw.githubusercontent.com/strimzi/client-examples/main/java/kafka/producer/src/main/java/io/strimzi/kafka/producer/KafkaProducerExample.java)
    
-   - consumer example source code at https://raw.githubusercontent.com/strimzi/client-examples/main/java/kafka/consumer/src/main/java/io/strimzi/kafka/consumer/KafkaConsumerExample.java
+   - consumer example source code at [KafkaConsumerExample.java](https://raw.githubusercontent.com/strimzi/client-examples/main/java/kafka/consumer/src/main/java/io/strimzi/kafka/consumer/KafkaConsumerExample.java)
 
 14. Stop kafka producer client, click quick-java-kafka-producer deployment, select Details tab on popup panel and click scale down to 0 
     
@@ -157,25 +160,25 @@ The **Fight** and **Statistics** microservices will be interacting with Kafka br
 17. In Deploy Image page, 
     
     - select image name from external registry
-    - input 'obsidiandynamics/kafdrop'
-    - set Runtime icon to 'amq'
+    - input `obsidiandynamics/kafdrop`
+    - set Runtime icon to `amq`
 
     ![Deploy Image](image/kafka-deployment/kafka-13.png)
 
 18. Set General Information for deployment
     
     - select Create application
-    - set applicaton name to 'kafdrop'
-    - set name to 'kafdrop'
-    - select resource type to 'Deployment'
+    - set applicaton name to `kafdrop`
+    - set name to `kafdrop`
+    - select resource type to `Deployment`
 
     ![Deploy Image](image/kafka-deployment/kafka-14.png)
 
 19. In advanced deployment option
     
     - Set Environment variables
-    - set name to 'KAFKA_BROKERCONNECT'
-    - set value to 'fights-kafka-bootstrap:9092'
+    - set name to `KAFKA_BROKERCONNECT`
+    - set value to `fights-kafka-bootstrap:9092`
     - leave all default, click Create
 
     ![Deploy Image](image/kafka-deployment/kafka-16.png)

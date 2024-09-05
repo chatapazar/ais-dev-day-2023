@@ -66,11 +66,11 @@
 
 ## Review Source Code of Heroes Microservice
 
-1. git url of Heroes Microservice --> https://github.com/quarkusio/quarkus-super-heroes/tree/main/rest-heroes
+1. git url of Heroes Microservice --> [Rest-Heroes](https://github.com/quarkusio/quarkus-super-heroes/tree/main/rest-heroes)
 
-2. heroes rest web service --> https://github.com/quarkusio/quarkus-super-heroes/blob/main/rest-heroes/src/main/java/io/quarkus/sample/superheroes/hero/rest/HeroResource.java
+2. heroes rest web service --> [HeroResource.java](https://github.com/quarkusio/quarkus-super-heroes/blob/main/rest-heroes/src/main/java/io/quarkus/sample/superheroes/hero/rest/HeroResource.java)
 
-3. heroes microservice configuration --> https://github.com/quarkusio/quarkus-super-heroes/blob/main/rest-heroes/src/main/resources/application.yml
+3. heroes microservice configuration --> [application.yml](https://github.com/quarkusio/quarkus-super-heroes/blob/main/rest-heroes/src/main/resources/application.yml)
 
 ## Deploy application with existing container image
 

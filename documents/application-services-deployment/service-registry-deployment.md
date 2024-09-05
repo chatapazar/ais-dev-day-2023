@@ -32,8 +32,8 @@ Red Hat build of Apicurio Registry is based on [Apicruio Registry](https://www.a
 
 5. set Environment variables, 
    
-   - add name to 'REGISTRY_AUTH_ANONYMOUS_READ_ACCESS_ENABLED'
-   - add value to 'true'
+   - add name to `REGISTRY_AUTH_ANONYMOUS_READ_ACCESS_ENABLED`
+   - add value to `true`
    
    ![Apicurio Registry](image/registry-deployment/registry-4.png)
 

@@ -48,7 +48,7 @@
 
 ## How to implement OpenTelemetry in Application
 
-1. Example OpenTelemetry Configuration in Quarkus --> https://github.com/chatapazar/dev-day-2024q3/blob/main/code/rest-heroes/src/main/resources/application.yml
+1. Example OpenTelemetry Configuration in Quarkus --> [application.yml](https://github.com/chatapazar/dev-day-2024q3/blob/main/code/rest-heroes/src/main/resources/application.yml)
    
    Example Config
    ```yaml
@@ -61,7 +61,7 @@
            endpoint: http://localhost:4317
    ```
 
-2. Example OpenTelemetry Configuration for JDBC --> https://github.com/chatapazar/dev-day-2024q3/blob/main/code/rest-villains/src/main/resources/application.properties
+2. Example OpenTelemetry Configuration for JDBC --> [application.properties](https://github.com/chatapazar/dev-day-2024q3/blob/main/code/rest-villains/src/main/resources/application.properties)
    
    Example Config
    ```property
@@ -72,7 +72,7 @@
    quarkus.datasource.jdbc.driver=io.opentelemetry.instrumentation.jdbc.OpenTelemetryDriver
    ```
 
-3. Example OpenTelemetry with Kafka Client --> https://github.com/chatapazar/dev-day-2024q3/blob/main/code/rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/service/FightService.java
+3. Example OpenTelemetry with Kafka Client --> [FightService.java](https://github.com/chatapazar/dev-day-2024q3/blob/main/code/rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/service/FightService.java)
    
    Example Code
    ```java
