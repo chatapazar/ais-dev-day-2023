@@ -16,7 +16,7 @@
 
   - [Deploy Database For Villain Microservice](application-services-deployment/villain-database.md)
 
-  - [Deploy Databases For Fight Microservices](application-services-deployment/fight-databases.md)
+  - [Deploy Databases For Fight Microservices](application-services-deployment/fight-database.md)
 
 - [Red Hat Streams of Apache Kafka Deployment](application-services-deployment/kafka-deployment.md)
 
@@ -34,9 +34,13 @@
 
 ## Application Observeability
 
+- [OpenShift Container Platform Observability](application-monitoring/observability.md)
+
 - [Application Logging](application-monitoring/application-logging.md)
 
-- [Application Metrics](application-monitoring/application-metrics.md)
+- [OpenShift Monitoring](application-monitoring/openshift-metrics.md)
+
+- [User Application Metrics](application-monitoring/application-metrics.md)
 
   - [Configure Service Monitoring](application-monitoring/configure-service-monitoring.md)
 
@@ -54,7 +58,7 @@
 
   - [Configure OpenShift Distributed Tracing Platform](application-monitoring/configure-distributed-tracing-platform.md)
 
-  - [Configure OpenShift Distributed Tracing Data Collection](application-monitoring/configure-distributed-tracing-data-collection.md)
+  - [Configure OpenShift OpenTelemetry Collector](application-monitoring/configure-distributed-tracing-data-collection.md)
 
   - [Trace Application Transaction](application-monitoring/trace-application-transaction.md)
 

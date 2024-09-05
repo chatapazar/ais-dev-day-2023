@@ -8,11 +8,7 @@ It's important to monitor your application because the first step to fixing a pr
 
 System monitoring tools can help you track many different aspects of your software: CPU utilization, memory footprint, I/O wait times, latency, throughput, errors, and so on. Most applications have at least some metric that can be useful for performance tuning or debugging purposes (although it's easy to get overwhelmed by the number of metrics available). The trick is figuring out which ones are most relevant for your particular situation and understanding how they fit into the big picture.
 
-## OpenShift Container Platform monitoring
-
-OpenShift Container Platform includes a preconfigured, preinstalled, and self-updating monitoring stack that provides monitoring for core platform components. You also have the option to enable monitoring for user-defined projects.
-
-A cluster administrator can configure the monitoring stack with the supported configurations. OpenShift Container Platform delivers monitoring best practices out of the box.
+## User-defined Application Monitoring
 
 In OpenShift Container Platform, cluster components are monitored by scraping metrics exposed through service endpoints. You can also configure metrics collection for user-defined projects.
 
@@ -46,6 +42,37 @@ The OpenShift Container Platform monitoring stack is based on the Prometheus ope
 
 ![Metrics Dashboard](image/application-metrics/ocp-monitoring-stack.png)
 
+## Test Application Metrics
+
+1. Review Example Metrics Code of Rest-Heroes
+   
+   - git repository of Rest-Heroes --> https://github.com/chatapazar/dev-day-2024q3/tree/main/code/rest-heroes
+   - Quarkus use Micrometer Metrics to auto generate default metrics by add dependency (xmicrometer-registry-prometheus) in pom.xml --> https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/code/rest-heroes/pom.xml
+   - Quarkus Micrometer Metrics --> https://quarkus.io/guides/telemetry-micrometer
+
+
+2. Test Application Metrics, Back to Topology view, click rest-heroes deployment, click pod in popup panel
+   
+   ![Application Metrics](image/application-metrics/monitor-12.png)
+
+3. In pod detail, select Terminal tab to access to container
+   
+   ![Application Metrics](image/application-metrics/monitor-13.png)
+
+4. run command to get application metrics information (in prometheus format)
+
+   Example Command
+
+   ```bash
+   curl http://localhost:8080/q/metrics
+   ```
+
+   ![Application Metrics](image/application-metrics/monitor-14.png) 
+
+5. review metrics information (prometheus format)
+
+   ![Application Metrics](image/application-metrics/monitor-15.png)  
+   
 ## References
 
 * [Monitoring Overview](https://docs.openshift.com/container-platform/4.11/monitoring/monitoring-overview.html)

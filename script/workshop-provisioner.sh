@@ -65,15 +65,18 @@ install_distributed_tracing_platform() {
     operatorDesc="Red Hat OpenShift distributed tracing platform"
     ymlFilePath=../manifest/distributed-tracing-platform-subscription.yml
 
+    oc new-project $project
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
 install_distributed_tracing_data_collection() {
+    
     operatorName=opentelemetry-product
     operatorDesc="Red Hat build of OpenTelemetry"
     ymlFilePath=../manifest/distributed-tracing-data-collection-subscription.yml
     project=openshift-opentelemetry-operator
 
+    oc new-project $project
     install_operator $operatorName "$operatorDesc" $ymlFilePath $project
 }
 
@@ -155,17 +158,17 @@ repeat '-'
 enable_user_workload_monitoring
 repeat '-'
 
-install_amq_streams
-repeat '-'
+# install_amq_streams
+# repeat '-'
 
-install_distributed_tracing_platform
-repeat '-'
+# install_distributed_tracing_platform
+# repeat '-'
 
-install_distributed_tracing_data_collection
-repeat '-'
+# install_distributed_tracing_data_collection
+# repeat '-'
 
-install_service_registry
-repeat '-'
+# install_service_registry
+# repeat '-'
 
 install_grafana
 repeat '-'

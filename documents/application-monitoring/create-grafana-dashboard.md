@@ -30,6 +30,6 @@ Now we've configured the datasource for our Grafana instance. Basically, the Gra
 
     ![Create Grafana dashboard](image/create-grafana-dashboard/create-dashboard-6.png)
 
-7. The dashboard will be imported and application metrics are displayed in various type of visualization.
+7. The dashboard will be imported and application metrics are displayed in various type of visualization. (select application if data not found!!!)
 
     ![Create Grafana dashboard](image/create-grafana-dashboard/create-dashboard-7.png)

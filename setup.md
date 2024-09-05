@@ -18,10 +18,6 @@
    * Grafana Operator
    * Dev Workspace Operator 
    * Red Hat OpenShift Dev Spaces
-   * Red Hat Streams for Apache Kafka
-   * Red Hat build of Apicurio Registry
-   * Red Hat OpenShift distributed tracing platform
-   * Red Hat build of OpenTelemetry
    * Red Hat Cluster Logging
    * Red Hat Loki
 
@@ -29,9 +25,16 @@
 
    * Dev Spaces (Eclipse Che) in **redhat-openshift-devspaces** project
 
-4.5 if you found error Dev Workspace Operator 0.30  
+   - if you found error Dev Workspace Operator 0.30  
 
-  * https://access.redhat.com/solutions/7084768 (need restart controller pod to take effect)
+      https://access.redhat.com/solutions/7084768 (need restart controller pod to take effect)
+
+   - Manual Install (reduce problem)
+
+      - Red Hat Streams for Apache Kafka
+      - Red Hat build of Apicurio Registry
+      - Red Hat OpenShift distributed tracing platform
+      - Red Hat build of OpenTelemetry
 
 5. Install Web Terminal Operator via OpenShift web console then run these commands to custom the tooling image.
 
@@ -48,8 +51,8 @@
    For example, provisioning 5 lab users:
 
    ```sh
-   export USER_PASSWORD=H3x8GWJZPtxxU8xp
-   export ADMIN_PASSWORD=Ysrun6PzuUrL5h3q
+   export USER_PASSWORD=wmQIC2ZRvCCgMWMy
+   export ADMIN_PASSWORD=TxbA0JYAO2elY5Hx
    ./lab-user-provisioner.sh 5
    ```
 
