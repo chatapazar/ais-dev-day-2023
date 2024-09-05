@@ -133,19 +133,20 @@
 
 ## Add application configurations in ConfigMap and Secret objects to application container
 
-1. Click on **rest-villains** entity in view area, a panel will show on right hand side. Notice that a build process starts automatically to build source code and container image (you can click **View logs** to see build logs). By the way, just let it run in background for now. Then click **rest-villains** link.
+1. Wait until build complete!!!
+2. Click on **rest-villains** entity in view area, a panel will show on right hand side. Notice that a build process starts automatically to build source code and container image (you can click **View logs** to see build logs). By the way, just let it run in background for now. Then click **rest-villains** link.
 
    ![Deploy application container](image/villain-microservice/deploy-17.png)
 
-2. Go to **Environment** tab to add environment variables to application container. Then click **Add all from ConfigMap or Secret** link.
+3. Go to **Environment** tab to add environment variables to application container. Then click **Add all from ConfigMap or Secret** link.
 
    ![Deploy application container](image/villain-microservice/deploy-18.png)
 
-3. Select **rest-villains-config** ConfigMap and **rest-villains-config-creds** Secret objects, then click **Save** button. And then go to **Topology** menu.
+4. Select **rest-villains-config** ConfigMap and **rest-villains-config-creds** Secret objects, then click **Save** button. And then go to **Topology** menu.
 
    ![Deploy application container](image/villain-microservice/deploy-19.png)
 
-4. Wait for a while until you see dark blue ring surrounds the **rest-villains** entity. Hover mouse pointer over it, a bubble should show up and say _1 Running_ which means there is 1 pod running.
+5. Wait for a while until you see dark blue ring surrounds the **rest-villains** entity. Hover mouse pointer over it, a bubble should show up and say _1 Running_ which means there is 1 pod running.
 
    ![Deploy application container](image/villain-microservice/deploy-23.png)
 

@@ -26,7 +26,9 @@ Red Hat build of Apicurio Registry is based on [Apicruio Registry](https://www.a
    
    ![Apicurio Registry](image/registry-deployment/registry-2.png)
 
-4. Expand Configuration of Red Hat build of Apicurio Registry KafkaSQL storage and set kafka bootstrap servers URL to 'fights-kafka-bootstrap:9092'
+4. Expand Configuration of Red Hat build of Apicurio Registry KafkaSQL storage and 
+   
+   - set kafka bootstrap servers URL to `fights-kafka-bootstrap:9092`
    
    ![Apicurio Registry](image/registry-deployment/registry-3.png)
 

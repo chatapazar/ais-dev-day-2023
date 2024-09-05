@@ -29,6 +29,8 @@
   - [Hero Microservice](application-deployment/hero-microservice.md)
   
   - [Villain Microservice](application-deployment/villain-microservice.md)
+  
+  - [Fight Microservice](application-deployment/fight-microservice.md) 
 
   - [Deploy Other Microservices](application-deployment/other-microservices.md)
 
