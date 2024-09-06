@@ -122,20 +122,52 @@ add_grafana_operator_to_project() {
     done
 }
 
+create_argocd_user() {
+# change to mod at crd of operator (ACD instance)
+# https://access.redhat.com/solutions/6637881
+# extraConfig:
+#     accounts.<new-username>: apiKey, login
+  extraConfig:
+    accounts.user1: apiKey, login
+    accounts.user2: apiKey, login
+    accounts.user3: apiKey, login
+    accounts.user4: apiKey, login
+    accounts.user5: apiKey, login
+}
+
+update_argocd_password(){
+    oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
+    ARGOCD=$(oc get route/openshift-gitops-server -n openshift-gitops -o jsonpath='{.spec.host}')
+    echo https://$ARGOCD
+    PASSWORD=$(oc extract secret/openshift-gitops-cluster -n openshift-gitops --to=-) 2>/dev/null
+    echo $PASSWORD
+    argocd login $ARGOCD  --insecure --username admin --password $PASSWORD
+    for i in $( seq 1 $totalUsers )
+    do
+        username=user$i
+        argocd account update-password --account $username --new-password $USER_PASSWORD --current-password $PASSWORD
+    done
+}
+
+
+
+
 ####################################################
 # Main (Entry point)
 ####################################################
 totalUsers=$1
 
-create_projects
-repeat '-'
-add_monitoring_edit_role_to_user
-repeat '-'
-add_monitoring_view_role_to_grafana_serviceaccount
-repeat '-'
-add_grafana_operator_to_project
-repeat '-'
-add_ui_serviceaccount
-repeat '-'
-add_logging_view_role_to_user
-repeat '-'
+# create_projects
+# repeat '-'
+# add_monitoring_edit_role_to_user
+# repeat '-'
+# add_monitoring_view_role_to_grafana_serviceaccount
+# repeat '-'
+# add_grafana_operator_to_project
+# repeat '-'
+# add_ui_serviceaccount
+# repeat '-'
+# add_logging_view_role_to_user
+# repeat '-'
+# update_argocd_password
+# repeat '-'

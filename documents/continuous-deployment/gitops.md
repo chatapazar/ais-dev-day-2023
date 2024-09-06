@@ -85,19 +85,20 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     ![](image/cd-0.png)
   
   - check you cluster name from your current openshift workshop console
-    - such as your current workshop console URL is 'https://console-openshift-console.apps.cluster-4qhvp.4qhvp.sandbox689.opentlc.com'. 
-    - your CLUSTER_NAME is 'cluster-4qhvp.4qhvp.sandbox689.opentlc.com'
-  - open browser to https://git-gitea.apps.CLUSTER_NAME/lab-admin/developer-advocacy-2022
+    - such as your current workshop console URL is `https://console-openshift-console.apps.cluster-4qhvp.4qhvp.sandbox689.opentlc.com`. 
+    - your CLUSTER_NAME is `cluster-4qhvp.4qhvp.sandbox689.opentlc.com`
+    - **above cluster is example, please check from your current browser!!!**
+  - open browser to [https://gitlab.com/chatapazar/developer-advocacy-2022](https://gitlab.com/chatapazar/developer-advocacy-2022)
   
-    ![](image/cd-2.png)
+    ![](image/argo-1.png)
   
   - go to manifest/apps-kustomize
   
-    ![](image/cd-3.png)
+    ![](image/argo-2.png)
   
   - go to base folder
   
-    ![](image/cd-4.png)
+    ![](image/argo-3.png)
   
     - review following file:
       - kustomization.yml
@@ -109,14 +110,14 @@ Argo CD reports any configurations that deviate from their specified state. Thes
       - route.yml
   - go to overlays/dev folder
   
-    ![](image/cd-5.png)
+    ![](image/argo-4.png)
   
     - review following file:
       - kustomization.yml
       - event-statistics.yml
     - content of event-statistics.yml in overlays/dev/kustomization.yml
   
-      ![](image/cd-6.png)
+      ![](image/argo-5.png)
   
   - compare content of event-statistics.yml between base folder and overlays/dev folder (about resource request and limit)
     - resource request & limit in base/event-statistics.yml
@@ -165,7 +166,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
   
     ![](image/cd-9.png)
   
-  - use local user for login, type your username and password (same with your openshift login, such as user5/openshift), click 'SIGN IN'
+  - use local user for login, type your username and password (same with your openshift login), click `SIGN IN`
   
     ![](image/cd-10.png)
   
@@ -174,7 +175,8 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     ![](image/cd-11.png)
 
 * Create Application
-  - Click 'NEW APP' icon from left top of console to Create Application
+  
+  - Click `NEW APP` icon from left top of console to Create Application
   
     ![](image/cd-12.png)
 
@@ -183,29 +185,26 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     ![](image/cd-13.png)
 
     In General part
-    - Application Name: userX-event-statistics 
+    - Application Name: `userX-event-statistics` 
       - change X to your username such as user5-event-statistics
-    - Project: default
-    - SYNC POLICY: Manual
+    - Project: `default`
+    - SYNC POLICY: `Manual`
     - leave default for sync option
   - in Source part
     
-    ![](image/cd-14.png)
+    ![](image/argo-6.png)
     
-    - set Repository URL: https://git-gitea.apps.CLUSTER_NAME/lab-admin/developer-advocacy-2022
-      - Change CLUSTER_NAME to your current workshop cluster
-      - such as your current workshop console URL is 'https://console-openshift-console.apps.cluster-4qhvp.4qhvp.sandbox689.opentlc.com'. 
-      - your CLUSTER_NAME is 'cluster-4qhvp.4qhvp.sandbox689.opentlc.com' 
-    - Revision: HEAD
-    - Path: manifest/apps-kustomize/overlays/dev
+    - set Repository URL: `https://gitlab.com/chatapazar/developer-advocacy-2022.git`
+    - Revision: `HEAD`
+    - Path: `manifest/apps-kustomize/overlays/dev`
   - in Destination part
     
     ![](image/cd-15.png)
     
-    - Cluster URL: https://kubernetes.default.svc
-    - Namespace: userX-super-heroes
-      - change X to your username such as user5-super-heroes
-  - Leave default in last part (Source Type/Kustomize)
+    - Cluster URL: `https://kubernetes.default.svc`
+    - Namespace: `userX-super-heroes`
+      - change X to your username such as `user5-super-heroes`
+  - Select Kustomize and Leave default in last part (Source Type/Kustomize)
     
     ![](image/cd-16.png)
   
@@ -214,7 +213,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
   
     ![](image/cd-17.png)
   
-  - see status of your application set to 'OutOfSync'
+  - see status of your application set to `OutOfSync`
 
 * Sync (Deploy) Application
   - Next Step, We will start sync (deploy) application to openshift.
@@ -230,18 +229,20 @@ Argo CD reports any configurations that deviate from their specified state. Thes
       - deployment
       - rolebinding
       - route
-  - click sync icon, in sync panel, leave all default and click 'synchronize'
+  - click sync icon, in sync panel, leave all default and click `synchronize`
   
     ![](image/cd-19.png)
   
-  - wait until current sync status change to 'Synced' and last sync result change to 'Sync OK'
+  - wait until current sync status change to `Synced` and last sync result change to `Sync OK`
   
     ![](image/cd-20.png)
   
     - all component change to green icon and don't have yellow icon
+
 * Check Deployment Application in Developer Console
-  - back to OpenShift Developer Console, in your topology of project 'userX-super-heroes'
-  - 'event-statistics' deploy in your project now.
+
+  - back to OpenShift Developer Console, in your topology of project `userX-super-heroes`
+  - `event-statistics` deploy in your project now.
   
     ![](image/cd-21.png)
   
@@ -255,21 +256,6 @@ Argo CD reports any configurations that deviate from their specified state. Thes
   - in Edit resource limits, check request memory set to 256 Mi and limit memory set to 512 Mi (same with value in overlays/dev/event-statistics.yml)
   
     ![](image/cd-24.png)
-
-* Test Event-Statistic Demo Applicaiton
-  - try super heroes fight! again and agian
-  
-    ![](image/cd-25.png)
-  
-  - open event-statistics ui, go to your project, click Open URL from event-statistics icon
-  
-    ![](image/cd-26.png)
-  
-  - view stat change stat auto after you play super heroes fight!
-  
-    ![](image/cd-27.png)
-  
-    ![](image/cd-28.png)
 
 * View Another view in OpenShift GitOps (ArgoCD)
   - back to your application in Argo CD Console, click your application

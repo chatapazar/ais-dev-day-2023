@@ -32,8 +32,12 @@
   
   - [Fight Microservice](application-deployment/fight-microservice.md) 
 
+  - [Continuous Deployment with GitOps](continuous-deployment/gitops.md) 
+  
   - [Deploy Other Microservices](application-deployment/other-microservices.md)
 
+  - [Beautify The Topology View](application-deployment/beautify-topology.md)
+  
 ## Application Observeability
 
 - [OpenShift Container Platform Observability](application-monitoring/observability.md)

@@ -48,6 +48,7 @@ Just in case you're curious about what else are installed in the cluster for thi
 * Red Hat build of OpenTelemetry
 * Red Hat Cluster Logging
 * Red Hat Loki Operator
+* Red Hat OpenShift GitOps
 
 ## References
 

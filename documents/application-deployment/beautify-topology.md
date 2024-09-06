@@ -28,10 +28,11 @@ Similar to the annotations, label can also be added to workload to provide some 
 1. Open Web Terminal then run following command:
 
     ```sh
-    oc label deployment rest-villians app.openshift.io/runtime='quarkus'
+    oc label deployment rest-villains app.openshift.io/runtime-
+    oc label deployment rest-villains app.openshift.io/runtime='quarkus'
     ```
 
-2. You should see the icon of **rest-villians** entity get changed from Java mascot (Duke) to Quarkus icon.
+2. You should see the icon of **rest-villains** entity get changed from Java mascot (Duke) to Quarkus icon.
 
 ## What have you learnt?
 

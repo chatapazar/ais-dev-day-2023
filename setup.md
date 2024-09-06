@@ -35,6 +35,7 @@
       - Red Hat build of Apicurio Registry
       - Red Hat OpenShift distributed tracing platform
       - Red Hat build of OpenTelemetry
+      - Red Hat OpenShift GitOps
 
 5. Install Web Terminal Operator via OpenShift web console then run these commands to custom the tooling image.
 
@@ -46,7 +47,27 @@
    oc patch devworkspacetemplates.workspace.devfile.io web-terminal-tooling --type=merge --patch-file=../manifest/web-terminal-tooling.json -n openshift-operators
    ```
 
-6. Export lab user password and cluster admin password (the passwords should be there in the mail sent from RHDP). Then run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) script with number of lab users as the script argument.
+6. Manual add account to argocd (in ACD CRD) before run update_argocd_password in lab-user-provisioner.sh
+   
+   ```
+   extraConfig:
+     accounts.user1: apiKey, login
+     accounts.user2: apiKey, login
+     accounts.user3: apiKey, login
+     accounts.user4: apiKey, login
+     accounts.user5: apiKey, login
+    ```
+   
+   and add defaultpolicy to role:admin 
+
+   ```
+   rbac:
+     defaultPolicy: 'role:admin'
+   ```
+
+
+
+7. Export lab user password and cluster admin password (the passwords should be there in the mail sent from RHDP). Then run [lab-user-provisioner.sh](script/lab-user-provisioner.sh) script with number of lab users as the script argument.
 
    For example, provisioning 5 lab users:
 
