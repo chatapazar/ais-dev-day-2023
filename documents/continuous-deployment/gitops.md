@@ -53,7 +53,6 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     - fight microservice
     - heroes microservice
     - villians microservice
-    - super heroes ui
   * Check Current Topology of your project userX-super-heroes like this (in userX-super-heroes)
     
     ![](image/cd-1.png)
