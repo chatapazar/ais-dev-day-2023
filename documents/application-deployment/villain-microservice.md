@@ -109,25 +109,21 @@
 
    ![Deploy application container](image/villain-microservice/deploy-11.png)
 
-8. Click **Build configuration** link.
-
-   ![Deploy application container](image/villain-microservice/deploy-12.png)
-
-9. Enter following environment variable then click **Deployment** link.
+8. Click  **Deployment** link Enter following environment variable.
 
     - **Name:** `KUBERNETES_NAMESPACE`
     - **Value:** `userX-super-heroes` where `X` is your user number!!!.
 
     ![Deploy application container](image/villain-microservice/deploy-14.png)
 
-11. Then click **Resource limits** link. Enter following memory request and limit. Then click **Labels** link.
+9.  Then click **Resource limits** link. Enter following memory request and limit. Then click **Labels** link.
 
     - **Request:** `256`
     - **Limit:** `768`
 
     ![Deploy application container](image/villain-microservice/deploy-15.png)
 
-12. Enter `system=quarkus-super-heroes` then click **Create** button.
+10. Enter `system=quarkus-super-heroes` then click **Create** button.
 
     ![Deploy application container](image/villain-microservice/deploy-16.png)
 
