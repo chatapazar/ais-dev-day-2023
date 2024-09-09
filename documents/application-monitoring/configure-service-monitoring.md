@@ -21,7 +21,6 @@ In this workshop, user-defined projects monitoring is already enable so you don'
    spec:
      endpoints:
      - interval: 30s
-       port: http
        targetPort: 8080
        path: /q/metrics
        scheme: http
