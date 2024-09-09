@@ -25,7 +25,7 @@
 
    * Dev Spaces (Eclipse Che) in **redhat-openshift-devspaces** project
 
-   - if you found error Dev Workspace Operator 0.30  
+   - if you found error Dev Workspace Operator 0.30  (fix in 0.30.1)
 
       https://access.redhat.com/solutions/7084768 (need restart controller pod to take effect)
 
