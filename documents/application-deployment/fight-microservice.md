@@ -115,6 +115,42 @@
 
    ![Deploy application](image/fight-microservice/deploy-9.png)
 
+## Tip in Quarkus 
+
+1. From latest view in Topology, you can see link from res-fights to another pods.
+    
+2. Quarkus can make auto generate annotation to topology view by add config to properties of quarkus, see example below
+   
+   ```properties
+   ...
+   # OpenShift
+   %openshift.quarkus.config.profile.parent=prod
+   %openshift.quarkus.kubernetes.deployment-target=openshift
+   %openshift.quarkus.container-image.builder=openshift
+   %openshift-17.quarkus.config.profile.parent=prod
+   %openshift-17.quarkus.kubernetes.deployment-target=openshift
+   %openshift-17.quarkus.container-image.builder=openshift
+   %openshift-17.quarkus.docker.dockerfile-jvm-path=${paths.dockerfile.jvm-17}
+   %openshift-17.quarkus.openshift.jvm-dockerfile=${paths.dockerfile.jvm-17}
+   %openshift-17.quarkus.openshift.base-jvm-image=${paths.base-image.jvm-17}
+   quarkus.openshift.base-jvm-image=${paths.base-image.jvm-11}
+   quarkus.openshift.base-native-image=${paths.base-image.native}
+   quarkus.openshift.part-of=${quarkus.kubernetes.part-of}
+   quarkus.openshift.route.expose=true
+   quarkus.openshift.annotations."app.openshift.io/connects-to"=fights-db,fights-kafka,apicurio,rest-villains,rest-heroes,otel-collector
+   quarkus.openshift.env.configmaps=${quarkus.kubernetes.env.configmaps}
+   quarkus.openshift.env.secrets=${quarkus.kubernetes.env.secrets}
+   quarkus.openshift.labels.app=${quarkus.kubernetes.labels.app}
+   quarkus.openshift.labels.application=${quarkus.kubernetes.labels.application}
+   quarkus.openshift.labels.system=${quarkus.kubernetes.labels.system}
+   quarkus.openshift.ports."http".container-port=8080
+   quarkus.openshift.ports."http".host-port=8080
+   ...
+   ```
+
+   or view in [application.properties](https://gitlab.com/chatapazar/developer-advocacy-2024/-/raw/main/code/rest-fights/src/main/resources/application.properties?ref_type=heads)
+
+
 ## What have you learnt?
 
 1. How to deploy microservice using Maven command.
