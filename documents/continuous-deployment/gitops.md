@@ -87,7 +87,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     - such as your current workshop console URL is `https://console-openshift-console.apps.cluster-4qhvp.4qhvp.sandbox689.opentlc.com`. 
     - your CLUSTER_NAME is `cluster-4qhvp.4qhvp.sandbox689.opentlc.com`
     - **above cluster is example, please check from your current browser!!!**
-  - open browser to [https://gitlab.com/chatapazar/developer-advocacy-2022](https://gitlab.com/chatapazar/developer-advocacy-2022)
+  - open browser to [https://gitlab.com/chatapazar/developer-advocacy-2024.git](https://gitlab.com/chatapazar/developer-advocacy-2024.git)
   
     ![](image/argo-1.png)
   
@@ -193,7 +193,7 @@ Argo CD reports any configurations that deviate from their specified state. Thes
     
     ![](image/argo-6.png)
     
-    - set Repository URL: `https://gitlab.com/chatapazar/developer-advocacy-2022.git`
+    - set Repository URL: `https://gitlab.com/chatapazar/developer-advocacy-2024.git`
     - Revision: `HEAD`
     - Path: `manifest/apps-kustomize/overlays/dev`
   - in Destination part

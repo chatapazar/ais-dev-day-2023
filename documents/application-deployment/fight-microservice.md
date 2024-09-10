@@ -72,7 +72,7 @@
 1. Open the Web Terminal. Then run this command to clone Git repository to local.
 
     ```sh
-    git clone https://gitlab.com/s.audomsak/developer-advocacy-2022.git
+    git clone https://gitlab.com/chatapazar/developer-advocacy-2024.git
     ```
 
     Notice that the URL is internal DNS! Yes, there is a Git server (Gitea) running in the same cluster but different project.
@@ -82,7 +82,7 @@
 2. Run this command to go into the **Fight** microservice project directory.
 
     ```sh
-    cd developer-advocacy-2022/code/rest-fights && ls -l
+    cd developer-advocacy-2024/code/rest-fights && ls -l
     ```
 
    ![Deploy application](image/fight-microservice/deploy-6.png)

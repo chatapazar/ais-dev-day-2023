@@ -157,17 +157,17 @@ update_argocd_password(){
 ####################################################
 totalUsers=$1
 
-# create_projects
-# repeat '-'
+create_projects
+repeat '-'
 add_monitoring_edit_role_to_user
 repeat '-'
 add_monitoring_view_role_to_grafana_serviceaccount
 repeat '-'
-# add_grafana_operator_to_project
-# repeat '-'
-# add_ui_serviceaccount
-# repeat '-'
-# add_logging_view_role_to_user
-# repeat '-'
-# update_argocd_password
-# repeat '-'
+add_grafana_operator_to_project
+repeat '-'
+add_ui_serviceaccount
+repeat '-'
+add_logging_view_role_to_user
+repeat '-'
+update_argocd_password
+repeat '-'

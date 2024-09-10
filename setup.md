@@ -56,6 +56,51 @@
      accounts.user3: apiKey, login
      accounts.user4: apiKey, login
      accounts.user5: apiKey, login
+     accounts.user6: apiKey, login
+     accounts.user7: apiKey, login
+     accounts.user8: apiKey, login
+     accounts.user9: apiKey, login
+     accounts.user10: apiKey, login
+     accounts.user11: apiKey, login
+     accounts.user12: apiKey, login
+     accounts.user13: apiKey, login
+     accounts.user14: apiKey, login
+     accounts.user15: apiKey, login
+     accounts.user16: apiKey, login
+     accounts.user17: apiKey, login
+     accounts.user18: apiKey, login
+     accounts.user19: apiKey, login
+     accounts.user20: apiKey, login
+     accounts.user21: apiKey, login
+     accounts.user22: apiKey, login
+     accounts.user23: apiKey, login
+     accounts.user24: apiKey, login
+     accounts.user25: apiKey, login
+     accounts.user26: apiKey, login
+     accounts.user27: apiKey, login
+     accounts.user28: apiKey, login
+     accounts.user29: apiKey, login
+     accounts.user30: apiKey, login
+     accounts.user31: apiKey, login
+     accounts.user32: apiKey, login
+     accounts.user33: apiKey, login
+     accounts.user34: apiKey, login
+     accounts.user35: apiKey, login
+     accounts.user36: apiKey, login
+     accounts.user37: apiKey, login
+     accounts.user38: apiKey, login
+     accounts.user39: apiKey, login
+     accounts.user40: apiKey, login
+     accounts.user41: apiKey, login
+     accounts.user42: apiKey, login
+     accounts.user43: apiKey, login
+     accounts.user44: apiKey, login
+     accounts.user45: apiKey, login
+     accounts.user46: apiKey, login
+     accounts.user47: apiKey, login
+     accounts.user48: apiKey, login
+     accounts.user49: apiKey, login
+     accounts.user50: apiKey, login
     ```
    
    and add defaultpolicy to role:admin 
@@ -72,9 +117,9 @@
    For example, provisioning 5 lab users:
 
    ```sh
-   export USER_PASSWORD=eMXN20CMUZLIYYNr
-   export ADMIN_PASSWORD=wpEpTLW45HeM8Crr
-   ./lab-user-provisioner.sh 5
+   export USER_PASSWORD=8tynmfQ3P6iN4ICk
+   export ADMIN_PASSWORD=PjCSW5GFbHAyKMrp
+   ./lab-user-provisioner.sh 50
    ```
 
    **Following projects/namespaces will be created for each user:**

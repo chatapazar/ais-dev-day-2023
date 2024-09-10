@@ -41,6 +41,7 @@ If you're curious what the script does, see the code [here](../../script/install
    -->
 
    ```sh
+    cd ~
     curl https://raw.githubusercontent.com/chatapazar/dev-day-2024q3/main/manifest/super-heroes/ui-super-heroes-app.yml -o ui-super-heroes-app.yml
     oc apply -f ui-super-heroes-app.yml
     ```
